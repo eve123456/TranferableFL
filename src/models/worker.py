@@ -2,7 +2,7 @@ from src.utils.flops_counter import get_model_complexity_info
 from src.utils.torch_utils import get_flat_grad, get_state_dict, get_flat_params_from, set_flat_params_to
 import torch.nn as nn
 import torch
-
+from PIL import Image
 
 criterion = nn.CrossEntropyLoss()
 mseloss = nn.MSELoss()
@@ -138,6 +138,7 @@ class Worker(object):
             for x, y in test_dataloader:
                 # from IPython import embed
                 # embed()
+                # x = Image.fromarray(x)
                 x = self.flatten_data(x)
                 if self.gpu:
                     x, y = x.cuda(), y.cuda()

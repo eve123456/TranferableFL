@@ -3,6 +3,7 @@ import json
 import numpy as np
 import os
 import time
+import torch
 import torchvision.transforms as transforms
 from tensorboardX import SummaryWriter
 from torch.utils.data import Dataset
@@ -18,7 +19,7 @@ def mkdir(path):
     return path
 
 
-def read_data(train_data_dir, test_data_dir, key=None):
+def read_data(train_data_dir, test_data_dir, dataset_name, key=None):
     """Parses data in given train and test data directories
 
     Assumes:
@@ -55,7 +56,7 @@ def read_data(train_data_dir, test_data_dir, key=None):
         train_data.update(cdata['user_data'])
 
     for cid, v in train_data.items():
-        train_data[cid] = MiniDataset(v['x'], v['y'])
+        train_data[cid] = MiniDataset(v['x'], v['y'], dataset_name)
 
     test_files = os.listdir(test_data_dir)
     test_files = [f for f in test_files if f.endswith('.pkl')]
@@ -71,7 +72,7 @@ def read_data(train_data_dir, test_data_dir, key=None):
         test_data.update(cdata['user_data'])
 
     for cid, v in test_data.items():
-        test_data[cid] = MiniDataset(v['x'], v['y'])
+        test_data[cid] = MiniDataset(v['x'], v['y'], dataset_name)
 
     clients = list(sorted(train_data.keys()))
 
@@ -79,36 +80,53 @@ def read_data(train_data_dir, test_data_dir, key=None):
 
 
 class MiniDataset(Dataset):
-    def __init__(self, data, labels):
+    def __init__(self, data, labels, dataset_name):
         super(MiniDataset, self).__init__()
         self.data = np.array(data)
         self.labels = np.array(labels).astype("int64")
+        self.dataset_name = dataset_name
 
-        if self.data.ndim == 4 and self.data.shape[3] == 3:
-            self.data = self.data.astype("uint8")
-            self.transform = transforms.Compose(
-                [transforms.RandomHorizontalFlip(),
-                 transforms.RandomCrop(32, 4),
-                 transforms.ToTensor(),
-                 transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-                 ]
-            )
-        elif self.data.ndim == 4 and self.data.shape[3] == 1:
-            self.transform = transforms.Compose(
-                [transforms.ToTensor(),
-                 transforms.Normalize((0.1307,), (0.3081,))
-                 ]
-            )
-        elif self.data.ndim == 3:
-            self.data = self.data.reshape(-1, 28, 28, 1).astype("uint8")
-            self.transform = transforms.Compose(
-                [transforms.ToTensor(),
-                 transforms.Normalize((0.1307,), (0.3081,))
-                 ]
-            )
+        if self.dataset_name == "svhn":
+            
+                
+            # This module doesn't work
+            transform = transforms.Compose([
+                # transforms.Resize((28, 28)),
+                transforms.ToTensor(),
+                transforms.ToPILImage(),
+                transforms.Grayscale(num_output_channels=1),
+                #     transforms.Normalize((0.5, 0.5, 0.5), (1.0, 1.0, 1.0)),
+                ])
+            
+            self.transform = transform
+        
         else:
-            self.data = self.data.astype("float32")
-            self.transform = None
+
+            if self.data.ndim == 4 and self.data.shape[3] == 3:
+                self.data = self.data.astype("uint8")
+                self.transform = transforms.Compose(
+                    [transforms.RandomHorizontalFlip(),
+                    transforms.RandomCrop(32, 4),
+                    transforms.ToTensor(),
+                    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+                    ]
+                )
+            elif self.data.ndim == 4 and self.data.shape[3] == 1:
+                self.transform = transforms.Compose(
+                    [transforms.ToTensor(),
+                    transforms.Normalize((0.1307,), (0.3081,))
+                    ]
+                )
+            elif self.data.ndim == 3:
+                self.data = self.data.reshape(-1, 28, 28, 1).astype("uint8")
+                self.transform = transforms.Compose(
+                    [transforms.ToTensor(),
+                    transforms.Normalize((0.1307,), (0.3081,))
+                    ]
+                )
+            else:
+                self.data = self.data.astype("float32")
+                self.transform = None
 
     def __len__(self):
         return len(self.labels)
@@ -120,8 +138,37 @@ class MiniDataset(Dataset):
             data = Image.fromarray(data)
 
         if self.transform is not None:
-            data = self.transform(data)
+            # data = Image.fromarray(data.astype(np.uint8))
+            
+            # data = self.transform(data)
+            
+            if self.dataset_name == "svhn":
 
+                data1 = torch.from_numpy(data)
+                
+                t2 = transforms.Compose([
+                transforms.ToPILImage(),
+                ])
+                
+                data2 = t2(data1.to(torch.float32))
+
+                t3 = transforms.Compose([
+                transforms.Grayscale(num_output_channels=1),
+                #     transforms.Normalize((0.5, 0.5, 0.5), (1.0, 1.0, 1.0)),
+                ])
+
+                data3 = t3(data2)
+                
+                t4 = transforms.Compose([
+                            # transforms.Resize((28, 28)),
+                            transforms.ToTensor(),
+                            ])
+                data4 = t4(data3)
+
+                data = data4
+  
+            
+            
         return data, target
 
 

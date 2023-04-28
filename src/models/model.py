@@ -49,6 +49,25 @@ class LeNet(nn.Module):
         return out
 
 
+class TwoConvOneFc_svhn(nn.Module):
+    def __init__(self, input_shape, out_dim):
+        super(TwoConvOneFc_svhn, self).__init__()
+        self.conv1 = nn.Conv2d(input_shape[0], 32, 5)
+        self.conv2 = nn.Conv2d(32, 64, 5)
+        self.fc1 = nn.Linear(1600, 512)
+        self.fc2 = nn.Linear(512, out_dim)
+
+    def forward(self, x):
+        out = F.relu(self.conv1(x))
+        out = F.max_pool2d(out, 2)
+        out = F.relu(self.conv2(out))
+        out = F.max_pool2d(out, 2)
+        out = out.view(out.size(0), -1)
+        out = F.relu(self.fc1(out))
+        out = self.fc2(out)
+        return out
+
+
 class TwoConvOneFc(nn.Module):
     def __init__(self, input_shape, out_dim):
         super(TwoConvOneFc, self).__init__()
@@ -107,7 +126,12 @@ def choose_model(options):
     elif model_name == '2nn':
         return TwoHiddenLayerFc(options['input_shape'], options['num_class'])
     elif model_name == 'cnn':
-        return TwoConvOneFc(options['input_shape'], options['num_class'])
+        if options['dataset_name'] == "mnist":
+            return TwoConvOneFc(options['input_shape'], options['num_class'])
+        if options['dataset_name'] == "svhn":
+            return TwoConvOneFc_svhn(options['input_shape'], options['num_class'])
+        else:
+            raise Exception(options['dataset_name'] + " not supported!")
     elif model_name == 'ccnn':
         return CifarCnn(options['input_shape'], options['num_class'])
     elif model_name == 'lenet':

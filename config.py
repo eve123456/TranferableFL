@@ -1,6 +1,6 @@
 # GLOBAL PARAMETERS
 DATASETS = ['sent140', 'nist', 'shakespeare',
-            'mnist', 'synthetic', 'cifar10']
+            'mnist', 'synthetic', 'cifar10','svhn']
 TRAINERS = {'fedavg': 'FedAvgTrainer',
             'fedavg4': 'FedAvg4Trainer',
             'fedavg5': 'FedAvg5Trainer',
@@ -19,6 +19,9 @@ class ModelConfig(object):
                 return {'input_shape': 784, 'num_class': 10}
             else:
                 return {'input_shape': (1, 28, 28), 'num_class': 10}
+        elif dataset == 'svhn':
+            # to transfer to mnist, train on greyscale svhn
+            return {'input_shape': (1, 32, 32), 'num_class': 10}
         elif dataset == 'cifar10':
             return {'input_shape': (3, 32, 32), 'num_class': 10}
         elif dataset == 'sent140':
