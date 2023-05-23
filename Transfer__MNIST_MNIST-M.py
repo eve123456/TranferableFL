@@ -34,7 +34,8 @@ def read_options():
     parser.add_argument('--finetune_dataset',
                         help='name of finetune dataset;',
                         type=str,
-                        default='mnist-m')
+                        # default='mnist-m')
+                        default = 'mnist')
     parser.add_argument('--finetune_lr',
                         help='lr for finetune;',
                         type=float,
@@ -46,8 +47,8 @@ def read_options():
     parser.add_argument('--finetune_epochs',
                         help='epochs for finetune;',
                         type=int,
-                        default=100)
-                        # default = 2)
+                        # default=100)
+                        default = 2)
     parser.add_argument('--model',
                         help='name of model;',
                         type=str,
@@ -76,8 +77,8 @@ def read_options():
     parser.add_argument('--num_round',
                         help='number of rounds to simulate;',
                         type=int,
-                        default=1000)
-                        # default = 2)
+                        # default=1000)
+                        default = 2)
                         
     parser.add_argument('--eval_every',
                         help='evaluate every ____ rounds;',
@@ -226,7 +227,6 @@ if options['finetune_dataset'] == "mnist-m":
     transforms.Resize(28),
     transforms.ToTensor(),
     transforms.Grayscale()
-    # transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
     ])
 
     tg_trainset = GetLoader(
@@ -257,9 +257,7 @@ elif options['finetune_dataset'] == "mnist":
     data_path = './data/TARGET/mnist'
     
     img_transform_target = transforms.Compose([
-    # transforms.Resize(28),
     transforms.ToTensor(),
-    # transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
     ])
     
     trainset = torchvision.datasets.MNIST(root=data_path, train =True, download=False, transform=img_transform_target)
@@ -269,7 +267,8 @@ elif options['finetune_dataset'] == "mnist":
 
 
 
-### Train
+####### Train
+### check if feature extractor of the model matters for target fomain
 
 # # Train model_target_only
 # print(f"Training model_target_only...")
@@ -279,11 +278,10 @@ elif options['finetune_dataset'] == "mnist":
 # print(f"Training model_flag...")
 # ft_trn_main(model_flag, options, device,tg_train_loader, tg_test_loader, criterion)
 
-# Train model_ft
+### Train model_ft
 print(f"Training model_ft...")
 ft_trn_main(model_ft, options, device,tg_train_loader, tg_test_loader, criterion)
-
-# # Evaluate model_source_only
+### Evaluate model_source_only
 res_sc_only = torch.zeros((2))
 print(f"Evaluating model_source_only...")
 model_source_only = model_source_only.to(device)
