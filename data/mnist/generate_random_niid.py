@@ -6,7 +6,7 @@ import torchvision
 cpath = os.path.dirname(__file__)
 
 
-NUM_USER = 100
+NUM_USER = 10
 SAVE = True
 DATASET_FILE = os.path.join(cpath, 'data')
 IMAGE_DATA = not False
@@ -76,7 +76,7 @@ def main():
         mnist_traindata.append(train_mnist.data[idx])
     split_mnist_traindata = []
     for digit in mnist_traindata:
-        split_mnist_traindata.append(data_split(digit, 20))
+        split_mnist_traindata.append(data_split(digit, int(NUM_USER*2/10)))
 
     mnist_testdata = []
     for number in range(10):
@@ -84,7 +84,7 @@ def main():
         mnist_testdata.append(test_mnist.data[idx])
     split_mnist_testdata = []
     for digit in mnist_testdata:
-        split_mnist_testdata.append(data_split(digit, 20))
+        split_mnist_testdata.append(data_split(digit, int(NUM_USER*2/10)))
 
     data_distribution = np.array([len(v) for v in mnist_traindata])
     data_distribution = np.round(data_distribution / data_distribution.sum(), 3)
@@ -106,9 +106,10 @@ def main():
     print(">>> Data is balanced")
 
     for user in range(NUM_USER):
-        print(user, np.array([len(v) for v in split_mnist_traindata]))
-
+        print(f"Client {user} choosing from distribution {np.array([len(v) for v in split_mnist_traindata])}")
+        dl = []
         for d in choose_two_digit(split_mnist_traindata):
+            dl.append(d)
             l = len(split_mnist_traindata[d][-1])
             train_X[user] += split_mnist_traindata[d].pop().tolist()
             train_y[user] += (d * np.ones(l)).tolist()
@@ -116,6 +117,7 @@ def main():
             l = len(split_mnist_testdata[d][-1])
             test_X[user] += split_mnist_testdata[d].pop().tolist()
             test_y[user] += (d * np.ones(l)).tolist()
+        print(f"Client {user} got digits: {dl}")
 
     # Setup directory for train/test data
     print('>>> Set data path for MNIST.')

@@ -28,6 +28,26 @@ class TwoHiddenLayerFc(nn.Module):
         return out
 
 
+class LeNet_MNIST(nn.Module):
+    def __init__(self, input_shape, out_dim):
+        super(LeNet_MNIST, self).__init__()
+        self.conv1 = nn.Conv2d(input_shape[0], 6, 5)
+        self.conv2 = nn.Conv2d(6, 16, 5)
+        self.fc1 = nn.Linear(256, 120)
+        self.fc2 = nn.Linear(120, 84)
+        self.fc3 = nn.Linear(84, out_dim)
+
+    def forward(self, x):
+        out = F.relu(self.conv1(x))
+        out = F.max_pool2d(out, 2)
+        out = F.relu(self.conv2(out))
+        out = F.max_pool2d(out, 2)
+        out = out.view(out.size(0), -1)
+        out = F.relu(self.fc1(out))
+        out = F.relu(self.fc2(out))
+        out = self.fc3(out)
+        return out
+
 class LeNet(nn.Module):
     def __init__(self, input_shape, out_dim):
         super(LeNet, self).__init__()
@@ -47,7 +67,6 @@ class LeNet(nn.Module):
         out = F.relu(self.fc2(out))
         out = self.fc3(out)
         return out
-
 
 class TwoConvOneFc_svhn(nn.Module):
     def __init__(self, input_shape, out_dim):
@@ -85,6 +104,11 @@ class TwoConvOneFc(nn.Module):
         out = F.relu(self.fc1(out))
         out = self.fc2(out)
         return out
+
+# class MNIST_CNN(nn.Module):
+#     def __init__(self, input_shape, out_dim):
+#         super(MNIST_CNN, self).__init__()
+#         self.conv1 = nn.Conv2d(input_shape[0],100,2)
 
 
 class CifarCnn(nn.Module):
@@ -135,7 +159,10 @@ def choose_model(options):
     elif model_name == 'ccnn':
         return CifarCnn(options['input_shape'], options['num_class'])
     elif model_name == 'lenet':
-        return LeNet(options['input_shape'], options['num_class'])
+        if options['dataset_name'] == "mnist" or "mnist-m":
+            return LeNet_MNIST(options['input_shape'], options['num_class'])
+        else:
+            return LeNet(options['input_shape'], options['num_class'])
     elif model_name.startswith('vgg'):
         mod = importlib.import_module('src.models.vgg')
         vgg_model = getattr(mod, model_name)

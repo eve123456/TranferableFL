@@ -87,8 +87,6 @@ class MiniDataset(Dataset):
         self.dataset_name = dataset_name
 
         if self.dataset_name == "svhn":
-            
-                
             # This module doesn't work
             transform = transforms.Compose([
                 # transforms.Resize((28, 28)),
@@ -111,14 +109,15 @@ class MiniDataset(Dataset):
                     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
                     ]
                 )
-            elif self.data.ndim == 4 and self.data.shape[3] == 1:
+            elif self.data.ndim == 4 and self.data.shape[3] == 1: 
                 self.transform = transforms.Compose(
                     [transforms.ToTensor(),
                     transforms.Normalize((0.1307,), (0.3081,))
                     ]
                 )
             elif self.data.ndim == 3:
-                self.data = self.data.reshape(-1, 28, 28, 1).astype("uint8")
+                self.data = np.expand_dims(self.data, axis = 1).astype(np.float64)
+                # self.data = self.data.reshape(-1, 28, 28, 1).astype("uint8")
                 self.transform = transforms.Compose(
                     [transforms.ToTensor(),
                     transforms.Normalize((0.1307,), (0.3081,))
@@ -134,14 +133,12 @@ class MiniDataset(Dataset):
     def __getitem__(self, index):
         data, target = self.data[index], self.labels[index]
 
+        # If data shape is [batch_size, w, h, c]
         if self.data.ndim == 4 and self.data.shape[3] == 3:
             data = Image.fromarray(data)
-
+        
+        # Below for SVHN only
         if self.transform is not None:
-            # data = Image.fromarray(data.astype(np.uint8))
-            
-            # data = self.transform(data)
-            
             if self.dataset_name == "svhn":
 
                 data1 = torch.from_numpy(data)
@@ -166,7 +163,11 @@ class MiniDataset(Dataset):
                 data4 = t4(data3)
 
                 data = data4
-  
+        # 
+            else:
+                pass
+
+
             
             
         return data, target

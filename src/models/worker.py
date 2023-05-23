@@ -68,7 +68,8 @@ class Worker(object):
         for x, y in dataloader:            
             x = self.flatten_data(x)
             if self.gpu:
-                x, y = x.cuda(), y.cuda()
+                x, y = x.type(torch.float).cuda(), y.cuda()
+                # x, y = x.cuda(), y.cuda()
             pred = self.model(x)
             loss += criterion(pred, y) * y.size(0)
             total_num += y.size(0)
@@ -98,7 +99,8 @@ class Worker(object):
                 # embed()
                 x = self.flatten_data(x)
                 if self.gpu:
-                    x, y = x.cuda(), y.cuda()
+                    x, y = x.type(torch.float).cuda(), y.cuda()
+                    # x, y = x.cuda(), y.cuda()
 
                 self.optimizer.zero_grad()
                 pred = self.model(x)
@@ -141,7 +143,8 @@ class Worker(object):
                 # x = Image.fromarray(x)
                 x = self.flatten_data(x)
                 if self.gpu:
-                    x, y = x.cuda(), y.cuda()
+                    
+                    x, y = x.type(torch.float).cuda(), y.cuda()
 
                 pred = self.model(x)
                 loss = criterion(pred, y)
@@ -168,7 +171,8 @@ class LrdWorker(Worker):
             x, y = next(iter(train_dataloader))
             x = self.flatten_data(x)
             if self.gpu:
-                x, y = x.cuda(), y.cuda()
+                x, y = x.type(torch.float).cuda(), y.cuda()
+                # x, y = x.cuda(), y.cuda()
         
             self.optimizer.zero_grad()
             pred = self.model(x)
@@ -215,7 +219,8 @@ class LrAdjustWorker(Worker):
             x, y = next(iter(train_dataloader))
             x = self.flatten_data(x)
             if self.gpu:
-                x, y = x.cuda(), y.cuda()
+                x, y = x.type(torch.float).cuda(), y.cuda()
+                # x, y = x.cuda(), y.cuda()
         
             self.optimizer.zero_grad()
             pred = self.model(x)

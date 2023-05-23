@@ -7,11 +7,11 @@ import torchvision.transforms as transforms
 cpath = os.path.dirname(__file__)
 
 
-NUM_USER = 100
+NUM_USER = 10
 SAVE = True
 DATASET_FILE = os.path.join(cpath, 'data')
 IMAGE_DATA = not False
-DOWNLOAD = True
+DOWNLOAD = False
 np.random.seed(6)
 
 
@@ -85,7 +85,7 @@ def main():
         svhn_traindata.append(train_svhn.data[idx])
     split_svhn_traindata = []
     for digit in svhn_traindata:
-        split_svhn_traindata.append(data_split(digit, 20))
+        split_svhn_traindata.append(data_split(digit, int(NUM_USER*2/10)))
 
     svhn_testdata = []
     for number in range(10):
@@ -93,7 +93,7 @@ def main():
         svhn_testdata.append(test_svhn.data[idx])
     split_svhn_testdata = []
     for digit in svhn_testdata:
-        split_svhn_testdata.append(data_split(digit, 20))
+        split_svhn_testdata.append(data_split(digit, int(NUM_USER*2/10)))
 
     data_distribution = np.array([len(v) for v in svhn_traindata])
     data_distribution = np.round(data_distribution / data_distribution.sum(), 3)
@@ -115,9 +115,10 @@ def main():
     print(">>> Data is balanced")
 
     for user in range(NUM_USER):
-        print(user, np.array([len(v) for v in split_svhn_traindata]))
-
+        print(f"Client {user} choosing from distribution {np.array([len(v) for v in split_svhn_traindata])}")
+        dl = []
         for d in choose_two_digit(split_svhn_traindata):
+            dl.append(d)
             l = len(split_svhn_traindata[d][-1])
             train_X[user] += split_svhn_traindata[d].pop().tolist()
             train_y[user] += (d * np.ones(l)).tolist()
@@ -125,6 +126,8 @@ def main():
             l = len(split_svhn_testdata[d][-1])
             test_X[user] += split_svhn_testdata[d].pop().tolist()
             test_y[user] += (d * np.ones(l)).tolist()
+        
+        print(f"Client {user} got digits: {dl}")
 
     # Setup directory for train/test data
     print('>>> Set data path for SVHN.')
