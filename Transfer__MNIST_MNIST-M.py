@@ -226,6 +226,7 @@ if options['finetune_dataset'] == "mnist-m":
     img_transform_target = transforms.Compose([
     transforms.Resize(28),
     transforms.ToTensor(),
+    lambda x: x*255,
     transforms.Grayscale()
     ])
 
@@ -258,6 +259,7 @@ elif options['finetune_dataset'] == "mnist":
     
     img_transform_target = transforms.Compose([
     transforms.ToTensor(),
+    lambda x: x*255,
     ])
     
     trainset = torchvision.datasets.MNIST(root=data_path, train =True, download=False, transform=img_transform_target)

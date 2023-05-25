@@ -207,6 +207,7 @@ kwargs = {'num_workers': 16}
 
 transform = transforms.Compose([
     transforms.ToTensor(),
+    lambda x: x*255,
     # transforms.Pad(2),
     # transforms.Normalize((0.1307,), (0.3081,)) ,
 ])
