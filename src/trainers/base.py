@@ -90,7 +90,7 @@ class BaseTrainer(object):
         np.random.seed(seed)
         return np.random.choice(self.clients, num_clients, replace=False).tolist()
 
-    def local_train(self, round_i, selected_clients, **kwargs):
+    def local_train(self, round_i, selected_clients, reg_J_flag, latest_J0, **kwargs):
         """Training procedure for selected local clients
 
         Args:
@@ -103,12 +103,20 @@ class BaseTrainer(object):
         """
         solns = []  # Buffer for receiving client solutions
         stats = []  # Buffer for receiving client communication costs
+        J_locals = [] # Buffer for receiving client Jacobians
         for i, c in enumerate(selected_clients, start=1):
             # Communicate the latest model
             c.set_flat_model_params(self.latest_model)
-
+            
             # Solve minimization locally
-            soln, stat = c.local_train()
+            if (not reg_J_flag) or round_i == 0:
+                # vanilla local train
+                soln, stat, J_local, J_local_size = c.local_train(reg_J_flag = False)
+            else:
+                # Communicate the latest global Jacobian if reg_J_flag and not first round
+                # local train penalizing reg_J
+                c.set_global_Jacobian(latest_J0)
+                soln, stat, J_local, J_local_size = c.local_train(reg_J_flag = True)
             if self.print_result:
                 print("Round: {:>2d} | CID: {: >3d} ({:>2d}/{:>2d})| "
                       "Param: norm {:>.4f} ({:>.4f}->{:>.4f})| "
@@ -120,8 +128,8 @@ class BaseTrainer(object):
             # Add solutions and stats
             solns.append(soln)
             stats.append(stat)
-
-        return solns, stats
+            J_locals.append(J_local)
+        return solns, stats, J_locals, J_local_size
 
     def aggregate(self, solns, **kwargs):
         """Aggregate local solutions and output new global parameter

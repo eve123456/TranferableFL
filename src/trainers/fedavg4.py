@@ -22,6 +22,8 @@ class FedAvg4Trainer(BaseTrainer):
         worker = LrdWorker(model, self.optimizer, options)
         super(FedAvg4Trainer, self).__init__(options, dataset, worker=worker)
         self.prob = self.compute_prob()
+        self.reg_J_flag = options['reg_J_flag']
+        self.latest_J0 = None
 
     def train(self):
         print('>>> Select {} clients per round \n'.format(self.clients_per_round))
@@ -30,7 +32,6 @@ class FedAvg4Trainer(BaseTrainer):
         self.latest_model = self.worker.get_flat_model_params().detach()
 
         for round_i in range(self.num_round):
-
             # Test latest model on train data
             self.test_latest_model_on_traindata(round_i)
             self.test_latest_model_on_evaldata(round_i)
@@ -43,7 +44,7 @@ class FedAvg4Trainer(BaseTrainer):
                 repeated_times = None
 
             # Solve minimization locally
-            solns, stats = self.local_train(round_i, selected_clients)
+            solns, stats, J_locals, J_local_size = self.local_train(round_i, selected_clients, self.reg_J_flag, self.latest_J0)
 
             # Track communication cost
             self.metrics.extend_commu_stats(round_i, stats)
@@ -51,6 +52,8 @@ class FedAvg4Trainer(BaseTrainer):
             # Update latest model
             self.latest_model = self.aggregate(solns, repeated_times=repeated_times)
             self.optimizer.inverse_prop_decay_learning_rate(round_i)
+
+            self.latest_J0 = self.aggregate_J(J_locals, J_local_size, repeated_times=repeated_times)
 
         # Test final model on train data
         self.test_latest_model_on_traindata(self.num_round)
@@ -101,3 +104,18 @@ class FedAvg4Trainer(BaseTrainer):
         # averaged_solution = from_numpy(averaged_solution, self.gpu)
         return averaged_solution.detach()
 
+    def aggregate_J(self,J_locals,J_local_size, **kwargs):
+        J0 = torch.zeros(J_local_size).cuda()
+        if self.simple_average:
+            repeated_times = kwargs['repeated_times']
+            assert len(J_locals) == len(repeated_times)
+            for i, (num_sample, J_local) in enumerate(J_locals):
+                J0 += J_local * repeated_times[i]
+            J0 /= self.clients_per_round
+        else:
+            for num_sample, J_local in J_locals:
+                J0 += num_sample * J_local
+            J0 /= self.all_train_data_num
+            J0 *= (100/self.clients_per_round)
+
+        return J0.detach()

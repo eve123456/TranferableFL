@@ -2,6 +2,7 @@ from src.utils.flops_counter import get_model_complexity_info
 from src.utils.torch_utils import get_flat_grad, get_state_dict, get_flat_params_from, set_flat_params_to
 import torch.nn as nn
 import torch
+from torch.autograd.functional import *
 from PIL import Image
 
 criterion = nn.CrossEntropyLoss()
@@ -21,6 +22,9 @@ class Worker(object):
         self.batch_size = options['batch_size']
         self.num_epoch = options['num_epoch']
         self.gpu = options['gpu'] if 'gpu' in options else False
+        self.latest_J0 = None
+        self.lbd_J = options['lbd_reg_J']
+        
         if options["model"] == '2nn' or options["model"] == 'logistic':
             self.flat_data = True
         else:
@@ -29,7 +33,6 @@ class Worker(object):
         # Setup local model and evaluate its statics
         self.flops, self.params_num, self.model_bytes = \
             get_model_complexity_info(self.model, options['input_shape'], gpu=options['gpu'])
-
     @property
     def model_bits(self):
         return self.model_bytes * 8
@@ -78,7 +81,18 @@ class Worker(object):
         flat_grads = get_flat_grad(loss, self.model.parameters(), create_graph=True)
         return flat_grads
 
-    def local_train(self, train_dataloader, **kwargs):
+    def get_Jacobian(self):
+        grad = torch.tensor([])
+        if self.gpu:
+            grad = grad.cuda()
+        
+        for mod in self.model.children():
+            grad = torch.cat(grad,mod.grad)
+        return grad
+
+
+    
+    def local_train(self, train_dataloader, reg_J_flag, **kwargs):
         """Train model locally and return new parameter and computation cost
 
         Args:
@@ -109,7 +123,10 @@ class Worker(object):
                     from IPython import embed
                     embed()
 
-                loss = criterion(pred, y)
+                loss = criterion(pred, y) 
+                if reg_J_flag:
+                    J_local = self.get_Jacobian()
+                    loss += self.lbd_J * torch.norm(J_local - self.latest_J0)
                 loss.backward()
                 torch.nn.utils.clip_grad_norm(self.model.parameters(), 60)
                 self.optimizer.step()
@@ -122,7 +139,7 @@ class Worker(object):
                 train_acc += correct
                 train_total += target_size
 
-        local_solution = self.get_flat_model_params()
+        local_solution = self.get_flat_model_params()       
         param_dict = {"norm": torch.norm(local_solution).item(),
                       "max": local_solution.max().item(),
                       "min": local_solution.min().item()}
@@ -131,7 +148,7 @@ class Worker(object):
                        "loss": train_loss/train_total,
                        "acc": train_acc/train_total}
         return_dict.update(param_dict)
-        return local_solution, return_dict
+        return local_solution, return_dict, J_local
 
     def local_test(self, test_dataloader):
         self.model.eval()
@@ -162,8 +179,26 @@ class LrdWorker(Worker):
     def __init__(self, model, optimizer, options):
         self.num_epoch = options['num_epoch']
         super(LrdWorker, self).__init__(model, optimizer, options)
+        self.latest_J0 = None
+        self.lbd_J = options['lbd_reg_J']
+
+    def get_flat_Jacobian_from(self,loss):
+        grads = []
+        for param in self.model.parameters():
+            grads.append(param.grad.view(-1))
+            # grads.append(jacobian(loss, param).view(-1))
+            flat_grads = torch.cat(grads)
+        return flat_grads
     
-    def local_train(self, train_dataloader, **kwargs):
+    def get_flat_Jacobian_from_avoid_backward(self,loss):
+        grads = []
+        for param in self.model.parameters():
+            
+            grads.append(torch.autograd.grad(loss, param.data.requires_grad_(), create_graph = True)[0].view(-1))
+            flat_grads = torch.cat(grads)
+        return flat_grads
+    
+    def local_train(self, train_dataloader, reg_J_flag, **kwargs):
         # current_step = kwargs['T']
         self.model.train()
         train_loss = train_acc = train_total = 0
@@ -178,7 +213,22 @@ class LrdWorker(Worker):
             pred = self.model(x)
             
             loss = criterion(pred, y)
-            loss.backward()
+            
+
+            if not reg_J_flag:
+                loss.backward()
+                J_local = self.get_flat_Jacobian_from(loss)
+
+            else:
+               
+                J_local = self.get_flat_Jacobian_from_avoid_backward(loss)
+                
+                self.optimizer.zero_grad()
+                loss = criterion(pred, y) + self.lbd_J * torch.norm(J_local - self.latest_J0)
+                loss.backward()
+                J_check = self.get_flat_Jacobian_from(loss)
+                print(f"new grad: \n{J_check}")
+            
             torch.nn.utils.clip_grad_norm(self.model.parameters(), 60)
             # lr = 100/(400+current_step+i)
             self.optimizer.step()
@@ -200,7 +250,7 @@ class LrdWorker(Worker):
             "loss": train_loss/train_total,
                 "acc": train_acc/train_total}
         return_dict.update(param_dict)
-        return local_solution, return_dict
+        return local_solution, return_dict, J_local
 
 
 class LrAdjustWorker(Worker):

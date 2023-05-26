@@ -5,7 +5,7 @@ Referred from https://github.com/lx10077/rlpy/blob/master/utils/torchs.py
 import torch
 import math
 import numpy as np
-
+from torch.autograd.functional import *
 
 # --- Pytorch operation shortcuts
 
@@ -116,6 +116,8 @@ def get_flat_params_from(model):
 
     flat_params = torch.cat(params)
     return flat_params
+
+
 
 
 def set_flat_params_to(model, flat_params):

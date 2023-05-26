@@ -28,6 +28,9 @@ class Client(object):
 
     def get_flat_model_params(self):
         return self.worker.get_flat_model_params()
+    
+    def set_global_Jacobian(self, J0):
+        self.worker.latest_J0 = J0
 
     def set_flat_model_params(self, flat_params):
         self.worker.set_flat_model_params(flat_params)
@@ -49,7 +52,7 @@ class Client(object):
 
         return (len(self.train_data), grads), stats
 
-    def local_train(self, **kwargs):
+    def local_train(self, reg_J_flag, **kwargs):
         """Solves local optimization problem
 
         Returns:
@@ -64,7 +67,7 @@ class Client(object):
 
         bytes_w = self.worker.model_bytes
         begin_time = time.time()
-        local_solution, worker_stats = self.worker.local_train(self.train_dataloader, **kwargs)
+        local_solution, worker_stats, J_local = self.worker.local_train(self.train_dataloader, reg_J_flag, **kwargs)
         end_time = time.time()
         bytes_r = self.worker.model_bytes
 
@@ -72,7 +75,7 @@ class Client(object):
                  "time": round(end_time-begin_time, 2)}
         stats.update(worker_stats)
 
-        return (len(self.train_data), local_solution), stats
+        return (len(self.train_data), local_solution), stats, (len(self.train_data), J_local), J_local.size()
 
     def local_test(self, use_eval_data=True):
         """Test current model on local eval data
