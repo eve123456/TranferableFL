@@ -16,14 +16,16 @@ class FedAvg4Trainer(BaseTrainer):
     def __init__(self, options, dataset):
         model = choose_model(options)
         self.move_model_to_gpu(model, options)
-
+        
         self.optimizer = GD(model.parameters(), lr=options['lr'], weight_decay=options['wd'])
         self.num_epoch = options['num_epoch']
         worker = LrdWorker(model, self.optimizer, options)
         super(FedAvg4Trainer, self).__init__(options, dataset, worker=worker)
         self.prob = self.compute_prob()
+        
         self.reg_J_flag = options['reg_J_flag']
         self.latest_J0 = None
+        self.lbd_reg_J = options["lbd_reg_J"]
 
     def train(self):
         print('>>> Select {} clients per round \n'.format(self.clients_per_round))
@@ -33,9 +35,12 @@ class FedAvg4Trainer(BaseTrainer):
 
         for round_i in range(self.num_round):
             # Test latest model on train data
-            self.test_latest_model_on_traindata(round_i)
+            
+            # test model on train data, get FL acc, loss, global grad norm, grad diff := sum((global_grad - local_grad)^2)
+            global_grads = self.test_latest_model_on_traindata(round_i)
+            # test model on train data, get FL acc, loss
             self.test_latest_model_on_evaldata(round_i)
-
+            
             # Choose K clients prop to data size
             if self.simple_average:
                 selected_clients, repeated_times = self.select_clients_with_prob(seed=round_i)
@@ -44,8 +49,12 @@ class FedAvg4Trainer(BaseTrainer):
                 repeated_times = None
 
             # Solve minimization locally
-            solns, stats, J_locals, J_local_size = self.local_train(round_i, selected_clients, self.reg_J_flag, self.latest_J0)
-
+            if not self.reg_J_flag:
+                solns, stats, J_locals, J_local_size = self.local_train(round_i, selected_clients, self.reg_J_flag, global_grads)
+            else:
+                gradnorm = np.linalg.norm(global_grads)
+                solns, stats = self.local_train_reg_J(round_i, selected_clients, self.lbd_reg_J, gradnorm)
+            
             # Track communication cost
             self.metrics.extend_commu_stats(round_i, stats)
 
@@ -53,7 +62,7 @@ class FedAvg4Trainer(BaseTrainer):
             self.latest_model = self.aggregate(solns, repeated_times=repeated_times)
             self.optimizer.inverse_prop_decay_learning_rate(round_i)
 
-            self.latest_J0 = self.aggregate_J(J_locals, J_local_size, repeated_times=repeated_times)
+            # self.latest_J0 = self.aggregate_J(J_locals, J_local_size, repeated_times=repeated_times)
 
         # Test final model on train data
         self.test_latest_model_on_traindata(self.num_round)

@@ -66,3 +66,26 @@ tensorboardX
 
 
 
+
+
+## data preparation
+- To generate MNIST data for pretrain, please run "python data/mnist/generate_random_niid.py"
+- To generate MNIST-M data for finetune, please download an mnist_m.tar.gz file from "https://drive.google.com/open?id=0B_tExHiYS-0veklUZHFYT19KYjg" to the path "./data/TARGET/mnist-m", and then unzip it:"cd data/TARGET/mnist-m", "tar -xf mnist_m.tar.gz"
+
+## command
+nohup python Transfer__MNIST_MNIST-M.py >> xx.log 2>&1 &
+
+## result directory
+Figure name: Source_Target_r_{federated round}_Fe_{federated epoch}_fe_{finetune epoch}
+i.e., MNIST_MNIST-M_r_200_Fe_5_fe_100
+
+## baseline
+model_source_only: federatedly train on source domain
+model_target_only: train on target domain
+model_flag: randomly initialized the model and freeze it, finetune the last layer on target domain
+model_ft: federatedly train on source domain, finetune the last layer on target domain.
+
+## Aug 30 hyper-parameter
+--num_epoch 10 --lr 0.01 --wd 0.0 --n_round 200 --finetune_epochs 100
+
+

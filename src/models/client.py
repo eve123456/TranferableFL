@@ -77,6 +77,33 @@ class Client(object):
 
         return (len(self.train_data), local_solution), stats, (len(self.train_data), J_local), J_local.size()
 
+
+    def local_train_reg_J(self, lbd_reg_J, gradnorm, **kwargs):
+        """Solves local optimization problem
+
+        Returns:
+            1: num_samples: number of samples used in training
+            1: soln: local optimization solution
+            2. Statistic Dict contain
+                2.1: bytes_write: number of bytes transmitted
+                2.2: comp: number of FLOPs executed in training process
+                2.3: bytes_read: number of bytes received
+                2.4: other stats in train process
+        """
+        bytes_w = self.worker.model_bytes
+        begin_time = time.time()
+        local_solution, worker_stats = self.worker.local_train_reg_J(self.train_dataloader, lbd_reg_J, gradnorm, **kwargs)
+        end_time = time.time()
+        bytes_r = self.worker.model_bytes
+
+        stats = {'id': self.cid, 'bytes_w': bytes_w, 'bytes_r': bytes_r,
+                 "time": round(end_time-begin_time, 2)}
+        stats.update(worker_stats)
+
+        return (len(self.train_data), local_solution), stats
+
+    
+    
     def local_test(self, use_eval_data=True):
         """Test current model on local eval data
 

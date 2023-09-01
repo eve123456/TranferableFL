@@ -4,6 +4,7 @@ import torch.nn as nn
 import torch
 from torch.autograd.functional import *
 from PIL import Image
+import numpy as np
 
 criterion = nn.CrossEntropyLoss()
 mseloss = nn.MSELoss()
@@ -22,8 +23,10 @@ class Worker(object):
         self.batch_size = options['batch_size']
         self.num_epoch = options['num_epoch']
         self.gpu = options['gpu'] if 'gpu' in options else False
-        self.latest_J0 = None
-        self.lbd_J = options['lbd_reg_J']
+        
+        if options["reg_J_flag"]:
+            self.latest_J0 = None
+            self.lbd_J = options['lbd_reg_J']
         
         if options["model"] == '2nn' or options["model"] == 'logistic':
             self.flat_data = True
@@ -179,8 +182,6 @@ class LrdWorker(Worker):
     def __init__(self, model, optimizer, options):
         self.num_epoch = options['num_epoch']
         super(LrdWorker, self).__init__(model, optimizer, options)
-        self.latest_J0 = None
-        self.lbd_J = options['lbd_reg_J']
 
     def get_flat_Jacobian_from(self,loss):
         grads = []
@@ -251,6 +252,65 @@ class LrdWorker(Worker):
                 "acc": train_acc/train_total}
         return_dict.update(param_dict)
         return local_solution, return_dict, J_local
+
+    def local_train_reg_J(self, train_dataloader, lbd_reg_J, gradnorm, **kwargs):
+        # current_step = kwargs['T']
+        self.model.train()
+        train_loss = train_acc = train_total = 0
+        for i in range(self.num_epoch*10):
+            x, y = next(iter(train_dataloader))
+            x = self.flatten_data(x)
+            if self.gpu:
+                x, y = x.type(torch.float).cuda(), y.cuda()
+                # x, y = x.cuda(), y.cuda()
+        
+            self.optimizer.zero_grad()
+            pred = self.model(x)
+            
+            loss_0 = criterion(pred, y)
+            
+            grad_in_tensor = self.get_flat_grads(train_dataloader)
+            # return grad_in_tenser.cpu().detach().numpy()
+            
+            # for c in self.clients:
+            #     (num, client_grad), stat = c.solve_grad()
+            #     local_grads.append(client_grad)
+            #     num_samples.append(num)
+            #     global_grads += client_grad * num
+            #     global_grads /= np.sum(np.asarray(num_samples))
+            
+            local_gradnorm = torch.norm(grad_in_tensor)
+            loss_reg_J = (gradnorm - local_gradnorm)**2
+            
+            loss = loss_0 + lbd_reg_J * loss_reg_J
+               
+            
+            
+            self.optimizer.zero_grad()
+            loss.backward()
+            
+            torch.nn.utils.clip_grad_norm(self.model.parameters(), 60)
+            # lr = 100/(400+current_step+i)
+            self.optimizer.step()
+            
+            _, predicted = torch.max(pred, 1)
+            correct = predicted.eq(y).sum().item()
+            target_size = y.size(0)
+            
+            train_loss += loss.item() * y.size(0)
+            train_acc += correct
+            train_total += target_size
+        
+        local_solution = self.get_flat_model_params()
+        param_dict = {"norm": torch.norm(local_solution).item(),
+            "max": local_solution.max().item(),
+            "min": local_solution.min().item()}
+        comp = self.num_epoch * train_total * self.flops
+        return_dict = {"comp": comp,
+            "loss": train_loss/train_total,
+                "acc": train_acc/train_total}
+        return_dict.update(param_dict)
+        return local_solution, return_dict
 
 
 class LrAdjustWorker(Worker):

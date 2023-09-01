@@ -35,6 +35,7 @@ class BaseTrainer(object):
         self.metrics = Metrics(self.clients, options, self.name)
         self.print_result = not options['noprint']
         self.latest_model = self.worker.get_flat_model_params()
+        
 
     @staticmethod
     def move_model_to_gpu(model, options):
@@ -131,6 +132,53 @@ class BaseTrainer(object):
             J_locals.append(J_local)
         return solns, stats, J_locals, J_local_size
 
+
+
+    def local_train_reg_J(self, round_i, selected_clients, lbd_reg_J, gradnorm, **kwargs):
+        """Training procedure for selected local clients
+
+        Args:
+            round_i: i-th round training
+            selected_clients: list of selected clients
+
+        Returns:
+            solns: local solutions, list of the tuple (num_sample, local_solution)
+            stats: Dict of some statistics
+        """
+        
+        
+        solns = []  # Buffer for receiving client solutions
+        stats = []  # Buffer for receiving client communication costs
+
+        for i, c in enumerate(selected_clients, start=1):
+            # Communicate the latest model
+            c.set_flat_model_params(self.latest_model)
+            
+            # Solve minimization locally
+            if round_i == 0:
+                # vanilla local train
+                soln, stat, J_local, J_local_size = c.local_train(reg_J_flag = False)
+            else:
+                # Communicate the latest global Jacobian if reg_J_flag and not first round
+                # local train penalizing reg_J
+                # c.set_global_Jacobian(latest_J0)
+                soln, stat = c.local_train_reg_J(lbd_reg_J, gradnorm)
+            if self.print_result:
+                print("Round: {:>2d} | CID: {: >3d} ({:>2d}/{:>2d})| "
+                      "Param: norm {:>.4f} ({:>.4f}->{:>.4f})| "
+                      "Loss {:>.4f} | Acc {:>5.2f}% | Time: {:>.2f}s".format(
+                       round_i, c.cid, i, self.clients_per_round,
+                       stat['norm'], stat['min'], stat['max'],
+                       stat['loss'], stat['acc']*100, stat['time']))
+
+            # Add solutions and stats
+            solns.append(soln)
+            stats.append(stat)
+    
+        return solns, stats
+
+
+
     def aggregate(self, solns, **kwargs):
         """Aggregate local solutions and output new global parameter
 
@@ -160,9 +208,15 @@ class BaseTrainer(object):
     def test_latest_model_on_traindata(self, round_i):
         # Collect stats from total train data
         begin_time = time.time()
+        
+        # calculate the federated acc, loss, num_sample on train data
         stats_from_train_data = self.local_test(use_eval_data=False)
-
-        # Record the global gradient
+            # schema of stats
+            # stats = {'acc': sum(tot_corrects) / sum(num_samples),
+            #                  'loss': sum(losses) / sum(num_samples),
+            #                  'num_samples': num_samples, 'ids': ids, 'groups': groups}
+        
+        # Record the global gradient (num_sample-weighted average gradient)
         model_len = len(self.latest_model)
         global_grads = np.zeros(model_len)
         num_samples = []
@@ -174,9 +228,10 @@ class BaseTrainer(object):
             num_samples.append(num)
             global_grads += client_grad * num
         global_grads /= np.sum(np.asarray(num_samples))
+        # Get norm of global gradient
         stats_from_train_data['gradnorm'] = np.linalg.norm(global_grads)
 
-        # Measure the gradient difference
+        # Measure the gradient difference := sum((local_grad - global_grad)^2)
         difference = 0.
         for idx in range(len(self.clients)):
             difference += np.sum(np.square(global_grads - local_grads[idx]))
