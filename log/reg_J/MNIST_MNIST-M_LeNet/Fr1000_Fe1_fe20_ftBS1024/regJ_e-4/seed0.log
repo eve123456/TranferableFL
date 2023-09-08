@@ -9354,3 +9354,2300 @@ local training with reg_J... lbd_reg_J =  0.0001
 Round: 526 | CID:   1 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1259 | Acc 39.06% | Time: 0.18s
 local training with reg_J... lbd_reg_J =  0.0001
 Round: 526 | CID:   3 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8022 | Acc 56.25% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 526 | CID:   4 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0147 | Acc 29.69% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 526 | CID:   5 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1994 | Acc 14.06% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 526 | CID:   8 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8365 | Acc 51.56% | Time: 0.19s
+
+>>> Round:  527 / Acc: 38.068% / Loss: 1.9777 / Grad Norm: 3.0178 / Grad Diff: 159.1922 / Time: 1.81s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 527 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.7168 | Acc 59.38% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 527 | CID:   1 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1417 | Acc 31.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 527 | CID:   2 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1021 | Acc 25.00% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 527 | CID:   4 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1316 | Acc 26.56% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 527 | CID:   6 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.7511 | Acc 53.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 527 | CID:   8 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8789 | Acc 59.38% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 527 | CID:   9 ( 7/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1964 | Acc 23.44% | Time: 0.16s
+
+>>> Round:  528 / Acc: 38.083% / Loss: 1.9775 / Grad Norm: 3.0182 / Grad Diff: 159.2085 / Time: 1.81s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 528 | CID:   1 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1466 | Acc 29.69% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 528 | CID:   2 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0792 | Acc 26.56% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 528 | CID:   4 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0614 | Acc 26.56% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 528 | CID:   5 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1287 | Acc 18.75% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 528 | CID:   6 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.6999 | Acc 56.25% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 528 | CID:   7 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0494 | Acc 28.12% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 528 | CID:   9 ( 7/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1868 | Acc 18.75% | Time: 0.18s
+
+>>> Round:  529 / Acc: 38.095% / Loss: 1.9774 / Grad Norm: 3.0195 / Grad Diff: 159.2585 / Time: 1.76s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 529 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.7833 | Acc 50.00% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 529 | CID:   1 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.2385 | Acc 20.31% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 529 | CID:   2 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1076 | Acc 29.69% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 529 | CID:   4 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1920)| Loss 2.0837 | Acc 29.69% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 529 | CID:   6 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.6094 | Acc 64.06% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 529 | CID:   8 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.9077 | Acc 40.62% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 529 | CID:   9 ( 7/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.2489 | Acc 17.19% | Time: 0.17s
+
+>>> Round:  530 / Acc: 38.115% / Loss: 1.9772 / Grad Norm: 3.0195 / Grad Diff: 159.2968 / Time: 1.82s
+======================================================================================================
+
+= Test = round: 530 / acc: 38.000% / loss: 1.9750 / Time: 0.14s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 530 | CID:   3 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8238 | Acc 60.94% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 530 | CID:   4 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1920)| Loss 2.1000 | Acc 23.44% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 530 | CID:   5 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1156 | Acc 25.00% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 530 | CID:   7 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.9789 | Acc 42.19% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 530 | CID:   8 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0138 | Acc 37.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 530 | CID:   9 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.2732 | Acc 25.00% | Time: 0.16s
+
+>>> Round:  531 / Acc: 38.130% / Loss: 1.9770 / Grad Norm: 3.0198 / Grad Diff: 159.3975 / Time: 1.81s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 531 | CID:   1 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0827 | Acc 32.81% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 531 | CID:   3 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8829 | Acc 51.56% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 531 | CID:   4 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1920)| Loss 2.1038 | Acc 25.00% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 531 | CID:   5 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1822 | Acc 17.19% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 531 | CID:   6 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8580 | Acc 50.00% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 531 | CID:   9 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1223 | Acc 25.00% | Time: 0.20s
+
+>>> Round:  532 / Acc: 38.137% / Loss: 1.9768 / Grad Norm: 3.0203 / Grad Diff: 159.4606 / Time: 1.78s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 532 | CID:   1 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1396 | Acc 29.69% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 532 | CID:   2 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0143 | Acc 26.56% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 532 | CID:   3 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8241 | Acc 53.12% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 532 | CID:   4 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.9544 | Acc 46.88% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 532 | CID:   6 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8817 | Acc 51.56% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 532 | CID:   7 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0233 | Acc 35.94% | Time: 0.18s
+
+>>> Round:  533 / Acc: 38.145% / Loss: 1.9767 / Grad Norm: 3.0210 / Grad Diff: 159.5466 / Time: 1.75s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 533 | CID:   1 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.2190 | Acc 14.06% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 533 | CID:   3 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8733 | Acc 54.69% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 533 | CID:   4 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1920)| Loss 2.0997 | Acc 15.62% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 533 | CID:   5 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1823 | Acc 21.88% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 533 | CID:   6 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.7324 | Acc 57.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 533 | CID:   8 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.9333 | Acc 50.00% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 533 | CID:   9 ( 7/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.2405 | Acc 15.62% | Time: 0.16s
+
+>>> Round:  534 / Acc: 38.163% / Loss: 1.9765 / Grad Norm: 3.0210 / Grad Diff: 159.6018 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 534 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1920)| Loss 1.6331 | Acc 65.62% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 534 | CID:   1 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1675 | Acc 25.00% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 534 | CID:   7 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0183 | Acc 37.50% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 534 | CID:   8 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8867 | Acc 46.88% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 534 | CID:   9 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.3379 | Acc  9.38% | Time: 0.18s
+
+>>> Round:  535 / Acc: 38.197% / Loss: 1.9763 / Grad Norm: 3.0206 / Grad Diff: 159.6781 / Time: 1.78s
+======================================================================================================
+
+= Test = round: 535 / acc: 38.150% / loss: 1.9741 / Time: 0.15s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 535 | CID:   1 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1258 | Acc 29.69% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 535 | CID:   3 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8709 | Acc 53.12% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 535 | CID:   4 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1920)| Loss 2.0960 | Acc 28.12% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 535 | CID:   5 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1294 | Acc 28.12% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 535 | CID:   6 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.7841 | Acc 50.00% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 535 | CID:   7 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0020 | Acc 45.31% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 535 | CID:   8 ( 7/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.9519 | Acc 43.75% | Time: 0.17s
+
+>>> Round:  536 / Acc: 38.208% / Loss: 1.9762 / Grad Norm: 3.0210 / Grad Diff: 159.7384 / Time: 1.80s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 536 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.6949 | Acc 50.00% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 536 | CID:   1 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0522 | Acc 35.94% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 536 | CID:   2 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0995 | Acc 28.12% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 536 | CID:   3 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8158 | Acc 65.62% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 536 | CID:   4 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0967 | Acc 35.94% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 536 | CID:   5 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1549 | Acc 18.75% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 536 | CID:   9 ( 7/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1191 | Acc 28.12% | Time: 0.17s
+
+>>> Round:  537 / Acc: 38.202% / Loss: 1.9761 / Grad Norm: 3.0212 / Grad Diff: 159.7842 / Time: 1.83s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 537 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1920)| Loss 1.6953 | Acc 53.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 537 | CID:   1 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0514 | Acc 39.06% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 537 | CID:   2 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0661 | Acc 28.12% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 537 | CID:   3 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8068 | Acc 71.88% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 537 | CID:   4 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0727 | Acc 29.69% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 537 | CID:   5 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1908 | Acc 20.31% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 537 | CID:   6 ( 7/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.6719 | Acc 64.06% | Time: 0.19s
+
+>>> Round:  538 / Acc: 38.218% / Loss: 1.9759 / Grad Norm: 3.0217 / Grad Diff: 159.8082 / Time: 1.79s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 538 | CID:   3 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8380 | Acc 53.12% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 538 | CID:   4 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1920)| Loss 2.0286 | Acc 35.94% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 538 | CID:   6 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.6720 | Acc 64.06% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 538 | CID:   7 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0003 | Acc 40.62% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 538 | CID:   8 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8834 | Acc 48.44% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 538 | CID:   9 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.2630 | Acc 15.62% | Time: 0.16s
+
+>>> Round:  539 / Acc: 38.243% / Loss: 1.9757 / Grad Norm: 3.0216 / Grad Diff: 159.9264 / Time: 1.78s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 539 | CID:   1 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1412 | Acc 35.94% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 539 | CID:   2 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1289 | Acc 20.31% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 539 | CID:   4 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1920)| Loss 2.1009 | Acc 31.25% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 539 | CID:   6 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.7742 | Acc 51.56% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 539 | CID:   7 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0239 | Acc 39.06% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 539 | CID:   8 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.9129 | Acc 40.62% | Time: 0.17s
+
+>>> Round:  540 / Acc: 38.255% / Loss: 1.9756 / Grad Norm: 3.0218 / Grad Diff: 159.9038 / Time: 1.82s
+======================================================================================================
+
+= Test = round: 540 / acc: 38.160% / loss: 1.9733 / Time: 0.12s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 540 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.7531 | Acc 54.69% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 540 | CID:   1 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0887 | Acc 31.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 540 | CID:   2 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0668 | Acc 26.56% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 540 | CID:   5 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1410 | Acc 23.44% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 540 | CID:   7 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.9804 | Acc 48.44% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 540 | CID:   8 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.9471 | Acc 45.31% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 540 | CID:   9 ( 7/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1783 | Acc 25.00% | Time: 0.18s
+
+>>> Round:  541 / Acc: 38.267% / Loss: 1.9754 / Grad Norm: 3.0223 / Grad Diff: 159.9833 / Time: 1.77s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 541 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.6696 | Acc 62.50% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 541 | CID:   3 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8580 | Acc 59.38% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 541 | CID:   5 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1152 | Acc 20.31% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 541 | CID:   6 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.7866 | Acc 50.00% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 541 | CID:   8 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.9220 | Acc 42.19% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 541 | CID:   9 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.2410 | Acc  7.81% | Time: 0.16s
+
+>>> Round:  542 / Acc: 38.275% / Loss: 1.9753 / Grad Norm: 3.0229 / Grad Diff: 160.0611 / Time: 1.79s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 542 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.7022 | Acc 53.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 542 | CID:   2 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0608 | Acc 26.56% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 542 | CID:   3 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8506 | Acc 45.31% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 542 | CID:   5 ( 4/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.1983 | Acc 21.88% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 542 | CID:   6 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.5984 | Acc 70.31% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 542 | CID:   7 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0244 | Acc 35.94% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 542 | CID:   8 ( 7/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8345 | Acc 48.44% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 542 | CID:   9 ( 8/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.2774 | Acc 14.06% | Time: 0.19s
+
+>>> Round:  543 / Acc: 38.268% / Loss: 1.9751 / Grad Norm: 3.0233 / Grad Diff: 160.1534 / Time: 1.77s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 543 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.6203 | Acc 65.62% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 543 | CID:   1 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1418 | Acc 28.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 543 | CID:   2 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0693 | Acc 28.12% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 543 | CID:   4 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1293 | Acc 25.00% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 543 | CID:   7 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0366 | Acc 39.06% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 543 | CID:   9 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1617 | Acc 25.00% | Time: 0.18s
+
+>>> Round:  544 / Acc: 38.305% / Loss: 1.9749 / Grad Norm: 3.0236 / Grad Diff: 160.1822 / Time: 1.77s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 544 | CID:   1 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1530 | Acc 34.38% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 544 | CID:   2 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0830 | Acc 25.00% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 544 | CID:   3 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8364 | Acc 56.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 544 | CID:   4 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0451 | Acc 39.06% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 544 | CID:   5 ( 5/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.1629 | Acc 20.31% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 544 | CID:   6 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.7230 | Acc 62.50% | Time: 0.17s
+
+>>> Round:  545 / Acc: 38.307% / Loss: 1.9748 / Grad Norm: 3.0247 / Grad Diff: 160.1983 / Time: 1.83s
+======================================================================================================
+
+= Test = round: 545 / acc: 38.190% / loss: 1.9725 / Time: 0.12s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 545 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.6653 | Acc 56.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 545 | CID:   1 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1644 | Acc 23.44% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 545 | CID:   3 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.7802 | Acc 67.19% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 545 | CID:   4 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0636 | Acc 26.56% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 545 | CID:   6 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.7485 | Acc 60.94% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 545 | CID:   7 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.9492 | Acc 51.56% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 545 | CID:   8 ( 7/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.9700 | Acc 43.75% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 545 | CID:   9 ( 8/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.2365 | Acc 10.94% | Time: 0.18s
+
+>>> Round:  546 / Acc: 38.335% / Loss: 1.9746 / Grad Norm: 3.0242 / Grad Diff: 160.2732 / Time: 1.76s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 546 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.7003 | Acc 60.94% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 546 | CID:   4 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.9661 | Acc 39.06% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 546 | CID:   5 ( 3/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.2287 | Acc 10.94% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 546 | CID:   8 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8773 | Acc 46.88% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 546 | CID:   9 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1474 | Acc 25.00% | Time: 0.17s
+
+>>> Round:  547 / Acc: 38.358% / Loss: 1.9744 / Grad Norm: 3.0251 / Grad Diff: 160.3467 / Time: 1.84s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 547 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.7020 | Acc 56.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 547 | CID:   1 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1356 | Acc 34.38% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 547 | CID:   2 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0071 | Acc 32.81% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 547 | CID:   3 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8412 | Acc 56.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 547 | CID:   5 ( 5/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.1718 | Acc 20.31% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 547 | CID:   8 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8446 | Acc 60.94% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 547 | CID:   9 ( 7/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1999 | Acc 25.00% | Time: 0.16s
+
+>>> Round:  548 / Acc: 38.365% / Loss: 1.9743 / Grad Norm: 3.0255 / Grad Diff: 160.4663 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 548 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.6924 | Acc 62.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 548 | CID:   2 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0899 | Acc 21.88% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 548 | CID:   3 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8638 | Acc 48.44% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 548 | CID:   4 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0755 | Acc 28.12% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 548 | CID:   5 ( 5/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.1902 | Acc 21.88% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 548 | CID:   6 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8683 | Acc 39.06% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 548 | CID:   9 ( 7/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.2470 | Acc 14.06% | Time: 0.18s
+
+>>> Round:  549 / Acc: 38.387% / Loss: 1.9741 / Grad Norm: 3.0261 / Grad Diff: 160.5159 / Time: 1.77s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 549 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.7003 | Acc 60.94% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 549 | CID:   1 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1286 | Acc 29.69% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 549 | CID:   2 ( 3/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.1042 | Acc 23.44% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 549 | CID:   3 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.9147 | Acc 54.69% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 549 | CID:   4 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1920)| Loss 2.0915 | Acc 29.69% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 549 | CID:   7 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.9588 | Acc 45.31% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 549 | CID:   8 ( 7/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 1.9378 | Acc 45.31% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 549 | CID:   9 ( 8/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1490 | Acc 23.44% | Time: 0.17s
+
+>>> Round:  550 / Acc: 38.393% / Loss: 1.9739 / Grad Norm: 3.0263 / Grad Diff: 160.5874 / Time: 1.82s
+======================================================================================================
+
+= Test = round: 550 / acc: 38.260% / loss: 1.9717 / Time: 0.12s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 550 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.7286 | Acc 56.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 550 | CID:   1 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1710 | Acc 23.44% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 550 | CID:   3 ( 3/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 1.8768 | Acc 45.31% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 550 | CID:   6 ( 4/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 1.8324 | Acc 51.56% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 550 | CID:   7 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0904 | Acc 32.81% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 550 | CID:   8 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.9083 | Acc 51.56% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 550 | CID:   9 ( 7/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.1730 | Acc 20.31% | Time: 0.20s
+
+>>> Round:  551 / Acc: 38.388% / Loss: 1.9738 / Grad Norm: 3.0264 / Grad Diff: 160.6427 / Time: 1.81s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 551 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.6881 | Acc 54.69% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 551 | CID:   2 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0475 | Acc 35.94% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 551 | CID:   5 ( 3/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.1966 | Acc 17.19% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 551 | CID:   6 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.7776 | Acc 57.81% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 551 | CID:   7 ( 5/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.0085 | Acc 39.06% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 551 | CID:   8 ( 6/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 1.9425 | Acc 48.44% | Time: 0.17s
+
+>>> Round:  552 / Acc: 38.390% / Loss: 1.9736 / Grad Norm: 3.0266 / Grad Diff: 160.7057 / Time: 1.77s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 552 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.6792 | Acc 50.00% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 552 | CID:   1 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0382 | Acc 37.50% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 552 | CID:   2 ( 3/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.0197 | Acc 37.50% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 552 | CID:   3 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8299 | Acc 60.94% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 552 | CID:   4 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1920)| Loss 2.0983 | Acc 26.56% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 552 | CID:   6 ( 6/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 1.8734 | Acc 42.19% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 552 | CID:   8 ( 7/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 1.8722 | Acc 50.00% | Time: 0.17s
+
+>>> Round:  553 / Acc: 38.405% / Loss: 1.9734 / Grad Norm: 3.0267 / Grad Diff: 160.7801 / Time: 1.83s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 553 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.6264 | Acc 64.06% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 553 | CID:   2 ( 2/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.1348 | Acc 21.88% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 553 | CID:   4 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0889 | Acc 29.69% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 553 | CID:   6 ( 4/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 1.7479 | Acc 53.12% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 553 | CID:   7 ( 5/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.9768 | Acc 48.44% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 553 | CID:   8 ( 6/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 1.8744 | Acc 50.00% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 553 | CID:   9 ( 7/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.1702 | Acc 20.31% | Time: 0.18s
+
+>>> Round:  554 / Acc: 38.405% / Loss: 1.9732 / Grad Norm: 3.0272 / Grad Diff: 160.8291 / Time: 1.78s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 554 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.5824 | Acc 60.94% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 554 | CID:   1 ( 2/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.1335 | Acc 26.56% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 554 | CID:   2 ( 3/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.0943 | Acc 23.44% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 554 | CID:   4 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0448 | Acc 34.38% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 554 | CID:   6 ( 5/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 1.7939 | Acc 53.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 554 | CID:   8 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8837 | Acc 53.12% | Time: 0.17s
+
+>>> Round:  555 / Acc: 38.430% / Loss: 1.9731 / Grad Norm: 3.0276 / Grad Diff: 160.8514 / Time: 1.82s
+======================================================================================================
+
+= Test = round: 555 / acc: 38.310% / loss: 1.9708 / Time: 0.12s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 555 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.7323 | Acc 54.69% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 555 | CID:   1 ( 2/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.1403 | Acc 29.69% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 555 | CID:   3 ( 3/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 1.8480 | Acc 51.56% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 555 | CID:   4 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1920)| Loss 2.1045 | Acc 31.25% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 555 | CID:   5 ( 5/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.2104 | Acc 17.19% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 555 | CID:   6 ( 6/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.8000 | Acc 46.88% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 555 | CID:   7 ( 7/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 2.0101 | Acc 32.81% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 555 | CID:   9 ( 8/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.2412 | Acc 18.75% | Time: 0.18s
+
+>>> Round:  556 / Acc: 38.440% / Loss: 1.9729 / Grad Norm: 3.0278 / Grad Diff: 160.8879 / Time: 1.84s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 556 | CID:   1 ( 1/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.0632 | Acc 28.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 556 | CID:   2 ( 2/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.1152 | Acc 21.88% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 556 | CID:   4 ( 3/10)| Param: norm 8.8840 (-0.2022->0.1920)| Loss 2.0673 | Acc 28.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 556 | CID:   5 ( 4/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.1271 | Acc 28.12% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 556 | CID:   7 ( 5/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.0725 | Acc 35.94% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 556 | CID:   8 ( 6/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 1.8755 | Acc 51.56% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 556 | CID:   9 ( 7/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.2056 | Acc 10.94% | Time: 0.16s
+
+>>> Round:  557 / Acc: 38.462% / Loss: 1.9728 / Grad Norm: 3.0277 / Grad Diff: 160.9270 / Time: 1.79s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 557 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1920)| Loss 1.7942 | Acc 50.00% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 557 | CID:   1 ( 2/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.0422 | Acc 48.44% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 557 | CID:   2 ( 3/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.0857 | Acc 25.00% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 557 | CID:   4 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1920)| Loss 2.0626 | Acc 32.81% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 557 | CID:   6 ( 5/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 1.7742 | Acc 53.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 557 | CID:   8 ( 6/10)| Param: norm 8.8840 (-0.2023->0.1920)| Loss 1.9205 | Acc 43.75% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 557 | CID:   9 ( 7/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.1826 | Acc 20.31% | Time: 0.16s
+
+>>> Round:  558 / Acc: 38.462% / Loss: 1.9726 / Grad Norm: 3.0279 / Grad Diff: 160.9877 / Time: 1.80s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 558 | CID:   1 ( 1/10)| Param: norm 8.8840 (-0.2023->0.1920)| Loss 2.1307 | Acc 32.81% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 558 | CID:   2 ( 2/10)| Param: norm 8.8840 (-0.2023->0.1920)| Loss 2.0601 | Acc 28.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 558 | CID:   3 ( 3/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 1.7717 | Acc 62.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 558 | CID:   7 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1921)| Loss 1.9538 | Acc 39.06% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 558 | CID:   8 ( 5/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 1.9152 | Acc 43.75% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 558 | CID:   9 ( 6/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.2129 | Acc 18.75% | Time: 0.18s
+
+>>> Round:  559 / Acc: 38.488% / Loss: 1.9724 / Grad Norm: 3.0277 / Grad Diff: 161.0782 / Time: 1.79s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 559 | CID:   1 ( 1/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.0542 | Acc 32.81% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 559 | CID:   2 ( 2/10)| Param: norm 8.8840 (-0.2023->0.1920)| Loss 2.0857 | Acc 25.00% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 559 | CID:   4 ( 3/10)| Param: norm 8.8840 (-0.2023->0.1920)| Loss 2.0237 | Acc 39.06% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 559 | CID:   5 ( 4/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.1266 | Acc 26.56% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 559 | CID:   6 ( 5/10)| Param: norm 8.8840 (-0.2023->0.1920)| Loss 1.7755 | Acc 57.81% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 559 | CID:   8 ( 6/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 1.8406 | Acc 56.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 559 | CID:   9 ( 7/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.1623 | Acc 29.69% | Time: 0.16s
+
+>>> Round:  560 / Acc: 38.495% / Loss: 1.9722 / Grad Norm: 3.0283 / Grad Diff: 161.1145 / Time: 1.77s
+======================================================================================================
+
+= Test = round: 560 / acc: 38.350% / loss: 1.9699 / Time: 0.13s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 560 | CID:   0 ( 1/10)| Param: norm 8.8840 (-0.2022->0.1920)| Loss 1.7952 | Acc 53.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 560 | CID:   2 ( 2/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.0772 | Acc 29.69% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 560 | CID:   3 ( 3/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 1.8642 | Acc 54.69% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 560 | CID:   4 ( 4/10)| Param: norm 8.8840 (-0.2022->0.1920)| Loss 2.0608 | Acc 32.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 560 | CID:   6 ( 5/10)| Param: norm 8.8840 (-0.2023->0.1920)| Loss 1.7656 | Acc 60.94% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 560 | CID:   8 ( 6/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 1.9185 | Acc 45.31% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 560 | CID:   9 ( 7/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.2792 | Acc 14.06% | Time: 0.16s
+
+>>> Round:  561 / Acc: 38.517% / Loss: 1.9721 / Grad Norm: 3.0294 / Grad Diff: 161.1556 / Time: 1.86s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 561 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7274 | Acc 56.25% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 561 | CID:   3 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8739 | Acc 48.44% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 561 | CID:   4 ( 3/10)| Param: norm 8.8840 (-0.2023->0.1920)| Loss 2.0197 | Acc 31.25% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 561 | CID:   5 ( 4/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.2071 | Acc 12.50% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 561 | CID:   6 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8398 | Acc 46.88% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 561 | CID:   8 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9620 | Acc 42.19% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 561 | CID:   9 ( 7/10)| Param: norm 8.8840 (-0.2023->0.1921)| Loss 2.2600 | Acc 14.06% | Time: 0.18s
+
+>>> Round:  562 / Acc: 38.523% / Loss: 1.9719 / Grad Norm: 3.0295 / Grad Diff: 161.2472 / Time: 1.76s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 562 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7599 | Acc 51.56% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 562 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1266 | Acc 32.81% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 562 | CID:   2 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0357 | Acc 37.50% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 562 | CID:   4 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0448 | Acc 29.69% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 562 | CID:   6 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9269 | Acc 42.19% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 562 | CID:   7 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9891 | Acc 45.31% | Time: 0.17s
+
+>>> Round:  563 / Acc: 38.547% / Loss: 1.9717 / Grad Norm: 3.0298 / Grad Diff: 161.2600 / Time: 1.80s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 563 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6381 | Acc 62.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 563 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1302 | Acc 34.38% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 563 | CID:   2 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1277 | Acc 25.00% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 563 | CID:   3 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8334 | Acc 53.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 563 | CID:   5 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.2014 | Acc 12.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 563 | CID:   7 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0671 | Acc 32.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 563 | CID:   8 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8355 | Acc 50.00% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 563 | CID:   9 ( 8/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.2210 | Acc 15.62% | Time: 0.19s
+
+>>> Round:  564 / Acc: 38.562% / Loss: 1.9716 / Grad Norm: 3.0304 / Grad Diff: 161.3036 / Time: 1.81s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 564 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6751 | Acc 56.25% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 564 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0688 | Acc 32.81% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 564 | CID:   2 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1039 | Acc 23.44% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 564 | CID:   3 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8437 | Acc 53.12% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 564 | CID:   4 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0900 | Acc 31.25% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 564 | CID:   6 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7300 | Acc 60.94% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 564 | CID:   8 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8924 | Acc 57.81% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 564 | CID:   9 ( 8/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.1794 | Acc 15.62% | Time: 0.16s
+
+>>> Round:  565 / Acc: 38.570% / Loss: 1.9714 / Grad Norm: 3.0301 / Grad Diff: 161.3607 / Time: 1.83s
+======================================================================================================
+
+= Test = round: 565 / acc: 38.440% / loss: 1.9691 / Time: 0.13s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 565 | CID:   1 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1140 | Acc 23.44% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 565 | CID:   2 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0648 | Acc 32.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 565 | CID:   3 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.9000 | Acc 45.31% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 565 | CID:   4 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0489 | Acc 34.38% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 565 | CID:   6 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6664 | Acc 62.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 565 | CID:   7 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.9027 | Acc 51.56% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 565 | CID:   8 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8961 | Acc 51.56% | Time: 0.17s
+
+>>> Round:  566 / Acc: 38.583% / Loss: 1.9713 / Grad Norm: 3.0300 / Grad Diff: 161.4132 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 566 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7279 | Acc 50.00% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 566 | CID:   2 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0879 | Acc 28.12% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 566 | CID:   4 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0629 | Acc 31.25% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 566 | CID:   5 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.0683 | Acc 35.94% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 566 | CID:   6 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6881 | Acc 59.38% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 566 | CID:   7 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0025 | Acc 45.31% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 566 | CID:   9 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1626 | Acc 17.19% | Time: 0.20s
+
+>>> Round:  567 / Acc: 38.602% / Loss: 1.9711 / Grad Norm: 3.0305 / Grad Diff: 161.4497 / Time: 1.80s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 567 | CID:   3 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.7917 | Acc 70.31% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 567 | CID:   5 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.2171 | Acc 12.50% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 567 | CID:   6 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8086 | Acc 46.88% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 567 | CID:   7 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.9740 | Acc 40.62% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 567 | CID:   8 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9944 | Acc 35.94% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 567 | CID:   9 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1834 | Acc 17.19% | Time: 0.16s
+
+>>> Round:  568 / Acc: 38.602% / Loss: 1.9710 / Grad Norm: 3.0308 / Grad Diff: 161.5691 / Time: 1.81s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 568 | CID:   2 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1338 | Acc 25.00% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 568 | CID:   3 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8270 | Acc 54.69% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 568 | CID:   4 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1081 | Acc 25.00% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 568 | CID:   5 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.2802 | Acc 12.50% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 568 | CID:   6 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7809 | Acc 56.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 568 | CID:   7 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.0121 | Acc 39.06% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 568 | CID:   8 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8663 | Acc 46.88% | Time: 0.18s
+
+>>> Round:  569 / Acc: 38.607% / Loss: 1.9708 / Grad Norm: 3.0306 / Grad Diff: 161.6576 / Time: 1.78s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 569 | CID:   2 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0475 | Acc 31.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 569 | CID:   3 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8324 | Acc 57.81% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 569 | CID:   5 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.1768 | Acc 23.44% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 569 | CID:   7 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8944 | Acc 42.19% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 569 | CID:   8 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8839 | Acc 54.69% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 569 | CID:   9 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1864 | Acc 12.50% | Time: 0.18s
+
+>>> Round:  570 / Acc: 38.627% / Loss: 1.9707 / Grad Norm: 3.0317 / Grad Diff: 161.7295 / Time: 1.77s
+======================================================================================================
+
+= Test = round: 570 / acc: 38.490% / loss: 1.9683 / Time: 0.16s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 570 | CID:   1 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.1465 | Acc 28.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 570 | CID:   3 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8345 | Acc 51.56% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 570 | CID:   4 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0142 | Acc 31.25% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 570 | CID:   5 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.1421 | Acc 31.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 570 | CID:   7 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.0391 | Acc 48.44% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 570 | CID:   8 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8794 | Acc 48.44% | Time: 0.17s
+
+>>> Round:  571 / Acc: 38.655% / Loss: 1.9705 / Grad Norm: 3.0328 / Grad Diff: 161.8160 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 571 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6781 | Acc 56.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 571 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.0926 | Acc 31.25% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 571 | CID:   2 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1270 | Acc 23.44% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 571 | CID:   5 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.1250 | Acc 18.75% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 571 | CID:   6 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8157 | Acc 51.56% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 571 | CID:   7 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.9529 | Acc 40.62% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 571 | CID:   8 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.9479 | Acc 54.69% | Time: 0.18s
+
+>>> Round:  572 / Acc: 38.657% / Loss: 1.9704 / Grad Norm: 3.0330 / Grad Diff: 161.8638 / Time: 1.84s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 572 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6678 | Acc 65.62% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 572 | CID:   2 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0952 | Acc 29.69% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 572 | CID:   3 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8791 | Acc 45.31% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 572 | CID:   4 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0580 | Acc 35.94% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 572 | CID:   5 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.2043 | Acc 18.75% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 572 | CID:   6 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8388 | Acc 48.44% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 572 | CID:   8 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8420 | Acc 57.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 572 | CID:   9 ( 8/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.2539 | Acc 15.62% | Time: 0.17s
+
+>>> Round:  573 / Acc: 38.673% / Loss: 1.9702 / Grad Norm: 3.0334 / Grad Diff: 161.8941 / Time: 1.81s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 573 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7341 | Acc 50.00% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 573 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.0815 | Acc 35.94% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 573 | CID:   3 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8913 | Acc 53.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 573 | CID:   4 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0302 | Acc 37.50% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 573 | CID:   5 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.1500 | Acc 25.00% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 573 | CID:   7 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.0538 | Acc 31.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 573 | CID:   8 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8497 | Acc 53.12% | Time: 0.19s
+
+>>> Round:  574 / Acc: 38.680% / Loss: 1.9701 / Grad Norm: 3.0328 / Grad Diff: 161.9539 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 574 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7707 | Acc 43.75% | Time: 0.21s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 574 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0791 | Acc 31.25% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 574 | CID:   2 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.0459 | Acc 32.81% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 574 | CID:   4 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0309 | Acc 35.94% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 574 | CID:   5 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.1685 | Acc 14.06% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 574 | CID:   6 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.7245 | Acc 60.94% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 574 | CID:   7 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.0512 | Acc 31.25% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 574 | CID:   8 ( 8/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8668 | Acc 59.38% | Time: 0.17s
+
+>>> Round:  575 / Acc: 38.693% / Loss: 1.9699 / Grad Norm: 3.0333 / Grad Diff: 161.9849 / Time: 1.81s
+======================================================================================================
+
+= Test = round: 575 / acc: 38.540% / loss: 1.9676 / Time: 0.15s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 575 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6313 | Acc 62.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 575 | CID:   2 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.0912 | Acc 29.69% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 575 | CID:   3 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8416 | Acc 56.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 575 | CID:   4 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0739 | Acc 21.88% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 575 | CID:   6 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8752 | Acc 40.62% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 575 | CID:   7 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.0654 | Acc 34.38% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 575 | CID:   8 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8710 | Acc 43.75% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 575 | CID:   9 ( 8/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1702 | Acc 18.75% | Time: 0.17s
+
+>>> Round:  576 / Acc: 38.687% / Loss: 1.9698 / Grad Norm: 3.0335 / Grad Diff: 162.0509 / Time: 1.84s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 576 | CID:   1 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1114 | Acc 35.94% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 576 | CID:   3 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8414 | Acc 56.25% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 576 | CID:   6 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7716 | Acc 51.56% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 576 | CID:   7 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9948 | Acc 45.31% | Time: 0.21s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 576 | CID:   9 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.2467 | Acc 12.50% | Time: 0.18s
+
+>>> Round:  577 / Acc: 38.695% / Loss: 1.9696 / Grad Norm: 3.0335 / Grad Diff: 162.1048 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 577 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7612 | Acc 48.44% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 577 | CID:   4 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0752 | Acc 35.94% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 577 | CID:   5 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.1888 | Acc 21.88% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 577 | CID:   7 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0440 | Acc 37.50% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 577 | CID:   8 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8662 | Acc 51.56% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 577 | CID:   9 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.2080 | Acc 12.50% | Time: 0.17s
+
+>>> Round:  578 / Acc: 38.697% / Loss: 1.9694 / Grad Norm: 3.0340 / Grad Diff: 162.2271 / Time: 1.78s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 578 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6510 | Acc 59.38% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 578 | CID:   2 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0681 | Acc 29.69% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 578 | CID:   3 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8114 | Acc 60.94% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 578 | CID:   4 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0171 | Acc 37.50% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 578 | CID:   5 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.1542 | Acc 17.19% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 578 | CID:   6 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8289 | Acc 45.31% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 578 | CID:   7 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9882 | Acc 40.62% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 578 | CID:   8 ( 8/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8802 | Acc 45.31% | Time: 0.18s
+
+>>> Round:  579 / Acc: 38.710% / Loss: 1.9692 / Grad Norm: 3.0349 / Grad Diff: 162.3114 / Time: 1.84s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 579 | CID:   1 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0899 | Acc 42.19% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 579 | CID:   3 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8278 | Acc 54.69% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 579 | CID:   4 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0880 | Acc 25.00% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 579 | CID:   5 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.2425 | Acc 10.94% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 579 | CID:   9 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1612 | Acc 23.44% | Time: 0.18s
+
+>>> Round:  580 / Acc: 38.732% / Loss: 1.9690 / Grad Norm: 3.0353 / Grad Diff: 162.4299 / Time: 1.74s
+======================================================================================================
+
+= Test = round: 580 / acc: 38.510% / loss: 1.9667 / Time: 0.14s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 580 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6737 | Acc 59.38% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 580 | CID:   4 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0194 | Acc 37.50% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 580 | CID:   5 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.1175 | Acc 23.44% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 580 | CID:   6 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6993 | Acc 54.69% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 580 | CID:   7 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9003 | Acc 50.00% | Time: 0.17s
+
+>>> Round:  581 / Acc: 38.735% / Loss: 1.9689 / Grad Norm: 3.0355 / Grad Diff: 162.5321 / Time: 1.80s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 581 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7290 | Acc 59.38% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 581 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9963 | Acc 35.94% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 581 | CID:   2 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0722 | Acc 32.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 581 | CID:   3 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8395 | Acc 62.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 581 | CID:   4 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0628 | Acc 31.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 581 | CID:   5 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.1283 | Acc 21.88% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 581 | CID:   6 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.5257 | Acc 71.88% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 581 | CID:   7 ( 8/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0834 | Acc 29.69% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 581 | CID:   9 ( 9/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1723 | Acc 26.56% | Time: 0.18s
+
+>>> Round:  582 / Acc: 38.747% / Loss: 1.9687 / Grad Norm: 3.0357 / Grad Diff: 162.5874 / Time: 1.81s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 582 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7065 | Acc 53.12% | Time: 0.22s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 582 | CID:   2 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0717 | Acc 23.44% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 582 | CID:   3 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8094 | Acc 59.38% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 582 | CID:   5 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.1598 | Acc 23.44% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 582 | CID:   6 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8260 | Acc 53.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 582 | CID:   7 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0926 | Acc 28.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 582 | CID:   8 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.9703 | Acc 37.50% | Time: 0.17s
+
+>>> Round:  583 / Acc: 38.750% / Loss: 1.9686 / Grad Norm: 3.0364 / Grad Diff: 162.6735 / Time: 1.81s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 583 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6107 | Acc 62.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 583 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1884 | Acc 28.12% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 583 | CID:   2 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1655 | Acc 23.44% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 583 | CID:   3 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.7922 | Acc 65.62% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 583 | CID:   5 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.2257 | Acc 15.62% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 583 | CID:   6 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7389 | Acc 64.06% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 583 | CID:   7 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0393 | Acc 39.06% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 583 | CID:   8 ( 8/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.9019 | Acc 51.56% | Time: 0.18s
+
+>>> Round:  584 / Acc: 38.753% / Loss: 1.9685 / Grad Norm: 3.0368 / Grad Diff: 162.7000 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 584 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6943 | Acc 54.69% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 584 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1476 | Acc 28.12% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 584 | CID:   2 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0708 | Acc 34.38% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 584 | CID:   3 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8118 | Acc 56.25% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 584 | CID:   7 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.0289 | Acc 39.06% | Time: 0.18s
+
+>>> Round:  585 / Acc: 38.753% / Loss: 1.9683 / Grad Norm: 3.0373 / Grad Diff: 162.7898 / Time: 1.80s
+======================================================================================================
+
+= Test = round: 585 / acc: 38.530% / loss: 1.9659 / Time: 0.15s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 585 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6946 | Acc 60.94% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 585 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1091 | Acc 21.88% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 585 | CID:   2 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0858 | Acc 31.25% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 585 | CID:   5 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.1648 | Acc 25.00% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 585 | CID:   6 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8600 | Acc 43.75% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 585 | CID:   7 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9980 | Acc 34.38% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 585 | CID:   9 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.1909 | Acc 17.19% | Time: 0.16s
+
+>>> Round:  586 / Acc: 38.757% / Loss: 1.9681 / Grad Norm: 3.0378 / Grad Diff: 162.8341 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 586 | CID:   1 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0808 | Acc 29.69% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 586 | CID:   2 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0870 | Acc 29.69% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 586 | CID:   3 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 1.8358 | Acc 59.38% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 586 | CID:   4 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9787 | Acc 42.19% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 586 | CID:   5 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.2949 | Acc 15.62% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 586 | CID:   6 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7245 | Acc 57.81% | Time: 0.18s
+
+>>> Round:  587 / Acc: 38.785% / Loss: 1.9680 / Grad Norm: 3.0382 / Grad Diff: 162.8619 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 587 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6571 | Acc 59.38% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 587 | CID:   2 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0573 | Acc 29.69% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 587 | CID:   4 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0598 | Acc 31.25% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 587 | CID:   5 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1921)| Loss 2.1417 | Acc 20.31% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 587 | CID:   6 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8347 | Acc 48.44% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 587 | CID:   8 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9427 | Acc 37.50% | Time: 0.18s
+
+>>> Round:  588 / Acc: 38.813% / Loss: 1.9678 / Grad Norm: 3.0392 / Grad Diff: 162.8849 / Time: 1.77s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 588 | CID:   2 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0460 | Acc 31.25% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 588 | CID:   3 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8494 | Acc 53.12% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 588 | CID:   4 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0060 | Acc 34.38% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 588 | CID:   5 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1596 | Acc 26.56% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 588 | CID:   6 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9489 | Acc 40.62% | Time: 0.17s
+
+>>> Round:  589 / Acc: 38.793% / Loss: 1.9677 / Grad Norm: 3.0397 / Grad Diff: 162.9569 / Time: 1.78s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 589 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7231 | Acc 53.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 589 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0857 | Acc 35.94% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 589 | CID:   2 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0165 | Acc 34.38% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 589 | CID:   6 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6798 | Acc 57.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 589 | CID:   7 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9940 | Acc 43.75% | Time: 0.17s
+
+>>> Round:  590 / Acc: 38.802% / Loss: 1.9676 / Grad Norm: 3.0400 / Grad Diff: 162.9790 / Time: 1.84s
+======================================================================================================
+
+= Test = round: 590 / acc: 38.610% / loss: 1.9652 / Time: 0.13s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 590 | CID:   1 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0684 | Acc 35.94% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 590 | CID:   3 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8986 | Acc 48.44% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 590 | CID:   4 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0536 | Acc 26.56% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 590 | CID:   5 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1121 | Acc 26.56% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 590 | CID:   6 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.5574 | Acc 71.88% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 590 | CID:   8 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9029 | Acc 53.12% | Time: 0.18s
+
+>>> Round:  591 / Acc: 38.827% / Loss: 1.9674 / Grad Norm: 3.0400 / Grad Diff: 163.0237 / Time: 1.79s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 591 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6494 | Acc 59.38% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 591 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1453 | Acc 32.81% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 591 | CID:   3 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7942 | Acc 57.81% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 591 | CID:   4 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0484 | Acc 31.25% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 591 | CID:   5 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1728 | Acc 18.75% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 591 | CID:   6 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7552 | Acc 53.12% | Time: 0.17s
+
+>>> Round:  592 / Acc: 38.838% / Loss: 1.9673 / Grad Norm: 3.0405 / Grad Diff: 163.0755 / Time: 1.80s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 592 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6729 | Acc 57.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 592 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1471 | Acc 25.00% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 592 | CID:   3 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8238 | Acc 57.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 592 | CID:   4 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1258 | Acc 18.75% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 592 | CID:   7 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9672 | Acc 37.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 592 | CID:   9 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1996 | Acc 20.31% | Time: 0.16s
+
+>>> Round:  593 / Acc: 38.855% / Loss: 1.9671 / Grad Norm: 3.0401 / Grad Diff: 163.1446 / Time: 1.81s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 593 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.5862 | Acc 71.88% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 593 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1284 | Acc 29.69% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 593 | CID:   2 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0733 | Acc 26.56% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 593 | CID:   3 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8384 | Acc 53.12% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 593 | CID:   4 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0331 | Acc 32.81% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 593 | CID:   6 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7430 | Acc 57.81% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 593 | CID:   7 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0668 | Acc 34.38% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 593 | CID:   9 ( 8/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1891 | Acc 21.88% | Time: 0.18s
+
+>>> Round:  594 / Acc: 38.847% / Loss: 1.9670 / Grad Norm: 3.0403 / Grad Diff: 163.1877 / Time: 1.78s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 594 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6811 | Acc 56.25% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 594 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0741 | Acc 29.69% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 594 | CID:   2 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0856 | Acc 25.00% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 594 | CID:   4 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0551 | Acc 40.62% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 594 | CID:   6 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6928 | Acc 60.94% | Time: 0.17s
+
+>>> Round:  595 / Acc: 38.858% / Loss: 1.9668 / Grad Norm: 3.0408 / Grad Diff: 163.2205 / Time: 1.79s
+======================================================================================================
+
+= Test = round: 595 / acc: 38.620% / loss: 1.9644 / Time: 0.12s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 595 | CID:   1 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1398 | Acc 29.69% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 595 | CID:   2 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0365 | Acc 29.69% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 595 | CID:   3 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9070 | Acc 53.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 595 | CID:   4 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0925 | Acc 32.81% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 595 | CID:   5 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1854 | Acc 12.50% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 595 | CID:   6 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6727 | Acc 60.94% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 595 | CID:   7 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0282 | Acc 43.75% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 595 | CID:   9 ( 8/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.2341 | Acc  9.38% | Time: 0.18s
+
+>>> Round:  596 / Acc: 38.868% / Loss: 1.9667 / Grad Norm: 3.0413 / Grad Diff: 163.2841 / Time: 1.79s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 596 | CID:   1 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1161 | Acc 34.38% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 596 | CID:   5 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1677 | Acc 23.44% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 596 | CID:   6 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7327 | Acc 54.69% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 596 | CID:   7 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9485 | Acc 48.44% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 596 | CID:   8 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9634 | Acc 35.94% | Time: 0.18s
+
+>>> Round:  597 / Acc: 38.887% / Loss: 1.9665 / Grad Norm: 3.0413 / Grad Diff: 163.3197 / Time: 1.78s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 597 | CID:   1 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0790 | Acc 32.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 597 | CID:   3 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7830 | Acc 60.94% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 597 | CID:   5 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1955 | Acc 17.19% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 597 | CID:   6 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7898 | Acc 54.69% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 597 | CID:   7 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9732 | Acc 40.62% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 597 | CID:   8 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8945 | Acc 50.00% | Time: 0.17s
+
+>>> Round:  598 / Acc: 38.897% / Loss: 1.9664 / Grad Norm: 3.0413 / Grad Diff: 163.3877 / Time: 1.80s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 598 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6167 | Acc 67.19% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 598 | CID:   2 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0746 | Acc 34.38% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 598 | CID:   3 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8176 | Acc 62.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 598 | CID:   6 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7596 | Acc 54.69% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 598 | CID:   7 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0017 | Acc 42.19% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 598 | CID:   8 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9264 | Acc 48.44% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 598 | CID:   9 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1167 | Acc 26.56% | Time: 0.18s
+
+>>> Round:  599 / Acc: 38.893% / Loss: 1.9662 / Grad Norm: 3.0412 / Grad Diff: 163.4734 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 599 | CID:   3 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7805 | Acc 62.50% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 599 | CID:   4 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1247 | Acc 21.88% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 599 | CID:   5 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1893 | Acc 17.19% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 599 | CID:   7 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0021 | Acc 32.81% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 599 | CID:   9 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.2802 | Acc 15.62% | Time: 0.18s
+
+>>> Round:  600 / Acc: 38.903% / Loss: 1.9661 / Grad Norm: 3.0408 / Grad Diff: 163.5446 / Time: 1.79s
+======================================================================================================
+
+= Test = round: 600 / acc: 38.670% / loss: 1.9637 / Time: 0.14s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 600 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6657 | Acc 60.94% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 600 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1039 | Acc 34.38% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 600 | CID:   2 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1329 | Acc 21.88% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 600 | CID:   3 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8334 | Acc 62.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 600 | CID:   5 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.2198 | Acc 15.62% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 600 | CID:   8 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9001 | Acc 51.56% | Time: 0.17s
+
+>>> Round:  601 / Acc: 38.912% / Loss: 1.9659 / Grad Norm: 3.0403 / Grad Diff: 163.5799 / Time: 1.78s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 601 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7335 | Acc 54.69% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 601 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0146 | Acc 43.75% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 601 | CID:   2 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0363 | Acc 28.12% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 601 | CID:   4 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1250 | Acc 21.88% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 601 | CID:   6 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7234 | Acc 57.81% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 601 | CID:   9 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1229 | Acc 25.00% | Time: 0.16s
+
+>>> Round:  602 / Acc: 38.923% / Loss: 1.9657 / Grad Norm: 3.0406 / Grad Diff: 163.6258 / Time: 1.83s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 602 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6639 | Acc 59.38% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 602 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0780 | Acc 37.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 602 | CID:   2 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0743 | Acc 21.88% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 602 | CID:   4 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0487 | Acc 39.06% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 602 | CID:   5 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1732 | Acc 17.19% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 602 | CID:   6 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6294 | Acc 67.19% | Time: 0.22s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 602 | CID:   7 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8862 | Acc 56.25% | Time: 0.19s
+
+>>> Round:  603 / Acc: 38.922% / Loss: 1.9656 / Grad Norm: 3.0415 / Grad Diff: 163.6677 / Time: 1.84s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 603 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6607 | Acc 62.50% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 603 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1258 | Acc 31.25% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 603 | CID:   4 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1120 | Acc 29.69% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 603 | CID:   6 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.6225 | Acc 62.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 603 | CID:   8 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9326 | Acc 46.88% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 603 | CID:   9 ( 6/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1082 | Acc 31.25% | Time: 0.17s
+
+>>> Round:  604 / Acc: 38.945% / Loss: 1.9654 / Grad Norm: 3.0404 / Grad Diff: 163.7420 / Time: 1.79s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 604 | CID:   0 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7022 | Acc 57.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 604 | CID:   1 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0656 | Acc 37.50% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 604 | CID:   2 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0394 | Acc 29.69% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 604 | CID:   3 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.7724 | Acc 56.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 604 | CID:   5 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1705 | Acc 23.44% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 604 | CID:   6 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6550 | Acc 67.19% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 604 | CID:   7 ( 7/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.9376 | Acc 48.44% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 604 | CID:   8 ( 8/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 1.8969 | Acc 45.31% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 604 | CID:   9 ( 9/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1798 | Acc 21.88% | Time: 0.18s
+
+>>> Round:  605 / Acc: 38.953% / Loss: 1.9652 / Grad Norm: 3.0409 / Grad Diff: 163.8108 / Time: 1.80s
+======================================================================================================
+
+= Test = round: 605 / acc: 38.700% / loss: 1.9628 / Time: 0.15s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 605 | CID:   1 ( 1/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0671 | Acc 35.94% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 605 | CID:   2 ( 2/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.1022 | Acc 29.69% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 605 | CID:   3 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8422 | Acc 50.00% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 605 | CID:   4 ( 4/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0980 | Acc 32.81% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 605 | CID:   5 ( 5/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.0990 | Acc 26.56% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 605 | CID:   6 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6142 | Acc 57.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 605 | CID:   7 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9967 | Acc 37.50% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 605 | CID:   8 ( 8/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8755 | Acc 46.88% | Time: 0.17s
+
+>>> Round:  606 / Acc: 38.962% / Loss: 1.9651 / Grad Norm: 3.0413 / Grad Diff: 163.8353 / Time: 1.81s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 606 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6422 | Acc 59.38% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 606 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1081 | Acc 28.12% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 606 | CID:   5 ( 3/10)| Param: norm 8.8841 (-0.2023->0.1920)| Loss 2.2199 | Acc 17.19% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 606 | CID:   6 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7779 | Acc 57.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 606 | CID:   7 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9592 | Acc 51.56% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 606 | CID:   8 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8638 | Acc 56.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 606 | CID:   9 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1365 | Acc 25.00% | Time: 0.18s
+
+>>> Round:  607 / Acc: 38.967% / Loss: 1.9649 / Grad Norm: 3.0417 / Grad Diff: 163.9031 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 607 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7353 | Acc 53.12% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 607 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0486 | Acc 39.06% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 607 | CID:   2 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0799 | Acc 23.44% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 607 | CID:   7 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0153 | Acc 40.62% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 607 | CID:   9 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2402 | Acc 14.06% | Time: 0.18s
+
+>>> Round:  608 / Acc: 38.985% / Loss: 1.9647 / Grad Norm: 3.0415 / Grad Diff: 164.0147 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 608 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6906 | Acc 64.06% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 608 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0772 | Acc 28.12% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 608 | CID:   3 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7881 | Acc 57.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 608 | CID:   6 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7532 | Acc 57.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 608 | CID:   7 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9532 | Acc 43.75% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 608 | CID:   8 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9198 | Acc 40.62% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 608 | CID:   9 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1787 | Acc 23.44% | Time: 0.16s
+
+>>> Round:  609 / Acc: 38.995% / Loss: 1.9645 / Grad Norm: 3.0420 / Grad Diff: 164.0874 / Time: 1.83s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 609 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.5865 | Acc 57.81% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 609 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1204 | Acc 34.38% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 609 | CID:   3 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8823 | Acc 53.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 609 | CID:   4 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0345 | Acc 35.94% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 609 | CID:   7 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9638 | Acc 50.00% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 609 | CID:   8 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9976 | Acc 34.38% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 609 | CID:   9 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2154 | Acc 15.62% | Time: 0.18s
+
+>>> Round:  610 / Acc: 39.010% / Loss: 1.9644 / Grad Norm: 3.0420 / Grad Diff: 164.1448 / Time: 1.79s
+======================================================================================================
+
+= Test = round: 610 / acc: 38.780% / loss: 1.9619 / Time: 0.16s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 610 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6713 | Acc 54.69% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 610 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0400 | Acc 20.31% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 610 | CID:   3 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8534 | Acc 59.38% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 610 | CID:   5 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1585 | Acc 21.88% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 610 | CID:   7 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0077 | Acc 40.62% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 610 | CID:   8 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9208 | Acc 51.56% | Time: 0.18s
+
+>>> Round:  611 / Acc: 39.022% / Loss: 1.9642 / Grad Norm: 3.0423 / Grad Diff: 164.2871 / Time: 1.77s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 611 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6869 | Acc 54.69% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 611 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0595 | Acc 32.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 611 | CID:   3 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8617 | Acc 54.69% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 611 | CID:   5 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0887 | Acc 15.62% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 611 | CID:   6 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6975 | Acc 53.12% | Time: 0.17s
+
+>>> Round:  612 / Acc: 39.007% / Loss: 1.9640 / Grad Norm: 3.0428 / Grad Diff: 164.3465 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 612 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7298 | Acc 59.38% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 612 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1383 | Acc 31.25% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 612 | CID:   3 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7664 | Acc 59.38% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 612 | CID:   4 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1042 | Acc 26.56% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 612 | CID:   6 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7971 | Acc 51.56% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 612 | CID:   8 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8490 | Acc 50.00% | Time: 0.21s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 612 | CID:   9 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1739 | Acc 10.94% | Time: 0.17s
+
+>>> Round:  613 / Acc: 39.030% / Loss: 1.9639 / Grad Norm: 3.0429 / Grad Diff: 164.3952 / Time: 1.80s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 613 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7460 | Acc 53.12% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 613 | CID:   4 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0994 | Acc 37.50% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 613 | CID:   5 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1893 | Acc 21.88% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 613 | CID:   7 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9861 | Acc 43.75% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 613 | CID:   8 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8811 | Acc 48.44% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 613 | CID:   9 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2125 | Acc 17.19% | Time: 0.18s
+
+>>> Round:  614 / Acc: 39.042% / Loss: 1.9637 / Grad Norm: 3.0425 / Grad Diff: 164.4452 / Time: 1.76s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 614 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7265 | Acc 60.94% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 614 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1244 | Acc 28.12% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 614 | CID:   2 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0601 | Acc 31.25% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 614 | CID:   4 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0405 | Acc 25.00% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 614 | CID:   5 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1561 | Acc 25.00% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 614 | CID:   6 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7801 | Acc 57.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 614 | CID:   7 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9773 | Acc 39.06% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 614 | CID:   8 ( 8/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8546 | Acc 50.00% | Time: 0.17s
+
+>>> Round:  615 / Acc: 39.042% / Loss: 1.9636 / Grad Norm: 3.0426 / Grad Diff: 164.4870 / Time: 1.83s
+======================================================================================================
+
+= Test = round: 615 / acc: 38.810% / loss: 1.9611 / Time: 0.12s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 615 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6445 | Acc 62.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 615 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1358 | Acc 31.25% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 615 | CID:   5 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1466 | Acc 18.75% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 615 | CID:   6 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7140 | Acc 56.25% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 615 | CID:   7 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9888 | Acc 42.19% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 615 | CID:   8 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8415 | Acc 45.31% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 615 | CID:   9 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1663 | Acc 25.00% | Time: 0.18s
+
+>>> Round:  616 / Acc: 39.060% / Loss: 1.9634 / Grad Norm: 3.0429 / Grad Diff: 164.5378 / Time: 1.79s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 616 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6590 | Acc 59.38% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 616 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2019 | Acc 26.56% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 616 | CID:   3 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8665 | Acc 53.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 616 | CID:   6 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7444 | Acc 56.25% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 616 | CID:   7 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8956 | Acc 51.56% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 616 | CID:   8 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9129 | Acc 48.44% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 616 | CID:   9 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1543 | Acc 21.88% | Time: 0.16s
+
+>>> Round:  617 / Acc: 39.082% / Loss: 1.9632 / Grad Norm: 3.0433 / Grad Diff: 164.6086 / Time: 1.81s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 617 | CID:   1 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1546 | Acc 32.81% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 617 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0864 | Acc 28.12% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 617 | CID:   5 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1545 | Acc 23.44% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 617 | CID:   6 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8146 | Acc 48.44% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 617 | CID:   7 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9195 | Acc 43.75% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 617 | CID:   8 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9297 | Acc 50.00% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 617 | CID:   9 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1440 | Acc 20.31% | Time: 0.19s
+
+>>> Round:  618 / Acc: 39.092% / Loss: 1.9631 / Grad Norm: 3.0433 / Grad Diff: 164.6522 / Time: 1.77s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 618 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7055 | Acc 53.12% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 618 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1090 | Acc 29.69% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 618 | CID:   6 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6880 | Acc 64.06% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 618 | CID:   7 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9254 | Acc 48.44% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 618 | CID:   8 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9107 | Acc 46.88% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 618 | CID:   9 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1840 | Acc 20.31% | Time: 0.18s
+
+>>> Round:  619 / Acc: 39.115% / Loss: 1.9629 / Grad Norm: 3.0429 / Grad Diff: 164.6815 / Time: 1.81s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 619 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6607 | Acc 59.38% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 619 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1057 | Acc 20.31% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 619 | CID:   5 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1704 | Acc 17.19% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 619 | CID:   6 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6341 | Acc 60.94% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 619 | CID:   8 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8674 | Acc 50.00% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 619 | CID:   9 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1154 | Acc 28.12% | Time: 0.16s
+
+>>> Round:  620 / Acc: 39.098% / Loss: 1.9628 / Grad Norm: 3.0435 / Grad Diff: 164.6884 / Time: 1.87s
+======================================================================================================
+
+= Test = round: 620 / acc: 38.830% / loss: 1.9603 / Time: 0.12s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 620 | CID:   2 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0969 | Acc 28.12% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 620 | CID:   3 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7977 | Acc 59.38% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 620 | CID:   4 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0728 | Acc 25.00% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 620 | CID:   7 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9237 | Acc 45.31% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 620 | CID:   8 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9537 | Acc 42.19% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 620 | CID:   9 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1450 | Acc 20.31% | Time: 0.18s
+
+>>> Round:  621 / Acc: 39.112% / Loss: 1.9627 / Grad Norm: 3.0438 / Grad Diff: 164.7280 / Time: 1.77s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 621 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7877 | Acc 54.69% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 621 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0523 | Acc 32.81% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 621 | CID:   3 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8432 | Acc 54.69% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 621 | CID:   4 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0068 | Acc 39.06% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 621 | CID:   6 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7761 | Acc 50.00% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 621 | CID:   7 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0345 | Acc 35.94% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 621 | CID:   8 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8939 | Acc 45.31% | Time: 0.17s
+
+>>> Round:  622 / Acc: 39.135% / Loss: 1.9626 / Grad Norm: 3.0446 / Grad Diff: 164.8079 / Time: 1.78s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 622 | CID:   1 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0460 | Acc 29.69% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 622 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1229 | Acc 28.12% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 622 | CID:   4 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0536 | Acc 29.69% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 622 | CID:   5 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1612 | Acc 17.19% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 622 | CID:   6 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6996 | Acc 60.94% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 622 | CID:   8 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8788 | Acc 53.12% | Time: 0.17s
+
+>>> Round:  623 / Acc: 39.152% / Loss: 1.9624 / Grad Norm: 3.0447 / Grad Diff: 164.8100 / Time: 1.80s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 623 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7322 | Acc 46.88% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 623 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0594 | Acc 31.25% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 623 | CID:   6 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7869 | Acc 51.56% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 623 | CID:   7 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0028 | Acc 42.19% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 623 | CID:   8 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8604 | Acc 57.81% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 623 | CID:   9 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0834 | Acc 31.25% | Time: 0.18s
+
+>>> Round:  624 / Acc: 39.158% / Loss: 1.9622 / Grad Norm: 3.0449 / Grad Diff: 164.8799 / Time: 1.80s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 624 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7364 | Acc 57.81% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 624 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0060 | Acc 39.06% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 624 | CID:   2 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0950 | Acc 21.88% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 624 | CID:   3 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8030 | Acc 70.31% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 624 | CID:   4 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0819 | Acc 28.12% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 624 | CID:   8 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8244 | Acc 59.38% | Time: 0.17s
+
+>>> Round:  625 / Acc: 39.167% / Loss: 1.9621 / Grad Norm: 3.0449 / Grad Diff: 164.9361 / Time: 1.80s
+======================================================================================================
+
+= Test = round: 625 / acc: 38.980% / loss: 1.9596 / Time: 0.14s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 625 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6324 | Acc 62.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 625 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0289 | Acc 26.56% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 625 | CID:   3 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8469 | Acc 50.00% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 625 | CID:   6 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7497 | Acc 54.69% | Time: 0.17s
+
+>>> Round:  626 / Acc: 39.175% / Loss: 1.9619 / Grad Norm: 3.0451 / Grad Diff: 165.0193 / Time: 1.84s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 626 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8586 | Acc 40.62% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 626 | CID:   3 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7866 | Acc 62.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 626 | CID:   4 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1060 | Acc 32.81% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 626 | CID:   5 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1507 | Acc 20.31% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 626 | CID:   6 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7276 | Acc 54.69% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 626 | CID:   8 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8658 | Acc 48.44% | Time: 0.21s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 626 | CID:   9 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2221 | Acc 20.31% | Time: 0.18s
+
+>>> Round:  627 / Acc: 39.177% / Loss: 1.9618 / Grad Norm: 3.0454 / Grad Diff: 165.0703 / Time: 1.78s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 627 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6689 | Acc 54.69% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 627 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0983 | Acc 29.69% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 627 | CID:   3 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7793 | Acc 64.06% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 627 | CID:   4 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0413 | Acc 35.94% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 627 | CID:   6 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7033 | Acc 65.62% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 627 | CID:   8 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9544 | Acc 39.06% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 627 | CID:   9 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2332 | Acc 23.44% | Time: 0.17s
+
+>>> Round:  628 / Acc: 39.173% / Loss: 1.9617 / Grad Norm: 3.0458 / Grad Diff: 165.0866 / Time: 1.83s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 628 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7052 | Acc 54.69% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 628 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0885 | Acc 37.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 628 | CID:   4 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9849 | Acc 40.62% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 628 | CID:   7 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9323 | Acc 43.75% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 628 | CID:   8 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9155 | Acc 43.75% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 628 | CID:   9 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1758 | Acc 18.75% | Time: 0.16s
+
+>>> Round:  629 / Acc: 39.187% / Loss: 1.9615 / Grad Norm: 3.0455 / Grad Diff: 165.1475 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 629 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6824 | Acc 56.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 629 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1646 | Acc 31.25% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 629 | CID:   2 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1238 | Acc 18.75% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 629 | CID:   4 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0234 | Acc 29.69% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 629 | CID:   5 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0817 | Acc 29.69% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 629 | CID:   7 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9382 | Acc 48.44% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 629 | CID:   8 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9080 | Acc 45.31% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 629 | CID:   9 ( 8/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1152 | Acc 21.88% | Time: 0.18s
+
+>>> Round:  630 / Acc: 39.198% / Loss: 1.9614 / Grad Norm: 3.0459 / Grad Diff: 165.2106 / Time: 1.77s
+======================================================================================================
+
+= Test = round: 630 / acc: 39.010% / loss: 1.9588 / Time: 0.16s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 630 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6545 | Acc 57.81% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 630 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1437 | Acc 26.56% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 630 | CID:   2 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0927 | Acc 28.12% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 630 | CID:   3 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8231 | Acc 60.94% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 630 | CID:   4 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0588 | Acc 34.38% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 630 | CID:   6 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6053 | Acc 65.62% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 630 | CID:   8 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8615 | Acc 50.00% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 630 | CID:   9 ( 8/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1334 | Acc 23.44% | Time: 0.17s
+
+>>> Round:  631 / Acc: 39.210% / Loss: 1.9612 / Grad Norm: 3.0461 / Grad Diff: 165.2637 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 631 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6098 | Acc 59.38% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 631 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1102 | Acc 18.75% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 631 | CID:   3 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8447 | Acc 50.00% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 631 | CID:   4 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1173 | Acc 29.69% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 631 | CID:   5 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1584 | Acc 28.12% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 631 | CID:   6 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6688 | Acc 62.50% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 631 | CID:   8 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8565 | Acc 46.88% | Time: 0.18s
+
+>>> Round:  632 / Acc: 39.213% / Loss: 1.9611 / Grad Norm: 3.0469 / Grad Diff: 165.2521 / Time: 1.77s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 632 | CID:   1 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1435 | Acc 32.81% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 632 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1250 | Acc 28.12% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 632 | CID:   3 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8437 | Acc 60.94% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 632 | CID:   4 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0762 | Acc 31.25% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 632 | CID:   5 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2249 | Acc 12.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 632 | CID:   6 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6464 | Acc 60.94% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 632 | CID:   8 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9666 | Acc 39.06% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 632 | CID:   9 ( 8/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1782 | Acc 14.06% | Time: 0.16s
+
+>>> Round:  633 / Acc: 39.220% / Loss: 1.9610 / Grad Norm: 3.0471 / Grad Diff: 165.2950 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 633 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7044 | Acc 51.56% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 633 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2012 | Acc 28.12% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 633 | CID:   2 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0341 | Acc 35.94% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 633 | CID:   5 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2128 | Acc 15.62% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 633 | CID:   6 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7185 | Acc 54.69% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 633 | CID:   8 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9464 | Acc 46.88% | Time: 0.18s
+
+>>> Round:  634 / Acc: 39.223% / Loss: 1.9608 / Grad Norm: 3.0474 / Grad Diff: 165.3330 / Time: 1.88s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 634 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6910 | Acc 56.25% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 634 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1392 | Acc 17.19% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 634 | CID:   3 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7985 | Acc 59.38% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 634 | CID:   5 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2279 | Acc 15.62% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 634 | CID:   8 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8757 | Acc 53.12% | Time: 0.18s
+
+>>> Round:  635 / Acc: 39.243% / Loss: 1.9607 / Grad Norm: 3.0482 / Grad Diff: 165.3928 / Time: 1.75s
+======================================================================================================
+
+= Test = round: 635 / acc: 39.070% / loss: 1.9582 / Time: 0.15s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 635 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6353 | Acc 68.75% | Time: 0.21s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 635 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2273 | Acc 26.56% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 635 | CID:   2 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9800 | Acc 37.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 635 | CID:   3 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8118 | Acc 65.62% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 635 | CID:   4 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0654 | Acc 34.38% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 635 | CID:   7 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0179 | Acc 39.06% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 635 | CID:   8 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8821 | Acc 46.88% | Time: 0.17s
+
+>>> Round:  636 / Acc: 39.272% / Loss: 1.9605 / Grad Norm: 3.0480 / Grad Diff: 165.4546 / Time: 1.77s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 636 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6822 | Acc 59.38% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 636 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1350 | Acc 31.25% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 636 | CID:   3 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8204 | Acc 56.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 636 | CID:   4 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0671 | Acc 39.06% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 636 | CID:   5 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2362 | Acc  9.38% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 636 | CID:   6 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8499 | Acc 46.88% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 636 | CID:   7 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9797 | Acc 46.88% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 636 | CID:   8 ( 8/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8053 | Acc 51.56% | Time: 0.20s
+
+>>> Round:  637 / Acc: 39.270% / Loss: 1.9604 / Grad Norm: 3.0483 / Grad Diff: 165.4922 / Time: 1.84s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 637 | CID:   1 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1478 | Acc 29.69% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 637 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0125 | Acc 40.62% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 637 | CID:   3 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8841 | Acc 51.56% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 637 | CID:   4 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9941 | Acc 45.31% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 637 | CID:   5 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1873 | Acc 15.62% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 637 | CID:   6 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8572 | Acc 51.56% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 637 | CID:   9 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1845 | Acc 15.62% | Time: 0.17s
+
+>>> Round:  638 / Acc: 39.282% / Loss: 1.9603 / Grad Norm: 3.0485 / Grad Diff: 165.5272 / Time: 1.80s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 638 | CID:   1 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1056 | Acc 29.69% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 638 | CID:   3 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8357 | Acc 56.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 638 | CID:   4 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0318 | Acc 34.38% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 638 | CID:   6 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6952 | Acc 62.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 638 | CID:   7 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9832 | Acc 37.50% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 638 | CID:   9 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2440 | Acc 10.94% | Time: 0.17s
+
+>>> Round:  639 / Acc: 39.290% / Loss: 1.9601 / Grad Norm: 3.0485 / Grad Diff: 165.6057 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 639 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6335 | Acc 59.38% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 639 | CID:   4 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9217 | Acc 45.31% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 639 | CID:   5 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2045 | Acc 18.75% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 639 | CID:   8 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9085 | Acc 50.00% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 639 | CID:   9 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1730 | Acc 14.06% | Time: 0.18s
+
+>>> Round:  640 / Acc: 39.303% / Loss: 1.9599 / Grad Norm: 3.0495 / Grad Diff: 165.7028 / Time: 1.83s
+======================================================================================================
+
+= Test = round: 640 / acc: 39.100% / loss: 1.9574 / Time: 0.14s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 640 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6127 | Acc 62.50% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 640 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0807 | Acc 34.38% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 640 | CID:   2 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0479 | Acc 31.25% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 640 | CID:   4 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0593 | Acc 23.44% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 640 | CID:   6 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7577 | Acc 48.44% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 640 | CID:   7 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0118 | Acc 35.94% | Time: 0.18s
+
+>>> Round:  641 / Acc: 39.310% / Loss: 1.9598 / Grad Norm: 3.0500 / Grad Diff: 165.7036 / Time: 1.76s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 641 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6352 | Acc 65.62% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 641 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1052 | Acc 32.81% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 641 | CID:   2 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0781 | Acc 25.00% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 641 | CID:   5 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1942 | Acc 21.88% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 641 | CID:   6 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7673 | Acc 60.94% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 641 | CID:   7 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8953 | Acc 51.56% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 641 | CID:   9 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2370 | Acc 18.75% | Time: 0.16s
+
+>>> Round:  642 / Acc: 39.325% / Loss: 1.9597 / Grad Norm: 3.0504 / Grad Diff: 165.7300 / Time: 1.81s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 642 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.5982 | Acc 67.19% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 642 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0637 | Acc 25.00% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 642 | CID:   3 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8446 | Acc 56.25% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 642 | CID:   5 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2105 | Acc 14.06% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 642 | CID:   6 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7803 | Acc 48.44% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 642 | CID:   7 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9718 | Acc 39.06% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 642 | CID:   9 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2128 | Acc 21.88% | Time: 0.17s
+
+>>> Round:  643 / Acc: 39.320% / Loss: 1.9595 / Grad Norm: 3.0506 / Grad Diff: 165.8305 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 643 | CID:   1 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1282 | Acc 34.38% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 643 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0649 | Acc 28.12% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 643 | CID:   3 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8392 | Acc 59.38% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 643 | CID:   5 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2060 | Acc 17.19% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 643 | CID:   7 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9522 | Acc 48.44% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 643 | CID:   8 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9115 | Acc 45.31% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 643 | CID:   9 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2370 | Acc 15.62% | Time: 0.16s
+
+>>> Round:  644 / Acc: 39.345% / Loss: 1.9594 / Grad Norm: 3.0509 / Grad Diff: 165.8678 / Time: 1.81s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 644 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6466 | Acc 57.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 644 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0197 | Acc 21.88% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 644 | CID:   5 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2156 | Acc 17.19% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 644 | CID:   6 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6713 | Acc 60.94% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 644 | CID:   9 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2257 | Acc 21.88% | Time: 0.16s
+
+>>> Round:  645 / Acc: 39.343% / Loss: 1.9593 / Grad Norm: 3.0522 / Grad Diff: 165.8953 / Time: 1.85s
+======================================================================================================
+
+= Test = round: 645 / acc: 39.140% / loss: 1.9567 / Time: 0.12s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 645 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6816 | Acc 57.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 645 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0328 | Acc 32.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 645 | CID:   4 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0446 | Acc 34.38% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 645 | CID:   5 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1965 | Acc 25.00% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 645 | CID:   7 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9783 | Acc 48.44% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 645 | CID:   8 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9414 | Acc 40.62% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 645 | CID:   9 ( 7/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2136 | Acc 20.31% | Time: 0.18s
+
+>>> Round:  646 / Acc: 39.347% / Loss: 1.9591 / Grad Norm: 3.0526 / Grad Diff: 165.9422 / Time: 1.78s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 646 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7626 | Acc 51.56% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 646 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1121 | Acc 31.25% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 646 | CID:   2 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0619 | Acc 31.25% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 646 | CID:   6 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6733 | Acc 57.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 646 | CID:   7 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0691 | Acc 32.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 646 | CID:   9 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2713 | Acc 15.62% | Time: 0.17s
+
+>>> Round:  647 / Acc: 39.363% / Loss: 1.9590 / Grad Norm: 3.0528 / Grad Diff: 166.0250 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 647 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6872 | Acc 62.50% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 647 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0741 | Acc 34.38% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 647 | CID:   4 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0875 | Acc 23.44% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 647 | CID:   5 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2046 | Acc 14.06% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 647 | CID:   9 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1678 | Acc 21.88% | Time: 0.17s
+
+>>> Round:  648 / Acc: 39.378% / Loss: 1.9588 / Grad Norm: 3.0530 / Grad Diff: 166.0399 / Time: 1.81s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 648 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6769 | Acc 57.81% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 648 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0989 | Acc 35.94% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 648 | CID:   3 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8270 | Acc 56.25% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 648 | CID:   4 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1193 | Acc 31.25% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 648 | CID:   7 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9838 | Acc 35.94% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 648 | CID:   8 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8544 | Acc 50.00% | Time: 0.18s
+
+>>> Round:  649 / Acc: 39.378% / Loss: 1.9587 / Grad Norm: 3.0530 / Grad Diff: 166.1213 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 649 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.6010 | Acc 65.62% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 649 | CID:   2 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0899 | Acc 31.25% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 649 | CID:   5 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2921 | Acc 15.62% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 649 | CID:   7 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.9754 | Acc 42.19% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 649 | CID:   8 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8726 | Acc 56.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 649 | CID:   9 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1812 | Acc 14.06% | Time: 0.17s
+
+>>> Round:  650 / Acc: 39.375% / Loss: 1.9586 / Grad Norm: 3.0537 / Grad Diff: 166.1387 / Time: 1.78s
+======================================================================================================
+
+= Test = round: 650 / acc: 39.210% / loss: 1.9560 / Time: 0.13s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 650 | CID:   0 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7129 | Acc 50.00% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 650 | CID:   1 ( 2/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0891 | Acc 31.25% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 650 | CID:   2 ( 3/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0658 | Acc 32.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 650 | CID:   5 ( 4/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.1241 | Acc 21.88% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 650 | CID:   6 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.7064 | Acc 56.25% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 650 | CID:   8 ( 6/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 1.8954 | Acc 48.44% | Time: 0.17s
+
+>>> Round:  651 / Acc: 39.400% / Loss: 1.9584 / Grad Norm: 3.0542 / Grad Diff: 166.1722 / Time: 1.86s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 651 | CID:   2 ( 1/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.0147 | Acc 25.00% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 651 | CID:   3 ( 2/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 1.8337 | Acc 50.00% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 651 | CID:   7 ( 3/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 1.9321 | Acc 40.62% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 651 | CID:   8 ( 4/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 1.8764 | Acc 54.69% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 651 | CID:   9 ( 5/10)| Param: norm 8.8842 (-0.2023->0.1920)| Loss 2.2706 | Acc 12.50% | Time: 0.19s
+
+>>> Round:  652 / Acc: 39.415% / Loss: 1.9583 / Grad Norm: 3.0543 / Grad Diff: 166.2743 / Time: 1.82s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 652 | CID:   0 ( 1/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 1.6676 | Acc 59.38% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 652 | CID:   1 ( 2/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 2.1035 | Acc 37.50% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 652 | CID:   2 ( 3/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 2.0146 | Acc 28.12% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 652 | CID:   3 ( 4/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 1.8570 | Acc 51.56% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 652 | CID:   4 ( 5/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 2.0112 | Acc 35.94% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 652 | CID:   5 ( 6/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 2.2183 | Acc 25.00% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 652 | CID:   8 ( 7/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 1.8076 | Acc 57.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 652 | CID:   9 ( 8/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 2.1897 | Acc 23.44% | Time: 0.17s
+
+>>> Round:  653 / Acc: 39.440% / Loss: 1.9582 / Grad Norm: 3.0543 / Grad Diff: 166.3303 / Time: 1.83s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 653 | CID:   1 ( 1/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 2.1352 | Acc 32.81% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 653 | CID:   4 ( 2/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 2.0670 | Acc 25.00% | Time: 0.16s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 653 | CID:   5 ( 3/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 2.1499 | Acc 15.62% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 653 | CID:   8 ( 4/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 1.8595 | Acc 53.12% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 653 | CID:   9 ( 5/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 2.1890 | Acc  9.38% | Time: 0.17s
+
+>>> Round:  654 / Acc: 39.457% / Loss: 1.9580 / Grad Norm: 3.0546 / Grad Diff: 166.3688 / Time: 1.84s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 654 | CID:   3 ( 1/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 1.8063 | Acc 59.38% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 654 | CID:   4 ( 2/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 1.9994 | Acc 28.12% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 654 | CID:   6 ( 3/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 1.7319 | Acc 59.38% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 654 | CID:   7 ( 4/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 1.9824 | Acc 40.62% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 654 | CID:   8 ( 5/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 1.8528 | Acc 53.12% | Time: 0.20s
+
+>>> Round:  655 / Acc: 39.462% / Loss: 1.9579 / Grad Norm: 3.0549 / Grad Diff: 166.4307 / Time: 1.85s
+======================================================================================================
+
+= Test = round: 655 / acc: 39.280% / loss: 1.9553 / Time: 0.15s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 655 | CID:   1 ( 1/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 2.1163 | Acc 26.56% | Time: 0.18s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 655 | CID:   3 ( 2/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 1.7740 | Acc 62.50% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 655 | CID:   4 ( 3/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 2.0539 | Acc 39.06% | Time: 0.19s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 655 | CID:   6 ( 4/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 1.7113 | Acc 54.69% | Time: 0.20s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 655 | CID:   7 ( 5/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 1.9916 | Acc 45.31% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 655 | CID:   8 ( 6/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 1.8740 | Acc 48.44% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 655 | CID:   9 ( 7/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 2.1379 | Acc 29.69% | Time: 0.16s
+
+>>> Round:  656 / Acc: 39.482% / Loss: 1.9577 / Grad Norm: 3.0554 / Grad Diff: 166.5331 / Time: 1.81s
+======================================================================================================
+
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 656 | CID:   0 ( 1/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 1.7140 | Acc 57.81% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 656 | CID:   2 ( 2/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 2.0393 | Acc 23.44% | Time: 0.17s
+local training with reg_J... lbd_reg_J =  0.0001
+Round: 656 | CID:   3 ( 3/10)| Param: norm 8.8843 (-0.2023->0.1920)| Loss 1.8793 | Acc 51.56% | Time: 0.17s
+local training with reg_J... lbd_reg_J = 
