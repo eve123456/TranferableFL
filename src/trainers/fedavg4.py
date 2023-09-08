@@ -50,7 +50,7 @@ class FedAvg4Trainer(BaseTrainer):
 
             # Solve minimization locally
             if not self.reg_J_flag:
-                solns, stats, J_locals, J_local_size = self.local_train(round_i, selected_clients, self.reg_J_flag, global_grads)
+                solns, stats = self.local_train(round_i, selected_clients)
             else:
                 gradnorm = np.linalg.norm(global_grads)
                 solns, stats = self.local_train_reg_J(round_i, selected_clients, self.lbd_reg_J, gradnorm)

@@ -52,7 +52,7 @@ class Client(object):
 
         return (len(self.train_data), grads), stats
 
-    def local_train(self, reg_J_flag, **kwargs):
+    def local_train(self, **kwargs):
         """Solves local optimization problem
 
         Returns:
@@ -67,7 +67,7 @@ class Client(object):
 
         bytes_w = self.worker.model_bytes
         begin_time = time.time()
-        local_solution, worker_stats, J_local = self.worker.local_train(self.train_dataloader, reg_J_flag, **kwargs)
+        local_solution, worker_stats = self.worker.local_train(self.train_dataloader, **kwargs)
         end_time = time.time()
         bytes_r = self.worker.model_bytes
 
@@ -75,7 +75,7 @@ class Client(object):
                  "time": round(end_time-begin_time, 2)}
         stats.update(worker_stats)
 
-        return (len(self.train_data), local_solution), stats, (len(self.train_data), J_local), J_local.size()
+        return (len(self.train_data), local_solution), stats
 
 
     def local_train_reg_J(self, lbd_reg_J, gradnorm, **kwargs):

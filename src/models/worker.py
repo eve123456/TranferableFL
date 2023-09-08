@@ -199,11 +199,12 @@ class LrdWorker(Worker):
             flat_grads = torch.cat(grads)
         return flat_grads
     
-    def local_train(self, train_dataloader, reg_J_flag, **kwargs):
+    def local_train(self, train_dataloader, **kwargs):
         # current_step = kwargs['T']
+        print("local training (vanilla)...")
         self.model.train()
         train_loss = train_acc = train_total = 0
-        for i in range(self.num_epoch*10):
+        for i in range(self.num_epoch):
             x, y = next(iter(train_dataloader))
             x = self.flatten_data(x)
             if self.gpu:
@@ -215,20 +216,7 @@ class LrdWorker(Worker):
             
             loss = criterion(pred, y)
             
-
-            if not reg_J_flag:
-                loss.backward()
-                J_local = self.get_flat_Jacobian_from(loss)
-
-            else:
-               
-                J_local = self.get_flat_Jacobian_from_avoid_backward(loss)
-                
-                self.optimizer.zero_grad()
-                loss = criterion(pred, y) + self.lbd_J * torch.norm(J_local - self.latest_J0)
-                loss.backward()
-                J_check = self.get_flat_Jacobian_from(loss)
-                print(f"new grad: \n{J_check}")
+            loss.backward()
             
             torch.nn.utils.clip_grad_norm(self.model.parameters(), 60)
             # lr = 100/(400+current_step+i)
@@ -251,20 +239,21 @@ class LrdWorker(Worker):
             "loss": train_loss/train_total,
                 "acc": train_acc/train_total}
         return_dict.update(param_dict)
-        return local_solution, return_dict, J_local
+        return local_solution, return_dict
 
     def local_train_reg_J(self, train_dataloader, lbd_reg_J, gradnorm, **kwargs):
         # current_step = kwargs['T']
+        print("local training with reg_J... lbd_reg_J = ", lbd_reg_J)
         self.model.train()
         train_loss = train_acc = train_total = 0
-        for i in range(self.num_epoch*10):
+        for i in range(self.num_epoch):
             x, y = next(iter(train_dataloader))
             x = self.flatten_data(x)
             if self.gpu:
                 x, y = x.type(torch.float).cuda(), y.cuda()
                 # x, y = x.cuda(), y.cuda()
         
-            self.optimizer.zero_grad()
+
             pred = self.model(x)
             
             loss_0 = criterion(pred, y)

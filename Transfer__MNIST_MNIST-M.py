@@ -26,35 +26,43 @@ def read_options():
                         type=int,
                         default=0)
 
-    parser.add_argument('--finetune_epochs',
-                        help='epochs for finetune;',
-                        type=int,
-                        # default=2)
-                        default = 100)
-
-    parser.add_argument('--num_round',
-                        help='number of rounds to simulate;',
-                        type=int,
-                        # default=1000)
-                        default = 200)
-
-    parser.add_argument('--num_epoch',
-                        help='number of epochs when clients train on data;',
-                        type=int,
-                        # default=1)
-                        default =10)
 
     parser.add_argument('--reg_J_flag',
-                        help='flag for regularizing J',
-                        type=bool,
-                        # default=10)
-                        default =True)
+                        help='flag for regularizing J, 1 for True, 0 for False',
+                        type=InterruptedError,
+                        default =1)
 
     parser.add_argument('--lbd_reg_J',
                         help='lambda for regularization on J',
                         type=float,
                         # default=10)
                         default =0.0001)
+
+    parser.add_argument('--finetune_epochs',
+                        help='epochs for finetune;',
+                        type=int,
+                        # default=2)
+                        default = 20)
+
+    parser.add_argument('--num_round',
+                        help='number of rounds to simulate;',
+                        type=int,
+                        default=1000)
+                        # default = 200)
+
+    parser.add_argument('--num_epoch',
+                        help='number of epochs when clients train on data;',
+                        type=int,
+                        # default=1)
+                        default =1)
+
+    
+
+    parser.add_argument('--ft_batch_size',
+                        help='batch size when clients train on data;',
+                        type=int,
+                        default=1024)
+    
 
     parser.add_argument('--algo',
                         help='name of trainer;',
@@ -135,7 +143,14 @@ def read_options():
     parsed = parser.parse_args()
     options = parsed.__dict__
     options['gpu'] = options['gpu'] and torch.cuda.is_available()
-
+    
+    print("\n\n\n reg_J_flag = ", options['reg_J_flag'])
+    print(type(options['reg_J_flag']))
+    print("\n\n\n","does", options['reg_J_flag'], "==", 0,"?  ", options['reg_J_flag'] == 0)
+    
+    options['reg_J_flag'] = False if options['reg_J_flag'] == 0 else True 
+    print("\n\n\n reg_J_flag = ", options['reg_J_flag'])
+    
     # Set seeds
     np.random.seed(1 + options['seed'])
     torch.manual_seed(12 + options['seed'])
@@ -184,9 +199,8 @@ trainer.train()
 
 # FL training finish here, save the latest server model
 flat_model_param = trainer.latest_model
-PATH = f"./models/{options['model']}_{dataset_name}_{options['algo']}"
+PATH = f"./models/{options['model']}_{dataset_name}_{options['algo']}_Fr{options['num_round']}_Fe{options['num_epoch']}_reg{options['reg_J_flag']}_{options['lbd_reg_J']}_s{options['seed']}"
 torch.save(flat_model_param, PATH)
-
 
 
 from src.utils.torch_utils import get_flat_grad, get_state_dict, get_flat_params_from, set_flat_params_to
@@ -197,7 +211,7 @@ from ft_functions import *
 flat_model_params = trainer.latest_model
 
 # Optional: load from the saved model.
-PATH = f"./models/{options['model']}_{dataset_name}_{options['algo']}"
+PATH = f"./models/{options['model']}_{dataset_name}_{options['algo']}_Fr{options['num_round']}_Fe{options['num_epoch']}_reg{options['reg_J_flag']}_{options['lbd_reg_J']}_s{options['seed']}"
 flat_model_params = torch.load(PATH)
 
 
@@ -264,13 +278,13 @@ if options['finetune_dataset'] == "mnist-m":
 
     tg_train_loader = torch.utils.data.DataLoader(
         dataset=tg_trainset,
-        batch_size=options['batch_size'],
+        batch_size=options['ft_batch_size'],
         shuffle=True,
         **kwargs)
 
     tg_test_loader = torch.utils.data.DataLoader(
         dataset=tg_testset,
-        batch_size=options['batch_size'],
+        batch_size=options['ft_batch_size'],
         shuffle=True,
         **kwargs)
 
@@ -284,8 +298,8 @@ elif options['finetune_dataset'] == "mnist":
     
     trainset = torchvision.datasets.MNIST(root=data_path, train =True, download=False, transform=img_transform_target)
     testset = torchvision.datasets.MNIST(root=data_path, train =False, download=False, transform=img_transform_target)
-    tg_train_loader = torch.utils.data.DataLoader(trainset, batch_size=options['batch_size'], shuffle=True, **kwargs)
-    tg_test_loader = torch.utils.data.DataLoader(testset, batch_size=options['batch_size'], shuffle=True, **kwargs)
+    tg_train_loader = torch.utils.data.DataLoader(trainset, batch_size=options['ft_batch_size'], shuffle=True, **kwargs)
+    tg_test_loader = torch.utils.data.DataLoader(testset, batch_size=options['ft_batch_size'], shuffle=True, **kwargs)
 
 
 
@@ -303,13 +317,12 @@ elif options['finetune_dataset'] == "mnist":
 ### Train model_ft
 print(f"Training model_ft...")
 ft_trn_main(model_ft, options, device,tg_train_loader, tg_test_loader, criterion)
+PATH = f"./models/{options['model']}_{dataset_name}_{options['algo']}_finetune_{options['finetune_dataset']}_Fr{options['num_round']}_Fe{options['num_epoch']}_fr{options['finetune_epochs']}_ftBS{options['ft_batch_size']}_reg{options['reg_J_flag']}_{options['lbd_reg_J']}_s{options['seed']}"
+torch.save(model_ft.state_dict(), PATH)
+
 # ### Evaluate model_source_only
 # res_sc_only = torch.zeros((2))
 # print(f"Evaluating model_source_only...")
 # model_source_only = model_source_only.to(device)
 # res_sc_only[0], res_sc_only[1] = ft_eval(model_source_only,device,tg_test_loader, criterion)
 # print(f"Tst_loss:{res_sc_only[0].item():.4f}, Tst_acc:{res_sc_only[1].item():.4f}")
-
-# Now save the final transfered model
-PATH = f"./models/{options['model']}_{dataset_name}_{options['algo']}_finetune_{options['finetune_dataset']}"
-torch.save(model_ft.state_dict(), PATH)

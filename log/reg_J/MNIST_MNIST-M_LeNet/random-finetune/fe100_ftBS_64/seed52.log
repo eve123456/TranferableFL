@@ -1,0 +1,145 @@
+nohup: ignoring input
+
+
+
+ reg_J_flag =  0
+<class 'int'>
+
+
+
+ does 0 == 0 ?   True
+
+
+
+ reg_J_flag =  False
+>>> Arguments:
+	             algo : fedavg4
+	       batch_size : 64
+	clients_per_round : 10
+	          dataset : mnist_all_data_1_random_niid
+	           device : 0
+	              dis : 
+	       eval_every : 5
+	 finetune_dataset : mnist-m
+	  finetune_epochs : 100
+	      finetune_lr : 0.01
+	      finetune_wd : 0.0
+	    ft_batch_size : 64
+	              gpu : True
+	      input_shape : (1, 28, 28)
+	        lbd_reg_J : 0.0001
+	               lr : 0.01
+	            model : LeNet
+	        noaverage : False
+	          noprint : False
+	        num_class : 10
+	        num_epoch : 10
+	        num_round : 200
+	       reg_J_flag : False
+	             seed : 52
+	               wd : 0.0
+>>> Read data from:
+     ./data/mnist/data/train/all_data_1_random_niid.pkl
+     ./data/mnist/data/test/all_data_1_random_niid.pkl
+Training model_flag...
+Epoch:001, Trn_loss:0.0018, Trn_acc:0.3583, Tst_loss:0.0087, Tst_acc:0.3512
+Epoch:002, Trn_loss:0.0019, Trn_acc:0.3643, Tst_loss:0.0102, Tst_acc:0.3532
+Epoch:003, Trn_loss:0.0020, Trn_acc:0.3771, Tst_loss:0.0088, Tst_acc:0.3715
+Epoch:004, Trn_loss:0.0017, Trn_acc:0.3738, Tst_loss:0.0084, Tst_acc:0.3675
+Epoch:005, Trn_loss:0.0018, Trn_acc:0.3684, Tst_loss:0.0086, Tst_acc:0.3646
+Epoch:006, Trn_loss:0.0019, Trn_acc:0.3780, Tst_loss:0.0075, Tst_acc:0.3723
+Epoch:007, Trn_loss:0.0018, Trn_acc:0.3494, Tst_loss:0.0097, Tst_acc:0.3421
+Epoch:008, Trn_loss:0.0020, Trn_acc:0.3877, Tst_loss:0.0089, Tst_acc:0.3805
+Epoch:009, Trn_loss:0.0019, Trn_acc:0.3691, Tst_loss:0.0072, Tst_acc:0.3603
+Epoch:010, Trn_loss:0.0017, Trn_acc:0.3849, Tst_loss:0.0074, Tst_acc:0.3837
+Epoch:011, Trn_loss:0.0017, Trn_acc:0.3956, Tst_loss:0.0074, Tst_acc:0.3890
+Epoch:012, Trn_loss:0.0017, Trn_acc:0.3750, Tst_loss:0.0082, Tst_acc:0.3667
+Epoch:013, Trn_loss:0.0019, Trn_acc:0.3539, Tst_loss:0.0108, Tst_acc:0.3425
+Epoch:014, Trn_loss:0.0019, Trn_acc:0.3904, Tst_loss:0.0090, Tst_acc:0.3824
+Epoch:015, Trn_loss:0.0017, Trn_acc:0.3824, Tst_loss:0.0096, Tst_acc:0.3762
+Epoch:016, Trn_loss:0.0020, Trn_acc:0.3526, Tst_loss:0.0076, Tst_acc:0.3457
+Epoch:017, Trn_loss:0.0017, Trn_acc:0.3803, Tst_loss:0.0080, Tst_acc:0.3748
+Epoch:018, Trn_loss:0.0019, Trn_acc:0.3632, Tst_loss:0.0100, Tst_acc:0.3564
+Epoch:019, Trn_loss:0.0018, Trn_acc:0.3883, Tst_loss:0.0079, Tst_acc:0.3793
+Epoch:020, Trn_loss:0.0019, Trn_acc:0.3501, Tst_loss:0.0086, Tst_acc:0.3427
+Epoch:021, Trn_loss:0.0019, Trn_acc:0.3632, Tst_loss:0.0081, Tst_acc:0.3538
+Epoch:022, Trn_loss:0.0019, Trn_acc:0.3827, Tst_loss:0.0071, Tst_acc:0.3770
+Epoch:023, Trn_loss:0.0020, Trn_acc:0.3670, Tst_loss:0.0081, Tst_acc:0.3633
+Epoch:024, Trn_loss:0.0020, Trn_acc:0.3791, Tst_loss:0.0091, Tst_acc:0.3697
+Epoch:025, Trn_loss:0.0018, Trn_acc:0.3765, Tst_loss:0.0089, Tst_acc:0.3716
+Epoch:026, Trn_loss:0.0020, Trn_acc:0.3925, Tst_loss:0.0077, Tst_acc:0.3826
+Epoch:027, Trn_loss:0.0019, Trn_acc:0.3827, Tst_loss:0.0087, Tst_acc:0.3740
+Epoch:028, Trn_loss:0.0019, Trn_acc:0.3804, Tst_loss:0.0069, Tst_acc:0.3776
+Epoch:029, Trn_loss:0.0016, Trn_acc:0.3781, Tst_loss:0.0093, Tst_acc:0.3731
+Epoch:030, Trn_loss:0.0017, Trn_acc:0.3851, Tst_loss:0.0076, Tst_acc:0.3820
+Epoch:031, Trn_loss:0.0019, Trn_acc:0.3656, Tst_loss:0.0087, Tst_acc:0.3558
+Epoch:032, Trn_loss:0.0016, Trn_acc:0.3801, Tst_loss:0.0083, Tst_acc:0.3722
+Epoch:033, Trn_loss:0.0019, Trn_acc:0.3764, Tst_loss:0.0092, Tst_acc:0.3683
+Epoch:034, Trn_loss:0.0015, Trn_acc:0.3838, Tst_loss:0.0086, Tst_acc:0.3753
+Epoch:035, Trn_loss:0.0018, Trn_acc:0.3748, Tst_loss:0.0088, Tst_acc:0.3690
+Epoch:036, Trn_loss:0.0014, Trn_acc:0.3707, Tst_loss:0.0070, Tst_acc:0.3618
+Epoch:037, Trn_loss:0.0018, Trn_acc:0.3820, Tst_loss:0.0081, Tst_acc:0.3784
+Epoch:038, Trn_loss:0.0017, Trn_acc:0.3941, Tst_loss:0.0090, Tst_acc:0.3882
+Epoch:039, Trn_loss:0.0015, Trn_acc:0.3797, Tst_loss:0.0099, Tst_acc:0.3770
+Epoch:040, Trn_loss:0.0019, Trn_acc:0.3975, Tst_loss:0.0066, Tst_acc:0.3862
+Epoch:041, Trn_loss:0.0020, Trn_acc:0.3920, Tst_loss:0.0082, Tst_acc:0.3836
+Epoch:042, Trn_loss:0.0019, Trn_acc:0.3818, Tst_loss:0.0083, Tst_acc:0.3767
+Epoch:043, Trn_loss:0.0017, Trn_acc:0.3850, Tst_loss:0.0079, Tst_acc:0.3813
+Epoch:044, Trn_loss:0.0020, Trn_acc:0.3661, Tst_loss:0.0079, Tst_acc:0.3632
+Epoch:045, Trn_loss:0.0019, Trn_acc:0.3871, Tst_loss:0.0106, Tst_acc:0.3836
+Epoch:046, Trn_loss:0.0020, Trn_acc:0.3796, Tst_loss:0.0086, Tst_acc:0.3743
+Epoch:047, Trn_loss:0.0019, Trn_acc:0.3738, Tst_loss:0.0092, Tst_acc:0.3704
+Epoch:048, Trn_loss:0.0018, Trn_acc:0.3840, Tst_loss:0.0083, Tst_acc:0.3758
+Epoch:049, Trn_loss:0.0019, Trn_acc:0.3584, Tst_loss:0.0083, Tst_acc:0.3580
+Epoch:050, Trn_loss:0.0019, Trn_acc:0.3795, Tst_loss:0.0087, Tst_acc:0.3731
+Epoch:051, Trn_loss:0.0018, Trn_acc:0.3812, Tst_loss:0.0086, Tst_acc:0.3716
+Epoch:052, Trn_loss:0.0019, Trn_acc:0.3623, Tst_loss:0.0081, Tst_acc:0.3597
+Epoch:053, Trn_loss:0.0017, Trn_acc:0.3793, Tst_loss:0.0086, Tst_acc:0.3785
+Epoch:054, Trn_loss:0.0017, Trn_acc:0.3721, Tst_loss:0.0082, Tst_acc:0.3632
+Epoch:055, Trn_loss:0.0019, Trn_acc:0.3798, Tst_loss:0.0079, Tst_acc:0.3812
+Epoch:056, Trn_loss:0.0022, Trn_acc:0.3778, Tst_loss:0.0088, Tst_acc:0.3711
+Epoch:057, Trn_loss:0.0020, Trn_acc:0.3660, Tst_loss:0.0074, Tst_acc:0.3595
+Epoch:058, Trn_loss:0.0017, Trn_acc:0.3890, Tst_loss:0.0084, Tst_acc:0.3792
+Epoch:059, Trn_loss:0.0016, Trn_acc:0.3856, Tst_loss:0.0093, Tst_acc:0.3766
+Epoch:060, Trn_loss:0.0020, Trn_acc:0.3581, Tst_loss:0.0087, Tst_acc:0.3534
+Epoch:061, Trn_loss:0.0019, Trn_acc:0.3841, Tst_loss:0.0093, Tst_acc:0.3773
+Epoch:062, Trn_loss:0.0018, Trn_acc:0.3744, Tst_loss:0.0099, Tst_acc:0.3618
+Epoch:063, Trn_loss:0.0018, Trn_acc:0.3787, Tst_loss:0.0083, Tst_acc:0.3734
+Epoch:064, Trn_loss:0.0018, Trn_acc:0.3671, Tst_loss:0.0080, Tst_acc:0.3590
+Epoch:065, Trn_loss:0.0020, Trn_acc:0.3703, Tst_loss:0.0085, Tst_acc:0.3634
+Epoch:066, Trn_loss:0.0018, Trn_acc:0.3867, Tst_loss:0.0089, Tst_acc:0.3762
+Epoch:067, Trn_loss:0.0018, Trn_acc:0.3818, Tst_loss:0.0096, Tst_acc:0.3737
+Epoch:068, Trn_loss:0.0021, Trn_acc:0.3787, Tst_loss:0.0092, Tst_acc:0.3758
+Epoch:069, Trn_loss:0.0018, Trn_acc:0.3905, Tst_loss:0.0093, Tst_acc:0.3800
+Epoch:070, Trn_loss:0.0018, Trn_acc:0.3733, Tst_loss:0.0084, Tst_acc:0.3714
+Epoch:071, Trn_loss:0.0021, Trn_acc:0.3731, Tst_loss:0.0072, Tst_acc:0.3674
+Epoch:072, Trn_loss:0.0018, Trn_acc:0.3765, Tst_loss:0.0081, Tst_acc:0.3684
+Epoch:073, Trn_loss:0.0019, Trn_acc:0.3449, Tst_loss:0.0083, Tst_acc:0.3425
+Epoch:074, Trn_loss:0.0018, Trn_acc:0.3837, Tst_loss:0.0096, Tst_acc:0.3817
+Epoch:075, Trn_loss:0.0019, Trn_acc:0.3846, Tst_loss:0.0097, Tst_acc:0.3777
+Epoch:076, Trn_loss:0.0017, Trn_acc:0.3382, Tst_loss:0.0078, Tst_acc:0.3369
+Epoch:077, Trn_loss:0.0020, Trn_acc:0.3866, Tst_loss:0.0093, Tst_acc:0.3783
+Epoch:078, Trn_loss:0.0016, Trn_acc:0.3783, Tst_loss:0.0101, Tst_acc:0.3710
+Epoch:079, Trn_loss:0.0018, Trn_acc:0.3846, Tst_loss:0.0081, Tst_acc:0.3763
+Epoch:080, Trn_loss:0.0018, Trn_acc:0.3895, Tst_loss:0.0091, Tst_acc:0.3847
+Epoch:081, Trn_loss:0.0018, Trn_acc:0.3771, Tst_loss:0.0103, Tst_acc:0.3692
+Epoch:082, Trn_loss:0.0017, Trn_acc:0.3529, Tst_loss:0.0081, Tst_acc:0.3461
+Epoch:083, Trn_loss:0.0020, Trn_acc:0.3815, Tst_loss:0.0084, Tst_acc:0.3745
+Epoch:084, Trn_loss:0.0015, Trn_acc:0.3443, Tst_loss:0.0102, Tst_acc:0.3452
+Epoch:085, Trn_loss:0.0017, Trn_acc:0.3547, Tst_loss:0.0108, Tst_acc:0.3524
+Epoch:086, Trn_loss:0.0021, Trn_acc:0.3808, Tst_loss:0.0083, Tst_acc:0.3734
+Epoch:087, Trn_loss:0.0017, Trn_acc:0.3823, Tst_loss:0.0074, Tst_acc:0.3690
+Epoch:088, Trn_loss:0.0020, Trn_acc:0.3736, Tst_loss:0.0084, Tst_acc:0.3700
+Epoch:089, Trn_loss:0.0019, Trn_acc:0.3720, Tst_loss:0.0081, Tst_acc:0.3683
+Epoch:090, Trn_loss:0.0019, Trn_acc:0.3575, Tst_loss:0.0080, Tst_acc:0.3494
+Epoch:091, Trn_loss:0.0018, Trn_acc:0.3725, Tst_loss:0.0087, Tst_acc:0.3710
+Epoch:092, Trn_loss:0.0019, Trn_acc:0.3831, Tst_loss:0.0093, Tst_acc:0.3800
+Epoch:093, Trn_loss:0.0019, Trn_acc:0.3794, Tst_loss:0.0085, Tst_acc:0.3742
+Epoch:094, Trn_loss:0.0018, Trn_acc:0.3652, Tst_loss:0.0090, Tst_acc:0.3610
+Epoch:095, Trn_loss:0.0020, Trn_acc:0.3690, Tst_loss:0.0083, Tst_acc:0.3634
+Epoch:096, Trn_loss:0.0018, Trn_acc:0.3791, Tst_loss:0.0092, Tst_acc:0.3758
+Epoch:097, Trn_loss:0.0019, Trn_acc:0.3762, Tst_loss:0.0096, Tst_acc:0.3706
+Epoch:098, Trn_loss:0.0018, Trn_acc:0.3881, Tst_loss:0.0093, Tst_acc:0.3784
+Epoch:099, Trn_loss:0.0020, Trn_acc:0.3705, Tst_loss:0.0078, Tst_acc:0.3617
+Epoch:100, Trn_loss:0.0018, Trn_acc:0.3874, Tst_loss:0.0075, Tst_acc:0.3811
+Finetune done
