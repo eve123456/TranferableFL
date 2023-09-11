@@ -1,1 +1,4 @@
 data/
+models/
+result/
+__pycache__/
