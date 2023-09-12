@@ -67,7 +67,7 @@ def ft_train(model, options, device, train_loader, test_loader, checkpoint_path)
             patience += 1
         
         if patience == options['early_stopping'] and options['early_stopping'] != 0:
-            print(f"Training early stopped. Model saved at {checkpoint_path}.")
+            print(f"Fine-tuning early stopped. Model saved at {checkpoint_path}.")
             break
         
         if not options['noprint']:

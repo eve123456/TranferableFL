@@ -268,15 +268,16 @@ def main():
 
     # `dataset` is a tuple like (cids, groups, train_data, test_data)
     all_data_info = read_data(train_path, test_path, sub_data)
-
+    
     # Call appropriate trainer
-    trainer = trainer_class(options, all_data_info)
+    model_path = f"./models/{options['model']}_{dataset_name}_{uid}.pt"
+    trainer = trainer_class(options, all_data_info, model_path)
     trainer.train()
 
     # FL training finish here, save the latest server model
-    flat_model_params = trainer.latest_model
-    model_path = f"./models/{options['model']}_{dataset_name}_{options['algo']}.pt"
-    torch.save(flat_model_params, model_path)
+    # flat_model_params = trainer.latest_model
+    # torch.save(flat_model_params, model_path)
+    flat_model_params = torch.load(model_path)
 
     # Initialize new models
     model_source_only = choose_model(options)  # baseline: lower bound (f on source, g on source)

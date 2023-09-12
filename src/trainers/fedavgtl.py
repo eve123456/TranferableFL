@@ -14,7 +14,7 @@ class FedAvgTLTrainer(BaseTrainer):
     """
     Scheme I and Scheme II, based on the flag of self.simple_average
     """
-    def __init__(self, options, dataset):
+    def __init__(self, options, dataset, checkpoint_path):
         model = choose_model(options)
         # set the model parameters to the best so far
         set_flat_params_to(model, options['model_init'])
@@ -26,6 +26,8 @@ class FedAvgTLTrainer(BaseTrainer):
         super(FedAvgTLTrainer, self).__init__(options, dataset, worker=worker)
         self.prob = self.compute_prob()
         self.alpha = options['alpha']
+        self.checkpoint_path = checkpoint_path
+        self.early_stopping = options['early_stopping']
 
     def train(self):
         print('>>> Select {} clients per round \n'.format(self.clients_per_round))
@@ -33,13 +35,27 @@ class FedAvgTLTrainer(BaseTrainer):
         # Fetch latest flat model parameter
         self.latest_model = self.worker.get_flat_model_params().detach()
         last_round_avg_local_grad_norm = None
-
+        best_loss = float('inf')
+        patience = 0
+        
         for round_i in range(self.num_round):
 
             # Test latest model on train data
             _, local_grads_norm_square = self.test_latest_model_on_traindata(round_i)
             self.test_latest_model_on_evaldata(round_i)
-
+            
+            # check for early stopping after we evaluate the loss on training data
+            if self.metrics.loss_on_train_data[round_i] < best_loss:
+                torch.save(self.latest_model, self.checkpoint_path)
+                best_loss = self.metrics.loss_on_train_data[round_i]
+                patience = 0
+            else:
+                patience += 1
+            
+            if patience == self.early_stopping and self.early_stopping != 0:
+                print(f"Training early stopped. Model saved at {self.checkpoint_path}.")
+                break
+            
             # Choose K clients prop to data size
             # if self.simple_average:
             #     selected_clients, repeated_times = self.select_clients_with_prob(seed=round_i)
