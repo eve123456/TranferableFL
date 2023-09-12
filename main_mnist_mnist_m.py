@@ -129,6 +129,10 @@ def read_options():
                         help='estimate of lipschitz continuous gradient constant (0 means no estimate yet);',
                         type=float,
                         default=0.0)
+    parser.add_argument('--last_k',
+                        help='number of fc layers to fine-tune;',
+                        type=int,
+                        default=2)
 
     parsed = parser.parse_args([])
     options = parsed.__dict__
@@ -195,14 +199,19 @@ def eval_hessian(model, data_loader, criterion, device, compute_alpha):
     return total_loss, alpha
 
 
-def freeze(model):
+def freeze(model, k):
+    # only fine-tune the last k fc layers (if there are more than k fc layers)
+    num_layer = 0
     for mod in model.children():
         for params in mod.parameters():
             params.requires_grad = False
+        num_layer += 1
 
-    # fix the last layer
-    for params in mod.parameters():
-        params.requires_grad = True
+    for mod in model.children():
+        num_layer -= 1
+        if num_layer <= k and isinstance(mod, torch.nn.Linear):
+            for params in mod.parameters():
+                params.requires_grad = True
 
 
 def main():
@@ -273,9 +282,9 @@ def main():
 
     # Now model is set with flat_model_params
     # Start fine-tuning below
-    # First, freeze all but last layer
-    freeze(model_random)
-    freeze(model_ft)
+    # First, freeze all but last k fc layers
+    freeze(model_random, options['last_k'])
+    freeze(model_ft, options['last_k'])
 
     # load the fine-tuning dataset
     ft_train_loader, ft_test_loader = get_loader('./data/mnist_m', options['ft_dataset'], options['ft_batch_size'], num_workers=16)
