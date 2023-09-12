@@ -65,4 +65,19 @@ matplotlib = 3.0.0
 tensorboardX
 
 
+## MNIST-M data preparation
+
+- To generate MNIST data for pretrain, please run "python data/mnist/generate_random_niid.py"
+- To generate MNIST-M data for finetune, please download an mnist_m.tar.gz file from "https://drive.google.com/open?id=0B_tExHiYS-0veklUZHFYT19KYjg" to the path "./data/TARGET/mnist-m", and then unzip it:"cd data/TARGET/mnist-m", "tar -xf mnist_m.tar.gz"
+
+## Run code in background
+`nohup python Transfer__MNIST_MNIST-M.py >> xx.log 2>&1 &`
+
+## Baselines
+model_source_only: federatedly train on source domain
+model_target_only: train on target domain
+model_random: randomly initialized the model and freeze it, finetune the last layer on target domain
+model_ft: federatedly train on source domain, finetune the last layer on target domain.
+
+
 
