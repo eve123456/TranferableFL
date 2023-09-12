@@ -1,4 +1,5 @@
 import numpy as np
+import datetime
 import argparse
 import warnings
 import importlib
@@ -133,6 +134,10 @@ def read_options():
                         help='number of fc layers to fine-tune;',
                         type=int,
                         default=2)
+    parser.add_argument('--early_stopping',
+                        help='number of epochs for early stopping during training (0 means no early stopping);',
+                        type=int,
+                        default=20)
 
     parsed = parser.parse_args([])
     options = parsed.__dict__
@@ -215,6 +220,9 @@ def freeze(model, k):
 
 
 def main():
+    # create unique id for saving files
+    uid = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+    
     # Parse command line arguments
     options, trainer_class, dataset_name, sub_data = read_options()
 
@@ -288,18 +296,19 @@ def main():
 
     # load the fine-tuning dataset
     ft_train_loader, ft_test_loader = get_loader('./data/mnist_m', options['ft_dataset'], options['ft_batch_size'], num_workers=16)
-
+    checkpoint_prefix = f'./models/ft_checkpoints/{uid}_'
+    
     # Train model_target_only
     print('>>> Training model_target_only')
-    model_target_only_results = ft_train(model_target_only, options, options['device'], ft_train_loader, ft_test_loader)
+    _, model_target_only_results = ft_train(model_target_only, options, options['device'], ft_train_loader, ft_test_loader, checkpoint_prefix + 'model_target_only.pt')
 
     # fine-tuning
     print('>>> Training model_ft')
-    model_ft_results = ft_train(model_ft, options, options['device'], ft_train_loader, ft_test_loader)
+    _, model_ft_results = ft_train(model_ft, options, options['device'], ft_train_loader, ft_test_loader, checkpoint_prefix + 'model_ft.pt')
 
     # fine-tuning random model
     print('>>> Training model_random')
-    model_random_results = ft_train(model_random, options, options['device'], ft_train_loader, ft_test_loader)
+    _, model_random_results = ft_train(model_random, options, options['device'], ft_train_loader, ft_test_loader, checkpoint_prefix + 'model_random.pt')
 
     # evaluate model_source_only
     print('>>> Evaluating model_source_only')
@@ -310,9 +319,9 @@ def main():
     model_source_only_results[2], model_source_only_results[3] = eval(model_source_only, options['device'],
                                                                       ft_test_loader, criterion=criterion)
 
-    print(f'model_target_only: {model_target_only_results[-1]}')
-    print(f'model_ft: {model_ft_results[-1]}')
-    print(f'model_random: {model_random_results[-1]}')
+    print(f'model_target_only: {model_target_only_results}')
+    print(f'model_ft: {model_ft_results}')
+    print(f'model_random: {model_random_results}')
     print(f'model_source_only: {model_source_only_results}')
 
 
