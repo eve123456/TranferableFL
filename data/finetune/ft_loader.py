@@ -47,8 +47,9 @@ def get_loader(image_dir, dataset_name, batch_size, **kwargs):
     img_transform = transforms.Compose([
         transforms.Resize(28),
         transforms.ToTensor(),
-        lambda x: x * 255,
-        transforms.Grayscale()
+        # lambda x: x * 255,
+        transforms.Grayscale(),
+        transforms.Normalize((0.4549,), (0.2208,))  # These are the mean and std computed on mnist_m_train
     ])
 
     trainset = FTDataset(
@@ -69,7 +70,7 @@ def get_loader(image_dir, dataset_name, batch_size, **kwargs):
         shuffle=True,
         **kwargs)
 
-    test_loader = torch.utils.data.DataLoader(
+    test_loader = DataLoader(
         dataset=testset,
         batch_size=batch_size,
         shuffle=False,

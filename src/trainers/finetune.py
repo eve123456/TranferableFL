@@ -76,6 +76,7 @@ def ft_train(model, options, device, train_loader, test_loader, checkpoint_path)
                   f"Test_loss: {results[epoch, 2].item():.4f}, "
                   f"Test_acc: {results[epoch, 3].item():.4f}")
     
+    print(f"Model saved at {checkpoint_path}.")
     model.load_state_dict(torch.load(checkpoint_path))
     best_results = [0.0, 0.0, 0.0, 0.0]
     best_results[0], best_results[1] = eval(model, device, train_loader, criterion)

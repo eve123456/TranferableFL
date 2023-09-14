@@ -103,8 +103,7 @@ class MiniDataset(Dataset):
                  ]
             )
         elif self.data.ndim == 3:
-            # self.data = np.expand_dims(self.data, axis=1).astype(np.float64)
-            self.data = self.data.reshape((-1, 28, 28, 1)).astype("float32")
+            self.data = self.data.reshape((-1, 28, 28, 1)).astype("uint8")
             self.transform = transforms.Compose(
                 [transforms.ToTensor(),
                  transforms.Normalize((0.1307,), (0.3081,))
