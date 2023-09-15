@@ -81,8 +81,8 @@ class FedAvgTLTrainer(BaseTrainer):
             self.metrics.extend_commu_stats(round_i, stats)
 
             # Update latest model
-            self.latest_model = self.aggregate(solns, repeated_times=repeated_times)    
-            self.optimizer.inverse_prop_decay_learning_rate(round_i)
+            self.latest_model = self.aggregate(solns, repeated_times=repeated_times)
+            # self.optimizer.inverse_prop_decay_learning_rate(round_i)
 
             # aggregate the local gradients and compute the norm
             last_round_avg_local_grad_norm = torch.norm(torch.mean(torch.stack(local_grads, dim=0), dim=0))
