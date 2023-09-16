@@ -35,7 +35,8 @@ class FedAvgTLTrainer(BaseTrainer):
         # Fetch latest flat model parameter
         self.latest_model = self.worker.get_flat_model_params().detach()
         last_round_avg_local_grad_norm = None
-        best_loss = float('inf')
+        best_train_loss = float('inf')
+        best_test_acc = 0
         patience = 0
         
         for round_i in range(self.num_round):
@@ -45,9 +46,10 @@ class FedAvgTLTrainer(BaseTrainer):
             self.test_latest_model_on_evaldata(round_i)
             
             # check for early stopping after we evaluate the loss on training data
-            if self.metrics.loss_on_train_data[round_i] < best_loss:
+            if self.metrics.loss_on_train_data[round_i] < best_train_loss:
                 torch.save(self.latest_model, self.checkpoint_path)
-                best_loss = self.metrics.loss_on_train_data[round_i]
+                best_train_loss = self.metrics.loss_on_train_data[round_i]
+                best_test_acc = self.metrics.acc_on_eval_data[round_i]
                 patience = 0
             else:
                 patience += 1
@@ -93,6 +95,7 @@ class FedAvgTLTrainer(BaseTrainer):
 
         # Save tracked information
         self.metrics.write()
+        return best_test_acc
 
     def compute_prob(self):
         probs = []

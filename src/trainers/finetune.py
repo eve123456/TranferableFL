@@ -70,7 +70,7 @@ def ft_train(model, options, device, train_loader, test_loader, checkpoint_path)
             print(f"Fine-tuning early stopped. Model saved at {checkpoint_path}.")
             break
         
-        if not options['noprint']:
+        if not options['noprint'] and epoch % options['eval_every'] == 0:
             print(f"Epoch: {epoch + 1:03d}, Train_loss: {results[epoch, 0].item():.4f}, "
                   f"Train_acc: {results[epoch, 1].item():.4f}, "
                   f"Test_loss: {results[epoch, 2].item():.4f}, "

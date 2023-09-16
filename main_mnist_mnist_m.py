@@ -1,4 +1,6 @@
 import numpy as np
+import pickle
+import json
 import datetime
 import argparse
 import warnings
@@ -65,7 +67,7 @@ def read_options():
     parser.add_argument('--num_round',
                         help='number of rounds to simulate;',
                         type=int,
-                        default=2)
+                        default=200)
     parser.add_argument('--eval_every',
                         help='evaluate every ____ rounds;',
                         type=int,
@@ -101,7 +103,7 @@ def read_options():
     parser.add_argument('--reg_J_coef',
                         help='coefficient for regularization on Jacobian;',
                         type=float,
-                        default=1e-3)
+                        default=0.0)
     parser.add_argument('--ft_dataset',
                         help='dataset for fine-tuning;',
                         type=str,
@@ -109,7 +111,7 @@ def read_options():
     parser.add_argument('--ft_epochs',
                         help='epochs for fine-tuning;',
                         type=int,
-                        default=2)
+                        default=200)
     parser.add_argument('--ft_batch_size',
                         help='batch size for fine-tuning;',
                         type=int,
@@ -117,7 +119,7 @@ def read_options():
     parser.add_argument('--ft_lr',
                         help='learning rate for fine-tuning;',
                         type=float,
-                        default=0.01)
+                        default=1e-3)
     parser.add_argument('--ft_wd',
                         help='weight decay for fine-tuning;',
                         type=float,
@@ -125,24 +127,28 @@ def read_options():
     parser.add_argument('--n_init',
                         help='number of initial models to consider;',
                         type=int,
-                        default=2)
+                        default=10)
     parser.add_argument('--alpha',
                         help='estimate of lipschitz continuous gradient constant (0 means no estimate yet);',
                         type=float,
-                        default=0.0)
+                        default=13.2316427)
     parser.add_argument('--last_k',
                         help='number of fc layers to fine-tune;',
                         type=int,
-                        default=2)
+                        default=1)
     parser.add_argument('--early_stopping',
                         help='number of epochs for early stopping during training (0 means no early stopping);',
                         type=int,
-                        default=20)
+                        default=10)
     parser.add_argument('--noft',
                         action='store_true',
                         default=False,
                         help='not performing fine-tuning (default: False);')
-
+    parser.add_argument('--repeat',
+                        help='number of repeated trails;',
+                        type=int,
+                        default=5)
+    
     parsed = parser.parse_args()
     options = parsed.__dict__
     options['gpu'] = options['gpu'] and torch.cuda.is_available()
@@ -224,10 +230,6 @@ def freeze(model, k):
 
 
 def main():
-    # create unique id for saving files
-    uid = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
-    print(f'uid: {uid}')
-    
     # Parse command line arguments
     options, trainer_class, dataset_name, sub_data = read_options()
 
@@ -262,76 +264,111 @@ def main():
     options['model_init'] = best_model_init
     print(f'>>> The estimate of constant alpha is {best_alpha}.')
 
-    # Set seeds
-    # np.random.seed(1 + options['seed'])
-    # torch.manual_seed(12 + options['seed'])
-    # if options['gpu']:
-    #     torch.cuda.manual_seed_all(123 + options['seed'])
-
+    # read the data
     train_path = os.path.join('./data', dataset_name, 'data', 'train')
     test_path = os.path.join('./data', dataset_name, 'data', 'test')
 
     # `dataset` is a tuple like (cids, groups, train_data, test_data)
     all_data_info = read_data(train_path, test_path, sub_data)
+    # load the fine-tuning dataset
+    ft_train_loader, ft_test_loader = get_loader('./data/mnist_m', options['ft_dataset'], options['ft_batch_size'], num_workers=16)
     
-    # Call appropriate trainer
-    model_path = f"./models/{options['model']}_{dataset_name}_{uid}.pt"
-    print(f'FL pretrained model will be saved at {model_path}')
-    trainer = trainer_class(options, all_data_info, model_path)
-    trainer.train()
+    # record the metrics for different trails
+    fl_test_acc = [0.0] * options['repeat']
+    model_source_only_test_acc = [0.0] * options['repeat']
+    model_ft_test_acc = [0.0] * options['repeat']
+    model_target_only_test_acc = [0.0] * options['repeat']
+    model_random_test_acc = [0.0] * options['repeat']
     
-    if not options['noft']:
-        # FL training finish here, save the latest server model
-        # flat_model_params = trainer.latest_model
-        # torch.save(flat_model_params, model_path)
-        flat_model_params = torch.load(model_path)
+    for repeat_i in range(options['repeat']):
+        print('\n' + '*' * 120 + '\n')
+        # Set seeds
+        np.random.seed(repeat_i + options['seed'])
+        torch.manual_seed(repeat_i + 10 + options['seed'])
+        if options['gpu']:
+            torch.cuda.manual_seed_all(repeat_i + 100 + options['seed'])
 
-        # Initialize new models
-        model_source_only = choose_model(options)  # baseline: lower bound (f on source, g on source)
-        model_ft = choose_model(options)  # baseline: standard fine-tune (f on source, g on target)
-        model_target_only = choose_model(options)  # baseline: upper bound (f on target, g on target)
-        model_random = choose_model(options)  # baseline: lower bound (f random, g on target)
+        # create unique id for saving files
+        uid = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+        print(f'uid: {uid}')
 
-        # Assign model params
-        set_flat_params_to(model_source_only, flat_model_params)
-        set_flat_params_to(model_ft, flat_model_params)
+        # Call appropriate trainer
+        model_path = f"./models/{options['model']}_{dataset_name}_{uid}.pt"
+        print(f'FL pretrained model will be saved at {model_path}')
+        trainer = trainer_class(options, all_data_info, model_path)
+        fl_test_acc[repeat_i] = trainer.train()
 
-        # Now model is set with flat_model_params
-        # Start fine-tuning below
-        # First, freeze all but last k fc layers
-        freeze(model_random, options['last_k'])
-        freeze(model_ft, options['last_k'])
+        if not options['noft']:
+            # FL training finish here, save the latest server model
+            # flat_model_params = trainer.latest_model
+            # torch.save(flat_model_params, model_path)
+            flat_model_params = torch.load(model_path)
 
-        # load the fine-tuning dataset
-        ft_train_loader, ft_test_loader = get_loader('./data/mnist_m', options['ft_dataset'], options['ft_batch_size'], num_workers=16)
-        checkpoint_prefix = f'./models/ft_checkpoints/{uid}_'
+            # Initialize new models
+            model_source_only = choose_model(options)  # baseline: lower bound (f on source, g on source)
+            model_ft = choose_model(options)  # baseline: standard fine-tune (f on source, g on target)
+            model_target_only = choose_model(options)  # baseline: upper bound (f on target, g on target)
+            model_random = choose_model(options)  # baseline: lower bound (f random, g on target)
 
-        # Train model_target_only
-        print('>>> Training model_target_only')
-        _, model_target_only_results = ft_train(model_target_only, options, options['device'], ft_train_loader, ft_test_loader, checkpoint_prefix + 'model_target_only.pt')
+            # Assign model params
+            set_flat_params_to(model_source_only, flat_model_params)
+            set_flat_params_to(model_ft, flat_model_params)
 
-        # fine-tuning
-        print('>>> Training model_ft')
-        _, model_ft_results = ft_train(model_ft, options, options['device'], ft_train_loader, ft_test_loader, checkpoint_prefix + 'model_ft.pt')
+            # Now model is set with flat_model_params
+            # Start fine-tuning below
+            # First, freeze all but last k fc layers
+            freeze(model_random, options['last_k'])
+            freeze(model_ft, options['last_k'])
 
-        # fine-tuning random model
-        print('>>> Training model_random')
-        _, model_random_results = ft_train(model_random, options, options['device'], ft_train_loader, ft_test_loader, checkpoint_prefix + 'model_random.pt')
+            checkpoint_prefix = f'./models/ft_checkpoints/{uid}_'
+            # Train model_target_only
+            print('>>> Training model_target_only')
+            _, model_target_only_results = ft_train(model_target_only, options, options['device'], ft_train_loader, ft_test_loader, checkpoint_prefix + 'model_target_only.pt')
 
-        # evaluate model_source_only
-        print('>>> Evaluating model_source_only')
-        model_source_only = model_source_only.to(options['device'])
-        model_source_only_results = [0., 0., 0., 0.]
-        model_source_only_results[0], model_source_only_results[1] = eval(model_source_only, options['device'],
-                                                                          ft_train_loader, criterion=criterion)
-        model_source_only_results[2], model_source_only_results[3] = eval(model_source_only, options['device'],
-                                                                          ft_test_loader, criterion=criterion)
+            # fine-tuning
+            print('>>> Training model_ft')
+            _, model_ft_results = ft_train(model_ft, options, options['device'], ft_train_loader, ft_test_loader, checkpoint_prefix + 'model_ft.pt')
 
-        print(f'model_target_only: {model_target_only_results}')
-        print(f'model_ft: {model_ft_results}')
-        print(f'model_random: {model_random_results}')
-        print(f'model_source_only: {model_source_only_results}')
+            # fine-tuning random model
+            print('>>> Training model_random')
+            _, model_random_results = ft_train(model_random, options, options['device'], ft_train_loader, ft_test_loader, checkpoint_prefix + 'model_random.pt')
 
+            # evaluate model_source_only
+            print('>>> Evaluating model_source_only')
+            model_source_only = model_source_only.to(options['device'])
+            model_source_only_results = [0., 0., 0., 0.]
+            model_source_only_results[0], model_source_only_results[1] = eval(model_source_only, options['device'],
+                                                                              ft_train_loader, criterion=criterion)
+            model_source_only_results[2], model_source_only_results[3] = eval(model_source_only, options['device'],
+                                                                              ft_test_loader, criterion=criterion)
+
+            print(f'model_target_only: {model_target_only_results}')
+            print(f'model_ft: {model_ft_results}')
+            print(f'model_random: {model_random_results}')
+            print(f'model_source_only: {model_source_only_results}')
+            
+            model_target_only_test_acc[repeat_i] = model_target_only_results[-1]
+            model_ft_test_acc[repeat_i] = model_ft_results[-1]
+            model_random_test_acc[repeat_i] = model_random_results[-1]
+            model_source_only_test_acc[repeat_i] = model_source_only_results[-1]
+    
+    fl_test_acc = [0.0] * options['repeat']
+    model_source_only_test_acc = [0.0] * options['repeat']
+    model_ft_test_acc = [0.0] * options['repeat']
+    model_target_only_test_acc = [0.0] * options['repeat']
+    model_random_test_acc = [0.0] * options['repeat']
+    
+    print('fl_test_acc_mean', np.mean(fl_test_acc))
+    print('model_source_only_test_acc_mean', np.mean(model_source_only_test_acc))
+    print('model_ft_test_acc_mean', np.mean(model_ft_test_acc))
+    print('model_target_only_test_acc_mean', np.mean(model_target_only_test_acc))
+    print('model_random_test_acc_mean', np.mean(model_random_test_acc))
+    
+    final_metrics = {'fl_test_acc': fl_test_acc, 'model_source_only_test_acc': model_source_only_test_acc, 'model_ft_test_acc': model_ft_test_acc,
+                    'model_target_only_test_acc': model_target_only_test_acc, 'model_random_test_acc': model_random_test_acc}
+    
+    with open(f'./result/mnist_all_data_1_equal_niid/{uid}.json', 'w') as ouf:
+        json.dump(final_metrics, ouf)
 
 if __name__ == '__main__':
     main()
