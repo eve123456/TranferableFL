@@ -352,12 +352,6 @@ def main():
             model_random_test_acc[repeat_i] = model_random_results[-1]
             model_source_only_test_acc[repeat_i] = model_source_only_results[-1]
     
-    fl_test_acc = [0.0] * options['repeat']
-    model_source_only_test_acc = [0.0] * options['repeat']
-    model_ft_test_acc = [0.0] * options['repeat']
-    model_target_only_test_acc = [0.0] * options['repeat']
-    model_random_test_acc = [0.0] * options['repeat']
-    
     print('fl_test_acc_mean', np.mean(fl_test_acc))
     print('model_source_only_test_acc_mean', np.mean(model_source_only_test_acc))
     print('model_ft_test_acc_mean', np.mean(model_ft_test_acc))
