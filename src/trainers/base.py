@@ -182,7 +182,7 @@ class BaseTrainer(object):
         end_time = time.time()
 
         self.metrics.update_train_stats(round_i, stats_from_train_data)
-        if self.print_result:
+        if self.print_result and round_i % self.eval_every == 0:
             print('\n>>> Round: {: >4d} / Acc: {:.3%} / Loss: {:.4f} /'
                   ' Grad Norm: {:.4f} / Grad Diff: {:.4f} / Time: {:.2f}s'.format(
                    round_i, stats_from_train_data['acc'], stats_from_train_data['loss'],

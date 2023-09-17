@@ -111,6 +111,7 @@ class Worker(object):
             # loss term for reg_J
             if self.reg_J_coef != 0:
                 # TODO: think about the reg_J term for Worker class
+                raise NotImplementedError
                 latest_model_local_grad = self.get_flat_grads(train_dataloader).detach()
 
             for batch_idx, (x, y) in enumerate(train_dataloader):
@@ -282,3 +283,60 @@ class LrAdjustWorker(Worker):
         
         self.optimizer.set_lr(current_lr)
         return local_solution, return_dict
+
+    
+class FedProxWorker(Worker):
+    def __init__(self, model, optimizer, options):
+        self.num_epoch = options['num_epoch']
+        super(FedProxWorker, self).__init__(model, optimizer, options)
+    
+    def local_train(self, train_dataloader, **kwargs):
+        # current_step = kwargs['T']
+        self.model.train()
+        train_loss = train_acc = train_total = 0
+        
+        # record the snapshot of the global model parameters
+        global_model_params = self.model.parameters().detach().clone()
+        
+        for i in range(self.num_epoch * 10):
+            x, y = next(iter(train_dataloader))
+            
+            # compute proximal loss
+            proximal_term = 0.0
+            if self.reg_J_coef != 0:
+                for w, w_t in zip(self.model.parameters(), global_model_params):
+                    proximal_term += (w - w_t).norm(2) ** 2
+
+            x = self.flatten_data(x)
+            if self.gpu:
+                x, y = x.cuda(), y.cuda()
+            
+            self.optimizer.zero_grad()
+            pred = self.model(x)
+            loss = criterion(pred, y) + self.reg_J_coef * proximal_term
+            loss.backward()
+            torch.nn.utils.clip_grad_norm_(self.model.parameters(), 60)
+            self.optimizer.step()
+            
+            _, predicted = torch.max(pred, 1)
+            correct = predicted.eq(y).sum().item()
+            target_size = y.size(0)
+            
+            train_loss += loss.item() * y.size(0)
+            train_acc += correct
+            train_total += target_size
+        
+        local_solution = self.get_flat_model_params()
+        param_dict = {"norm": torch.norm(local_solution).item(),
+                      "max": local_solution.max().item(),
+                      "min": local_solution.min().item()}
+        comp = self.num_epoch * train_total * self.flops
+        return_dict = {"comp": comp,
+                       "loss": train_loss / train_total,
+                       "acc": train_acc / train_total}
+        return_dict.update(param_dict)
+
+        # in the end, we need to compute the gradient again on the local dataset
+        local_grad = self.get_flat_grads(train_dataloader).detach()
+
+        return local_solution, return_dict, local_grad

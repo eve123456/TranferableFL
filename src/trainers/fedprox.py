@@ -1,7 +1,7 @@
 from src.utils.torch_utils import set_flat_params_to
 from src.trainers.base import BaseTrainer
 from src.models.model import choose_model
-from src.models.worker import LrdWorker
+from src.models.worker import FedProxWorker
 from src.optimizers.gd import GD
 import numpy as np
 import torch
@@ -10,9 +10,9 @@ import torch
 criterion = torch.nn.CrossEntropyLoss()
 
 
-class FedAvgTLTrainer(BaseTrainer):
+class FedProxTrainer(BaseTrainer):
     """
-    Scheme I and Scheme II, based on the flag of self.simple_average
+        FedProx Algorithm
     """
     def __init__(self, options, dataset, checkpoint_path):
         model = choose_model(options)
@@ -21,11 +21,9 @@ class FedAvgTLTrainer(BaseTrainer):
         self.move_model_to_gpu(model, options)
         self.optimizer = GD(model.parameters(), lr=options['lr'], weight_decay=options['wd'])
         self.num_epoch = options['num_epoch']
-        self.opt_lr = options['opt_lr']
-        worker = LrdWorker(model, self.optimizer, options)
-        super(FedAvgTLTrainer, self).__init__(options, dataset, worker=worker)
+        worker = FedProxWorker(model, self.optimizer, options)
+        super(FedProxTrainer, self).__init__(options, dataset, worker=worker)
         self.prob = self.compute_prob()
-        self.alpha = options['alpha']
         self.checkpoint_path = checkpoint_path
         self.early_stopping = options['early_stopping']
 
@@ -34,7 +32,7 @@ class FedAvgTLTrainer(BaseTrainer):
 
         # Fetch latest flat model parameter
         self.latest_model = self.worker.get_flat_model_params().detach()
-        last_round_avg_local_grad_norm = None
+
         best_train_loss = float('inf')
         best_test_acc = 0
         patience = 0
@@ -42,7 +40,7 @@ class FedAvgTLTrainer(BaseTrainer):
         for round_i in range(self.num_round):
 
             # Test latest model on train data
-            _, local_grads_norm_square = self.test_latest_model_on_traindata(round_i)
+            self.test_latest_model_on_traindata(round_i)
             self.test_latest_model_on_evaldata(round_i)
             
             # check for early stopping after we evaluate the loss on training data
@@ -70,14 +68,8 @@ class FedAvgTLTrainer(BaseTrainer):
             repeated_times = [1] * len(self.clients)
 
             # Solve minimization locally
-            # check if we need to optimize the learning rate at each round
-            if self.opt_lr:
-                if last_round_avg_local_grad_norm is not None:
-                    new_lr = self.clients_per_round * last_round_avg_local_grad_norm ** 2 / self.alpha / local_grads_norm_square
-                    self.optimizer.set_lr(new_lr)
             print(f'round {round_i} local learning rate = {self.optimizer.get_current_lr()}')
-            
-            solns, stats, local_grads = self.local_train(round_i, selected_clients, last_round_avg_local_grad_norm=last_round_avg_local_grad_norm)
+            solns, stats, local_grads = self.local_train(round_i, selected_clients)
 
             # Track communication cost
             self.metrics.extend_commu_stats(round_i, stats)
@@ -85,9 +77,6 @@ class FedAvgTLTrainer(BaseTrainer):
             # Update latest model
             self.latest_model = self.aggregate(solns, repeated_times=repeated_times)
             # self.optimizer.inverse_prop_decay_learning_rate(round_i)
-
-            # aggregate the local gradients and compute the norm
-            last_round_avg_local_grad_norm = torch.norm(torch.mean(torch.stack(local_grads, dim=0), dim=0))
 
         # Test final model on train data
         self.test_latest_model_on_traindata(self.num_round)
@@ -138,4 +127,3 @@ class FedAvgTLTrainer(BaseTrainer):
 
         # averaged_solution = from_numpy(averaged_solution, self.gpu)
         return averaged_solution.detach()
-
