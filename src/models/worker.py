@@ -2,6 +2,7 @@ from src.utils.flops_counter import get_model_complexity_info
 from src.utils.torch_utils import get_flat_grad, get_state_dict, get_flat_params_from, set_flat_params_to
 import torch.nn as nn
 import torch
+import copy
 
 
 criterion = nn.CrossEntropyLoss()
@@ -195,7 +196,7 @@ class LrdWorker(Worker):
 
             # loss term for reg_J
             if self.reg_J_coef != 0 and last_round_avg_local_grad_norm is not None:
-                latest_model_local_grad = self.get_flat_grads_from_data(x, y).detach()
+                latest_model_local_grad = self.get_flat_grads_from_data(x, y)
                 cur_lr = self.optimizer.get_current_lr()
                 loss_reg_J = self.alpha * (cur_lr ** 2) / 2 * torch.norm(latest_model_local_grad) ** 2 - cur_lr * last_round_avg_local_grad_norm ** 2
             else:
@@ -296,7 +297,7 @@ class FedProxWorker(Worker):
         train_loss = train_acc = train_total = 0
         
         # record the snapshot of the global model parameters
-        global_model_params = self.model.parameters().detach().clone()
+        global_model_params = copy.deepcopy(self.model.state_dict())
         
         for i in range(self.num_epoch * 10):
             x, y = next(iter(train_dataloader))
@@ -304,8 +305,8 @@ class FedProxWorker(Worker):
             # compute proximal loss
             proximal_term = 0.0
             if self.reg_J_coef != 0:
-                for w, w_t in zip(self.model.parameters(), global_model_params):
-                    proximal_term += (w - w_t).norm(2) ** 2
+                for w_key, w_t_key in zip(self.model.state_dict(), global_model_params):
+                    proximal_term += (self.model.state_dict()[w_key] - global_model_params[w_t_key]).norm() ** 2
 
             x = self.flatten_data(x)
             if self.gpu:
