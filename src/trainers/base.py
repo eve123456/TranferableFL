@@ -90,7 +90,7 @@ class BaseTrainer(object):
         np.random.seed(seed)
         return np.random.choice(self.clients, num_clients, replace=False).tolist()
 
-    def local_train(self, round_i, selected_clients, last_round_avg_local_grad_norm=None, last_round_global_grad = None, **kwargs):
+    def local_train(self, round_i, selected_clients, **kwargs):
         """Training procedure for selected local clients
 
         Args:
@@ -103,14 +103,31 @@ class BaseTrainer(object):
         """
         solns = []  # Buffer for receiving client solutions
         stats = []  # Buffer for receiving client communication costs
-        local_grads = []
+        
+        # calculate avg_grad_at_global_weight_last_round and its norm
+        if round_i == 0:
+            norm_avg_grad_at_global_weight_last_round = avg_grad_at_global_weight_last_round = None
+        else:
+            local_grads_at_global_weight = []
+        
+            for i, c in enumerate(selected_clients, start=1):
+                # Communicate the latest model
+                c.set_flat_model_params(self.latest_model)
+                c_grad_at_global_weights = c.worker.get_flat_grads(c.train_dataloader).detach()
+                local_grads_at_global_weight.append(c_grad_at_global_weights)
+            
+            avg_grad_at_global_weight_last_round = torch.mean(torch.stack(local_grads_at_global_weight, dim=0), dim=0)
+            
+            norm_avg_grad_at_global_weight_last_round = torch.norm(avg_grad_at_global_weight_last_round)
+
+        
         for i, c in enumerate(selected_clients, start=1):
             # Communicate the latest model
             c.set_flat_model_params(self.latest_model)
 
             # Solve minimization locally
-            soln, stat, local_grad = c.local_train(last_round_avg_local_grad_norm=last_round_avg_local_grad_norm, 
-                                                   last_round_global_grad= last_round_global_grad)
+            soln, stat = c.local_train(last_round_avg_local_grad_norm = norm_avg_grad_at_global_weight_last_round, 
+                                                   last_round_global_grad = avg_grad_at_global_weight_last_round)
             if self.print_result and False:
                 print("Round: {:>2d} | CID: {: >3d} ({:>2d}/{:>2d})| "
                       "Param: norm {:>.4f} ({:>.4f}->{:>.4f})| "
@@ -122,9 +139,9 @@ class BaseTrainer(object):
             # Add solutions and stats
             solns.append(soln)
             stats.append(stat)
-            local_grads.append(local_grad)
+            
 
-        return solns, stats, local_grads
+        return solns, stats
 
     def aggregate(self, solns, **kwargs):
         """Aggregate local solutions and output new global parameter

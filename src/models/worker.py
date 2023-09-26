@@ -264,9 +264,9 @@ class LrdWorker(Worker):
         return_dict.update(param_dict)
 
         # in the end, we need to compute the gradient again on the local dataset
-        local_grad = self.get_flat_grads(train_dataloader).detach()
+        # local_grad = self.get_flat_grads(train_dataloader).detach()
 
-        return local_solution, return_dict, local_grad
+        return local_solution, return_dict
 
 
 class LrAdjustWorker(Worker):

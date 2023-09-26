@@ -34,8 +34,6 @@ class FedAvgTLTrainer(BaseTrainer):
 
         # Fetch latest flat model parameter
         self.latest_model = self.worker.get_flat_model_params().detach()
-        last_round_avg_local_grad_norm = None
-        last_round_global_grad= None
 
         best_train_loss = float('inf')
         best_test_acc = 0
@@ -74,14 +72,14 @@ class FedAvgTLTrainer(BaseTrainer):
             # Solve minimization locally
             # check if we need to optimize the learning rate at each round
             if self.opt_lr:
-                if last_round_avg_local_grad_norm is not None:
-                    new_lr = self.clients_per_round * last_round_avg_local_grad_norm ** 2 / self.alpha / local_grads_norm_square
-                    self.optimizer.set_lr(new_lr)
+                # if last_round_avg_local_grad_norm is not None:
+                #     new_lr = self.clients_per_round * last_round_avg_local_grad_norm ** 2 / self.alpha / local_grads_norm_square
+                #     self.optimizer.set_lr(new_lr)
+                pass
             print(f'round {round_i} local learning rate = {self.optimizer.get_current_lr()}')
             
             
-            solns, stats, local_grads = self.local_train(round_i, selected_clients, last_round_avg_local_grad_norm=last_round_avg_local_grad_norm, 
-                                                   last_round_global_grad= last_round_global_grad)
+            solns, stats = self.local_train(round_i, selected_clients)
 
             # Track communication cost
             self.metrics.extend_commu_stats(round_i, stats)
@@ -90,9 +88,7 @@ class FedAvgTLTrainer(BaseTrainer):
             self.latest_model = self.aggregate(solns, repeated_times=repeated_times)
             # self.optimizer.inverse_prop_decay_learning_rate(round_i)
 
-            # aggregate the local gradients and compute the norm
-            last_round_global_grad = torch.mean(torch.stack(local_grads, dim=0), dim=0)
-            last_round_avg_local_grad_norm = torch.norm(torch.mean(torch.stack(local_grads, dim=0), dim=0))
+            
 
 
         # Test final model on train data

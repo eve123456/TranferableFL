@@ -65,7 +65,9 @@ class Client(object):
         bytes_w = self.worker.model_bytes
         begin_time = time.time()
         
-        local_solution, worker_stats, local_grad = self.worker.local_train(self.train_dataloader, last_round_avg_local_grad_norm=last_round_avg_local_grad_norm,
+        
+
+        local_solution, worker_stats = self.worker.local_train(self.train_dataloader, last_round_avg_local_grad_norm=last_round_avg_local_grad_norm,
                                                                         last_round_global_grad= last_round_global_grad, **kwargs)
         end_time = time.time()
         bytes_r = self.worker.model_bytes
@@ -74,7 +76,7 @@ class Client(object):
                  "time": round(end_time-begin_time, 2)}
         stats.update(worker_stats)
 
-        return (len(self.train_data), local_solution), stats, local_grad
+        return (len(self.train_data), local_solution), stats
 
     def local_test(self, use_eval_data=True):
         """Test current model on local eval data
