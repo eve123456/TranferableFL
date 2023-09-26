@@ -1,0 +1,63 @@
+nohup: ignoring input
+Using device: cuda:0
+>>> Arguments:
+	             algo : fedavgtl
+	            alpha : 13.2316427
+	       batch_size : 64
+	clients_per_round : 100
+	          dataset : mnist_all_data_1_equal_niid
+	           device : cuda:0
+	              dis : 
+	   early_stopping : 10
+	       eval_every : 5
+	    ft_batch_size : 128
+	       ft_dataset : mnist-m
+	        ft_epochs : 200
+	            ft_lr : 0.001
+	            ft_wd : 0.001
+	              gpu : True
+	      input_shape : (1, 28, 28)
+	           last_k : 1
+	               lr : 0.01
+	            model : lenet
+	           n_init : 10
+	        noaverage : False
+	             noft : False
+	          noprint : False
+	        num_class : 10
+	        num_epoch : 1
+	        num_round : 200
+	           opt_lr : False
+	            reg_J : True
+	       reg_J_coef : 0.01
+	           repeat : 1
+	             seed : 0
+	               wd : 0.0
+
+************************************************************************************************************************
+
+uid: 20230919220755
+>>> Training model_ft
+Epoch: 001, Train_loss: 1.1604, Train_acc: 0.6431, Test_loss: 1.1371, Test_acc: 0.6588
+Epoch: 006, Train_loss: 0.9101, Train_acc: 0.7162, Test_loss: 0.9076, Test_acc: 0.7218
+Epoch: 011, Train_loss: 0.8465, Train_acc: 0.7378, Test_loss: 0.8602, Test_acc: 0.7351
+Epoch: 016, Train_loss: 0.8195, Train_acc: 0.7431, Test_loss: 0.8380, Test_acc: 0.7424
+Epoch: 021, Train_loss: 0.7979, Train_acc: 0.7498, Test_loss: 0.8227, Test_acc: 0.7443
+Epoch: 026, Train_loss: 0.7877, Train_acc: 0.7541, Test_loss: 0.8212, Test_acc: 0.7437
+Epoch: 031, Train_loss: 0.7746, Train_acc: 0.7584, Test_loss: 0.8082, Test_acc: 0.7498
+Epoch: 036, Train_loss: 0.7601, Train_acc: 0.7622, Test_loss: 0.8002, Test_acc: 0.7527
+Epoch: 041, Train_loss: 0.7603, Train_acc: 0.7619, Test_loss: 0.7996, Test_acc: 0.7539
+Epoch: 046, Train_loss: 0.7464, Train_acc: 0.7676, Test_loss: 0.7855, Test_acc: 0.7568
+Epoch: 051, Train_loss: 0.7514, Train_acc: 0.7618, Test_loss: 0.7963, Test_acc: 0.7534
+Epoch: 056, Train_loss: 0.7414, Train_acc: 0.7661, Test_loss: 0.7899, Test_acc: 0.7550
+Epoch: 061, Train_loss: 0.7358, Train_acc: 0.7710, Test_loss: 0.7849, Test_acc: 0.7590
+Epoch: 066, Train_loss: 0.7335, Train_acc: 0.7694, Test_loss: 0.7810, Test_acc: 0.7574
+Epoch: 071, Train_loss: 0.7338, Train_acc: 0.7696, Test_loss: 0.7865, Test_acc: 0.7540
+Epoch: 076, Train_loss: 0.7240, Train_acc: 0.7734, Test_loss: 0.7805, Test_acc: 0.7569
+Epoch: 081, Train_loss: 0.7448, Train_acc: 0.7680, Test_loss: 0.8002, Test_acc: 0.7516
+Epoch: 086, Train_loss: 0.7307, Train_acc: 0.7713, Test_loss: 0.7813, Test_acc: 0.7598
+Fine-tuning early stopped. Model saved at ./models/ft_checkpoints/20230919220755_model_ft.pt.
+Model saved at ./models/ft_checkpoints/20230919220755_model_ft.pt.
+>>> Fine-tuning done!
+model_ft: [0.7229243980890832, 0.7749190691683192, 0.775101991623405, 0.758915676035996]
+model_ft_test_acc_mean 0.758915676035996

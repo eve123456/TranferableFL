@@ -71,7 +71,7 @@ tensorboardX
 - To generate MNIST-M data for finetune, please download an mnist_m.tar.gz file from "https://drive.google.com/open?id=0B_tExHiYS-0veklUZHFYT19KYjg" to the path "./data/TARGET/mnist-m", and then unzip it:"cd data/TARGET/mnist-m", "tar -xf mnist_m.tar.gz"
 
 ## Run code in background
-`nohup python Transfer__MNIST_MNIST-M.py >> xx.log 2>&1 &`
+`nohup python -u main_mnist_mnist_m.py >> xx.log 2>&1 &`
 
 ## Baselines
 model_source_only: federatedly train on source domain
@@ -81,3 +81,6 @@ model_ft: federatedly train on source domain, finetune the last layer on target 
 
 
 
+
+## Sep 19
+Latest result: log/fl_reg_J_5e-3.log

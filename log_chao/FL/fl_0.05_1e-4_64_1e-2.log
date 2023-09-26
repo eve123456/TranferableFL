@@ -1,0 +1,29 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "main_mnist_mnist_m.py", line 6, in <module>
+    import torch
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/torch/__init__.py", line 29, in <module>
+    from .torch_version import __version__ as __version__
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/torch/torch_version.py", line 3, in <module>
+    from pkg_resources import packaging  # type: ignore[attr-defined]
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/pkg_resources/__init__.py", line 3246, in <module>
+    @_call_aside
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/pkg_resources/__init__.py", line 3221, in _call_aside
+    f(*args, **kwargs)
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/pkg_resources/__init__.py", line 3259, in _initialize_master_working_set
+    working_set = WorkingSet._build_master()
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/pkg_resources/__init__.py", line 570, in _build_master
+    ws = cls()
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/pkg_resources/__init__.py", line 563, in __init__
+    self.add_entry(entry)
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/pkg_resources/__init__.py", line 619, in add_entry
+    for dist in find_distributions(entry, True):
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/pkg_resources/__init__.py", line 2079, in find_on_path
+    path_item_entries = _by_version_descending(filtered)
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/pkg_resources/__init__.py", line 2049, in _by_version_descending
+    return sorted(names, key=_by_version, reverse=True)
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/pkg_resources/__init__.py", line 2047, in _by_version
+    return [try_parse(part) for part in parts]
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/pkg_resources/__init__.py", line 2047, in <listcomp>
+    return [try_parse(part) for part in parts]
+KeyboardInterrupt

@@ -1,0 +1,200 @@
+nohup: ignoring input
+Using device: cuda:0
+>>> Arguments:
+	             algo : fedavgtl
+	            alpha : 51871.0
+	       batch_size : 32
+	clients_per_round : 100
+	          dataset : mnist_all_data_1_equal_niid
+	           device : cuda:0
+	              dis : 
+	   early_stopping : 20
+	       eval_every : 5
+	    ft_batch_size : 128
+	       ft_dataset : mnist-m
+	        ft_epochs : 2
+	            ft_lr : 0.01
+	            ft_wd : 0.0
+	              gpu : True
+	      input_shape : (1, 28, 28)
+	           last_k : 2
+	               lr : 0.005
+	            model : lenet
+	           n_init : 5
+	        noaverage : False
+	          noprint : False
+	        num_class : 10
+	        num_epoch : 1
+	        num_round : 200
+	           opt_lr : False
+	            reg_J : True
+	       reg_J_coef : 0.01
+	             seed : 0
+	               wd : 0.0001
+>>> Read data from:
+     ./data/mnist/data/all_data_1.pkl
+>>> The estimate of constant alpha is 51871.0.
+>>> Read data from:
+     ./data/mnist/data/train/all_data_1_equal_niid.pkl
+     ./data/mnist/data/test/all_data_1_equal_niid.pkl
+>>> Use gpu on device cuda:0
+>>> Model statistic per layer
+LeNet_MNIST(
+  286.12 KMac, 100.000% MACs, 
+  (conv1): Conv2d(89.856 KMac, 31.405% MACs, 1, 6, kernel_size=(5, 5), stride=(1, 1))
+  (conv2): Conv2d(154.624 KMac, 54.042% MACs, 6, 16, kernel_size=(5, 5), stride=(1, 1))
+  (fc1): Linear(30.72 KMac, 10.737% MACs, in_features=256, out_features=120, bias=True)
+  (fc2): Linear(10.08 KMac, 3.523% MACs, in_features=120, out_features=84, bias=True)
+  (fc3): Linear(840.0 Mac, 0.294% MACs, in_features=84, out_features=10, bias=True)
+)
+>>> Activate a worker for training
+>>> Initialize 100 clients in total
+>>> Weigh updates by simple average
+>>> Select 100 clients per round 
+
+
+>>> Round:    0 / Acc: 10.197% / Loss: 10.9787 / Grad Norm: 143.1302 / Grad Diff: 34136.5199 / Time: 7.50s
+======================================================================================================
+
+= Test = round: 0 / acc: 10.100% / loss: 10.9252 / Time: 0.61s
+======================================================================================================
+
+round 0 local learning rate = 0.005
+
+>>> Round:    1 / Acc: 18.611% / Loss: 2.3602 / Grad Norm: 6.5117 / Grad Diff: 325.0043 / Time: 7.41s
+======================================================================================================
+
+round 1 local learning rate = 0.005
+
+>>> Round:    2 / Acc: 29.336% / Loss: 1.9957 / Grad Norm: 6.9981 / Grad Diff: 422.0060 / Time: 7.63s
+======================================================================================================
+
+round 2 local learning rate = 0.0025
+
+>>> Round:    3 / Acc: 41.972% / Loss: 1.6576 / Grad Norm: 7.5485 / Grad Diff: 706.9898 / Time: 7.37s
+======================================================================================================
+
+round 3 local learning rate = 0.0016666666666666668
+
+>>> Round:    4 / Acc: 50.118% / Loss: 1.4465 / Grad Norm: 7.2361 / Grad Diff: 897.4934 / Time: 7.67s
+======================================================================================================
+
+round 4 local learning rate = 0.00125
+
+>>> Round:    5 / Acc: 55.598% / Loss: 1.3092 / Grad Norm: 7.0496 / Grad Diff: 987.7580 / Time: 7.71s
+======================================================================================================
+
+= Test = round: 5 / acc: 57.820% / loss: 1.2467 / Time: 0.63s
+======================================================================================================
+
+round 5 local learning rate = 0.001
+
+>>> Round:    6 / Acc: 59.624% / Loss: 1.2060 / Grad Norm: 6.7274 / Grad Diff: 1009.6570 / Time: 7.38s
+======================================================================================================
+
+round 6 local learning rate = 0.0008333333333333334
+
+>>> Round:    7 / Acc: 62.653% / Loss: 1.1257 / Grad Norm: 6.2439 / Grad Diff: 1000.7751 / Time: 7.21s
+======================================================================================================
+
+round 7 local learning rate = 0.0007142857142857143
+
+>>> Round:    8 / Acc: 65.004% / Loss: 1.0637 / Grad Norm: 5.9011 / Grad Diff: 989.2079 / Time: 7.66s
+======================================================================================================
+
+round 8 local learning rate = 0.000625
+
+>>> Round:    9 / Acc: 66.852% / Loss: 1.0128 / Grad Norm: 5.5578 / Grad Diff: 969.1497 / Time: 7.72s
+======================================================================================================
+
+round 9 local learning rate = 0.0005555555555555556
+
+>>> Round:   10 / Acc: 68.478% / Loss: 0.9697 / Grad Norm: 5.2560 / Grad Diff: 948.3121 / Time: 7.65s
+======================================================================================================
+
+= Test = round: 10 / acc: 70.150% / loss: 0.9096 / Time: 0.60s
+======================================================================================================
+
+round 10 local learning rate = 0.0005
+
+>>> Round:   11 / Acc: 69.747% / Loss: 0.9350 / Grad Norm: 5.1051 / Grad Diff: 931.5414 / Time: 7.42s
+======================================================================================================
+
+round 11 local learning rate = 0.00045454545454545455
+
+>>> Round:   12 / Acc: 70.821% / Loss: 0.9036 / Grad Norm: 4.7776 / Grad Diff: 907.8469 / Time: 7.58s
+======================================================================================================
+
+round 12 local learning rate = 0.0004166666666666667
+
+>>> Round:   13 / Acc: 71.799% / Loss: 0.8775 / Grad Norm: 4.5596 / Grad Diff: 888.6814 / Time: 7.76s
+======================================================================================================
+
+round 13 local learning rate = 0.0003846153846153846
+
+>>> Round:   14 / Acc: 72.570% / Loss: 0.8538 / Grad Norm: 4.3688 / Grad Diff: 868.3340 / Time: 7.62s
+======================================================================================================
+
+round 14 local learning rate = 0.00035714285714285714
+
+>>> Round:   15 / Acc: 73.292% / Loss: 0.8336 / Grad Norm: 4.2463 / Grad Diff: 853.8621 / Time: 7.61s
+======================================================================================================
+
+= Test = round: 15 / acc: 74.670% / loss: 0.7767 / Time: 0.61s
+======================================================================================================
+
+round 15 local learning rate = 0.0003333333333333333
+
+>>> Round:   16 / Acc: 73.915% / Loss: 0.8151 / Grad Norm: 4.0985 / Grad Diff: 837.2958 / Time: 7.49s
+======================================================================================================
+
+round 16 local learning rate = 0.0003125
+
+>>> Round:   17 / Acc: 74.441% / Loss: 0.7985 / Grad Norm: 3.9686 / Grad Diff: 824.0659 / Time: 7.46s
+======================================================================================================
+
+round 17 local learning rate = 0.00029411764705882356
+
+>>> Round:   18 / Acc: 74.974% / Loss: 0.7834 / Grad Norm: 3.8642 / Grad Diff: 811.7737 / Time: 7.59s
+======================================================================================================
+
+round 18 local learning rate = 0.0002777777777777778
+
+>>> Round:   19 / Acc: 75.463% / Loss: 0.7692 / Grad Norm: 3.7642 / Grad Diff: 796.5279 / Time: 7.87s
+======================================================================================================
+
+round 19 local learning rate = 0.0002631578947368421
+Traceback (most recent call last):
+  File "main_mnist_mnist_m.py", line 332, in <module>
+    main()
+  File "main_mnist_mnist_m.py", line 275, in main
+    trainer.train()
+  File "/data/shared/chao/transfer_fl/TranferableFL/src/trainers/fedavgtl.py", line 44, in train
+    _, local_grads_norm_square = self.test_latest_model_on_traindata(round_i)
+  File "/data/shared/chao/transfer_fl/TranferableFL/src/trainers/base.py", line 168, in test_latest_model_on_traindata
+    (num, client_grad), stat = c.solve_grad()
+  File "/data/shared/chao/transfer_fl/TranferableFL/src/models/client.py", line 48, in solve_grad
+    grads = self.get_flat_grads()  # Return grad in numpy array
+  File "/data/shared/chao/transfer_fl/TranferableFL/src/models/client.py", line 37, in get_flat_grads
+    grad_in_tenser = self.worker.get_flat_grads(self.train_dataloader)
+  File "/data/shared/chao/transfer_fl/TranferableFL/src/models/worker.py", line 73, in get_flat_grads
+    for x, y in dataloader:            
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 521, in __next__
+    data = self._next_data()
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 561, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 49, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 49, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/data/shared/chao/transfer_fl/TranferableFL/src/utils/worker_utils.py", line 127, in __getitem__
+    data = self.transform(data)
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/torchvision/transforms/transforms.py", line 61, in __call__
+    img = t(img)
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/torchvision/transforms/transforms.py", line 226, in forward
+    return F.normalize(tensor, self.mean, self.std, self.inplace)
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/torchvision/transforms/functional.py", line 348, in normalize
+    mean = mean.view(-1, 1, 1)
+KeyboardInterrupt

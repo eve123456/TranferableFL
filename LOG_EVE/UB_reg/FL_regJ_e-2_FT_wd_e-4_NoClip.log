@@ -1,0 +1,586 @@
+nohup: ignoring input
+working!
+Using device: cuda:0
+>>> Arguments:
+	             algo : fedavgtl
+	            alpha : 13.2316427
+	       batch_size : 64
+	clients_per_round : 100
+	             clip : False
+	          dataset : mnist_all_data_1_equal_niid
+	           device : cuda:0
+	              dis : 
+	   early_stopping : 10
+	       eval_every : 5
+	    ft_batch_size : 128
+	       ft_dataset : mnist-m
+	        ft_epochs : 200
+	            ft_lr : 0.001
+	            ft_wd : 0.0001
+	              gpu : True
+	      input_shape : (1, 28, 28)
+	           last_k : 1
+	               lr : 0.01
+	            model : lenet
+	           n_init : 1
+	        noaverage : False
+	             noft : False
+	          noprint : False
+	        num_class : 10
+	        num_epoch : 1
+	        num_round : 200
+	           opt_lr : False
+	            reg_J : True
+	       reg_J_coef : 0.01
+	   reg_J_ind_coef : 0.0
+	  reg_J_norm_coef : 0.0
+	           repeat : 1
+	     repeat_epoch : 10
+	             seed : 0
+	               wd : 0.0
+>>> Read data from:
+     ./data/mnist/data/all_data_1.pkl
+>>> The estimate of constant alpha is 13.2316427.
+>>> Read data from:
+     ./data/mnist/data/train/all_data_1_equal_niid.pkl
+     ./data/mnist/data/test/all_data_1_equal_niid.pkl
+
+************************************************************************************************************************
+
+uid: 20230925111800
+FL pretrained model will be saved at ./models/lenet_mnist_20230925111800.pt
+>>> Use gpu on device cuda:0
+>>> Model statistic per layer
+LeNet_MNIST(
+  286.12 KMac, 100.000% MACs, 
+  (conv1): Conv2d(89.856 KMac, 31.405% MACs, 1, 6, kernel_size=(5, 5), stride=(1, 1))
+  (conv2): Conv2d(154.624 KMac, 54.042% MACs, 6, 16, kernel_size=(5, 5), stride=(1, 1))
+  (fc1): Linear(30.72 KMac, 10.737% MACs, in_features=256, out_features=120, bias=True)
+  (fc2): Linear(10.08 KMac, 3.523% MACs, in_features=120, out_features=84, bias=True)
+  (fc3): Linear(840.0 Mac, 0.294% MACs, in_features=84, out_features=10, bias=True)
+)
+>>> Activate a worker for training
+>>> Initialize 100 clients in total
+>>> Weigh updates by simple average
+>>> Select 100 clients per round 
+
+
+>>> Round:    0 / Acc: 10.168% / Loss: 2.3091 / Grad Norm: 0.1699 / Grad Diff: 1.4350 / Time: 10.60s
+======================================================================================================
+
+= Test = round: 0 / acc: 10.070% / loss: 2.3086 / Time: 1.05s
+======================================================================================================
+
+round 0 local learning rate = 0.01
+round 1 local learning rate = 0.01
+round 2 local learning rate = 0.01
+round 3 local learning rate = 0.01
+round 4 local learning rate = 0.01
+
+>>> Round:    5 / Acc: 19.430% / Loss: 2.2916 / Grad Norm: 0.2704 / Grad Diff: 5.2784 / Time: 10.76s
+======================================================================================================
+
+= Test = round: 5 / acc: 19.150% / loss: 2.2905 / Time: 0.89s
+======================================================================================================
+
+round 5 local learning rate = 0.01
+round 6 local learning rate = 0.01
+round 7 local learning rate = 0.01
+round 8 local learning rate = 0.01
+round 9 local learning rate = 0.01
+
+>>> Round:   10 / Acc: 35.094% / Loss: 2.1788 / Grad Norm: 1.2686 / Grad Diff: 158.5757 / Time: 10.89s
+======================================================================================================
+
+= Test = round: 10 / acc: 35.690% / loss: 2.1714 / Time: 0.96s
+======================================================================================================
+
+round 10 local learning rate = 0.01
+round 11 local learning rate = 0.01
+round 12 local learning rate = 0.01
+round 13 local learning rate = 0.01
+round 14 local learning rate = 0.01
+
+>>> Round:   15 / Acc: 56.703% / Loss: 1.9799 / Grad Norm: 1.2307 / Grad Diff: 188.7612 / Time: 11.16s
+======================================================================================================
+
+= Test = round: 15 / acc: 59.370% / loss: 1.9623 / Time: 1.09s
+======================================================================================================
+
+round 15 local learning rate = 0.01
+round 16 local learning rate = 0.01
+round 17 local learning rate = 0.01
+round 18 local learning rate = 0.01
+round 19 local learning rate = 0.01
+
+>>> Round:   20 / Acc: 64.441% / Loss: 1.7133 / Grad Norm: 1.5117 / Grad Diff: 189.3976 / Time: 10.22s
+======================================================================================================
+
+= Test = round: 20 / acc: 67.340% / loss: 1.6820 / Time: 0.97s
+======================================================================================================
+
+round 20 local learning rate = 0.01
+round 21 local learning rate = 0.01
+round 22 local learning rate = 0.01
+round 23 local learning rate = 0.01
+round 24 local learning rate = 0.01
+
+>>> Round:   25 / Acc: 69.135% / Loss: 1.4296 / Grad Norm: 1.5159 / Grad Diff: 182.2059 / Time: 9.93s
+======================================================================================================
+
+= Test = round: 25 / acc: 71.640% / loss: 1.3891 / Time: 0.84s
+======================================================================================================
+
+round 25 local learning rate = 0.01
+round 26 local learning rate = 0.01
+round 27 local learning rate = 0.01
+round 28 local learning rate = 0.01
+round 29 local learning rate = 0.01
+
+>>> Round:   30 / Acc: 72.797% / Loss: 1.1754 / Grad Norm: 1.3669 / Grad Diff: 174.1628 / Time: 9.40s
+======================================================================================================
+
+= Test = round: 30 / acc: 74.940% / loss: 1.1303 / Time: 0.83s
+======================================================================================================
+
+round 30 local learning rate = 0.01
+round 31 local learning rate = 0.01
+round 32 local learning rate = 0.01
+round 33 local learning rate = 0.01
+round 34 local learning rate = 0.01
+
+>>> Round:   35 / Acc: 75.745% / Loss: 0.9899 / Grad Norm: 1.3363 / Grad Diff: 155.1227 / Time: 9.98s
+======================================================================================================
+
+= Test = round: 35 / acc: 77.450% / loss: 0.9458 / Time: 0.90s
+======================================================================================================
+
+round 35 local learning rate = 0.01
+round 36 local learning rate = 0.01
+round 37 local learning rate = 0.01
+round 38 local learning rate = 0.01
+round 39 local learning rate = 0.01
+
+>>> Round:   40 / Acc: 77.773% / Loss: 0.8531 / Grad Norm: 1.2718 / Grad Diff: 136.9522 / Time: 9.91s
+======================================================================================================
+
+= Test = round: 40 / acc: 79.530% / loss: 0.8114 / Time: 0.82s
+======================================================================================================
+
+round 40 local learning rate = 0.01
+round 41 local learning rate = 0.01
+round 42 local learning rate = 0.01
+round 43 local learning rate = 0.01
+round 44 local learning rate = 0.01
+
+>>> Round:   45 / Acc: 79.712% / Loss: 0.7550 / Grad Norm: 1.1397 / Grad Diff: 122.6937 / Time: 9.86s
+======================================================================================================
+
+= Test = round: 45 / acc: 81.160% / loss: 0.7162 / Time: 0.84s
+======================================================================================================
+
+round 45 local learning rate = 0.01
+round 46 local learning rate = 0.01
+round 47 local learning rate = 0.01
+round 48 local learning rate = 0.01
+round 49 local learning rate = 0.01
+
+>>> Round:   50 / Acc: 81.218% / Loss: 0.6817 / Grad Norm: 1.1002 / Grad Diff: 113.0299 / Time: 9.51s
+======================================================================================================
+
+= Test = round: 50 / acc: 82.620% / loss: 0.6454 / Time: 0.84s
+======================================================================================================
+
+round 50 local learning rate = 0.01
+round 51 local learning rate = 0.01
+round 52 local learning rate = 0.01
+round 53 local learning rate = 0.01
+round 54 local learning rate = 0.01
+
+>>> Round:   55 / Acc: 82.472% / Loss: 0.6232 / Grad Norm: 0.8001 / Grad Diff: 105.0000 / Time: 9.40s
+======================================================================================================
+
+= Test = round: 55 / acc: 83.960% / loss: 0.5891 / Time: 0.81s
+======================================================================================================
+
+round 55 local learning rate = 0.01
+round 56 local learning rate = 0.01
+round 57 local learning rate = 0.01
+round 58 local learning rate = 0.01
+round 59 local learning rate = 0.01
+
+>>> Round:   60 / Acc: 83.351% / Loss: 0.5827 / Grad Norm: 0.9017 / Grad Diff: 95.6091 / Time: 9.40s
+======================================================================================================
+
+= Test = round: 60 / acc: 84.620% / loss: 0.5497 / Time: 0.80s
+======================================================================================================
+
+round 60 local learning rate = 0.01
+round 61 local learning rate = 0.01
+round 62 local learning rate = 0.01
+round 63 local learning rate = 0.01
+round 64 local learning rate = 0.01
+
+>>> Round:   65 / Acc: 84.256% / Loss: 0.5459 / Grad Norm: 0.7070 / Grad Diff: 87.9985 / Time: 9.42s
+======================================================================================================
+
+= Test = round: 65 / acc: 85.450% / loss: 0.5150 / Time: 0.82s
+======================================================================================================
+
+round 65 local learning rate = 0.01
+round 66 local learning rate = 0.01
+round 67 local learning rate = 0.01
+round 68 local learning rate = 0.01
+round 69 local learning rate = 0.01
+
+>>> Round:   70 / Acc: 85.017% / Loss: 0.5169 / Grad Norm: 0.8013 / Grad Diff: 82.7577 / Time: 9.39s
+======================================================================================================
+
+= Test = round: 70 / acc: 86.160% / loss: 0.4863 / Time: 0.83s
+======================================================================================================
+
+round 70 local learning rate = 0.01
+round 71 local learning rate = 0.01
+round 72 local learning rate = 0.01
+round 73 local learning rate = 0.01
+round 74 local learning rate = 0.01
+
+>>> Round:   75 / Acc: 85.793% / Loss: 0.4913 / Grad Norm: 0.7144 / Grad Diff: 76.7780 / Time: 9.32s
+======================================================================================================
+
+= Test = round: 75 / acc: 86.630% / loss: 0.4616 / Time: 0.81s
+======================================================================================================
+
+round 75 local learning rate = 0.01
+round 76 local learning rate = 0.01
+round 77 local learning rate = 0.01
+round 78 local learning rate = 0.01
+round 79 local learning rate = 0.01
+
+>>> Round:   80 / Acc: 86.480% / Loss: 0.4686 / Grad Norm: 0.7047 / Grad Diff: 72.2106 / Time: 9.80s
+======================================================================================================
+
+= Test = round: 80 / acc: 87.220% / loss: 0.4393 / Time: 0.85s
+======================================================================================================
+
+round 80 local learning rate = 0.01
+round 81 local learning rate = 0.01
+round 82 local learning rate = 0.01
+round 83 local learning rate = 0.01
+round 84 local learning rate = 0.01
+
+>>> Round:   85 / Acc: 87.057% / Loss: 0.4499 / Grad Norm: 0.7642 / Grad Diff: 67.9776 / Time: 9.80s
+======================================================================================================
+
+= Test = round: 85 / acc: 87.610% / loss: 0.4213 / Time: 0.85s
+======================================================================================================
+
+round 85 local learning rate = 0.01
+round 86 local learning rate = 0.01
+round 87 local learning rate = 0.01
+round 88 local learning rate = 0.01
+round 89 local learning rate = 0.01
+
+>>> Round:   90 / Acc: 87.574% / Loss: 0.4330 / Grad Norm: 0.6818 / Grad Diff: 63.1791 / Time: 9.98s
+======================================================================================================
+
+= Test = round: 90 / acc: 88.050% / loss: 0.4047 / Time: 0.81s
+======================================================================================================
+
+round 90 local learning rate = 0.01
+round 91 local learning rate = 0.01
+round 92 local learning rate = 0.01
+round 93 local learning rate = 0.01
+round 94 local learning rate = 0.01
+
+>>> Round:   95 / Acc: 88.052% / Loss: 0.4161 / Grad Norm: 0.6167 / Grad Diff: 60.6001 / Time: 9.97s
+======================================================================================================
+
+= Test = round: 95 / acc: 88.600% / loss: 0.3889 / Time: 0.82s
+======================================================================================================
+
+round 95 local learning rate = 0.01
+round 96 local learning rate = 0.01
+round 97 local learning rate = 0.01
+round 98 local learning rate = 0.01
+round 99 local learning rate = 0.01
+
+>>> Round:  100 / Acc: 88.472% / Loss: 0.4026 / Grad Norm: 0.6727 / Grad Diff: 57.5092 / Time: 10.78s
+======================================================================================================
+
+= Test = round: 100 / acc: 88.990% / loss: 0.3761 / Time: 0.88s
+======================================================================================================
+
+round 100 local learning rate = 0.01
+round 101 local learning rate = 0.01
+round 102 local learning rate = 0.01
+round 103 local learning rate = 0.01
+round 104 local learning rate = 0.01
+
+>>> Round:  105 / Acc: 88.897% / Loss: 0.3883 / Grad Norm: 0.5747 / Grad Diff: 55.0782 / Time: 12.10s
+======================================================================================================
+
+= Test = round: 105 / acc: 89.530% / loss: 0.3619 / Time: 1.02s
+======================================================================================================
+
+round 105 local learning rate = 0.01
+round 106 local learning rate = 0.01
+round 107 local learning rate = 0.01
+round 108 local learning rate = 0.01
+round 109 local learning rate = 0.01
+
+>>> Round:  110 / Acc: 89.179% / Loss: 0.3761 / Grad Norm: 0.5667 / Grad Diff: 52.7657 / Time: 11.35s
+======================================================================================================
+
+= Test = round: 110 / acc: 89.870% / loss: 0.3506 / Time: 1.01s
+======================================================================================================
+
+round 110 local learning rate = 0.01
+round 111 local learning rate = 0.01
+round 112 local learning rate = 0.01
+round 113 local learning rate = 0.01
+round 114 local learning rate = 0.01
+
+>>> Round:  115 / Acc: 89.539% / Loss: 0.3646 / Grad Norm: 0.4507 / Grad Diff: 50.1465 / Time: 10.97s
+======================================================================================================
+
+= Test = round: 115 / acc: 90.200% / loss: 0.3399 / Time: 1.03s
+======================================================================================================
+
+round 115 local learning rate = 0.01
+round 116 local learning rate = 0.01
+round 117 local learning rate = 0.01
+round 118 local learning rate = 0.01
+round 119 local learning rate = 0.01
+
+>>> Round:  120 / Acc: 89.742% / Loss: 0.3550 / Grad Norm: 0.6020 / Grad Diff: 49.0192 / Time: 11.01s
+======================================================================================================
+
+= Test = round: 120 / acc: 90.440% / loss: 0.3307 / Time: 0.99s
+======================================================================================================
+
+round 120 local learning rate = 0.01
+round 121 local learning rate = 0.01
+round 122 local learning rate = 0.01
+round 123 local learning rate = 0.01
+round 124 local learning rate = 0.01
+
+>>> Round:  125 / Acc: 90.065% / Loss: 0.3452 / Grad Norm: 0.4976 / Grad Diff: 46.4590 / Time: 11.33s
+======================================================================================================
+
+= Test = round: 125 / acc: 90.830% / loss: 0.3213 / Time: 1.02s
+======================================================================================================
+
+round 125 local learning rate = 0.01
+round 126 local learning rate = 0.01
+round 127 local learning rate = 0.01
+round 128 local learning rate = 0.01
+round 129 local learning rate = 0.01
+
+>>> Round:  130 / Acc: 90.328% / Loss: 0.3356 / Grad Norm: 0.4306 / Grad Diff: 44.6588 / Time: 10.88s
+======================================================================================================
+
+= Test = round: 130 / acc: 91.060% / loss: 0.3122 / Time: 1.01s
+======================================================================================================
+
+round 130 local learning rate = 0.01
+round 131 local learning rate = 0.01
+round 132 local learning rate = 0.01
+round 133 local learning rate = 0.01
+round 134 local learning rate = 0.01
+
+>>> Round:  135 / Acc: 90.583% / Loss: 0.3277 / Grad Norm: 0.4671 / Grad Diff: 43.1178 / Time: 11.36s
+======================================================================================================
+
+= Test = round: 135 / acc: 91.230% / loss: 0.3050 / Time: 1.06s
+======================================================================================================
+
+round 135 local learning rate = 0.01
+round 136 local learning rate = 0.01
+round 137 local learning rate = 0.01
+round 138 local learning rate = 0.01
+round 139 local learning rate = 0.01
+
+>>> Round:  140 / Acc: 90.740% / Loss: 0.3203 / Grad Norm: 0.5020 / Grad Diff: 41.3941 / Time: 11.15s
+======================================================================================================
+
+= Test = round: 140 / acc: 91.460% / loss: 0.2976 / Time: 1.07s
+======================================================================================================
+
+round 140 local learning rate = 0.01
+round 141 local learning rate = 0.01
+round 142 local learning rate = 0.01
+round 143 local learning rate = 0.01
+round 144 local learning rate = 0.01
+
+>>> Round:  145 / Acc: 90.978% / Loss: 0.3116 / Grad Norm: 0.4444 / Grad Diff: 40.3967 / Time: 11.48s
+======================================================================================================
+
+= Test = round: 145 / acc: 91.550% / loss: 0.2897 / Time: 1.03s
+======================================================================================================
+
+round 145 local learning rate = 0.01
+round 146 local learning rate = 0.01
+round 147 local learning rate = 0.01
+round 148 local learning rate = 0.01
+round 149 local learning rate = 0.01
+
+>>> Round:  150 / Acc: 91.081% / Loss: 0.3056 / Grad Norm: 0.4847 / Grad Diff: 38.7515 / Time: 11.34s
+======================================================================================================
+
+= Test = round: 150 / acc: 91.860% / loss: 0.2841 / Time: 0.98s
+======================================================================================================
+
+round 150 local learning rate = 0.01
+round 151 local learning rate = 0.01
+round 152 local learning rate = 0.01
+round 153 local learning rate = 0.01
+round 154 local learning rate = 0.01
+
+>>> Round:  155 / Acc: 91.328% / Loss: 0.2982 / Grad Norm: 0.4094 / Grad Diff: 37.4248 / Time: 10.47s
+======================================================================================================
+
+= Test = round: 155 / acc: 91.990% / loss: 0.2772 / Time: 0.92s
+======================================================================================================
+
+round 155 local learning rate = 0.01
+round 156 local learning rate = 0.01
+round 157 local learning rate = 0.01
+round 158 local learning rate = 0.01
+round 159 local learning rate = 0.01
+
+>>> Round:  160 / Acc: 91.524% / Loss: 0.2922 / Grad Norm: 0.4314 / Grad Diff: 36.2092 / Time: 10.79s
+======================================================================================================
+
+= Test = round: 160 / acc: 92.180% / loss: 0.2718 / Time: 0.87s
+======================================================================================================
+
+round 160 local learning rate = 0.01
+round 161 local learning rate = 0.01
+round 162 local learning rate = 0.01
+round 163 local learning rate = 0.01
+round 164 local learning rate = 0.01
+
+>>> Round:  165 / Acc: 91.710% / Loss: 0.2852 / Grad Norm: 0.3376 / Grad Diff: 35.3368 / Time: 10.64s
+======================================================================================================
+
+= Test = round: 165 / acc: 92.340% / loss: 0.2654 / Time: 0.96s
+======================================================================================================
+
+round 165 local learning rate = 0.01
+round 166 local learning rate = 0.01
+round 167 local learning rate = 0.01
+round 168 local learning rate = 0.01
+round 169 local learning rate = 0.01
+
+>>> Round:  170 / Acc: 91.875% / Loss: 0.2796 / Grad Norm: 0.3402 / Grad Diff: 34.3364 / Time: 10.36s
+======================================================================================================
+
+= Test = round: 170 / acc: 92.450% / loss: 0.2601 / Time: 0.87s
+======================================================================================================
+
+round 170 local learning rate = 0.01
+round 171 local learning rate = 0.01
+round 172 local learning rate = 0.01
+round 173 local learning rate = 0.01
+round 174 local learning rate = 0.01
+
+>>> Round:  175 / Acc: 92.000% / Loss: 0.2739 / Grad Norm: 0.3618 / Grad Diff: 33.7301 / Time: 10.31s
+======================================================================================================
+
+= Test = round: 175 / acc: 92.620% / loss: 0.2547 / Time: 0.84s
+======================================================================================================
+
+round 175 local learning rate = 0.01
+round 176 local learning rate = 0.01
+round 177 local learning rate = 0.01
+round 178 local learning rate = 0.01
+round 179 local learning rate = 0.01
+
+>>> Round:  180 / Acc: 92.129% / Loss: 0.2684 / Grad Norm: 0.3357 / Grad Diff: 33.1995 / Time: 8.87s
+======================================================================================================
+
+= Test = round: 180 / acc: 92.730% / loss: 0.2494 / Time: 0.76s
+======================================================================================================
+
+round 180 local learning rate = 0.01
+round 181 local learning rate = 0.01
+round 182 local learning rate = 0.01
+round 183 local learning rate = 0.01
+round 184 local learning rate = 0.01
+
+>>> Round:  185 / Acc: 92.258% / Loss: 0.2640 / Grad Norm: 0.3090 / Grad Diff: 31.8238 / Time: 8.98s
+======================================================================================================
+
+= Test = round: 185 / acc: 92.810% / loss: 0.2453 / Time: 0.77s
+======================================================================================================
+
+round 185 local learning rate = 0.01
+round 186 local learning rate = 0.01
+round 187 local learning rate = 0.01
+round 188 local learning rate = 0.01
+round 189 local learning rate = 0.01
+
+>>> Round:  190 / Acc: 92.367% / Loss: 0.2593 / Grad Norm: 0.3286 / Grad Diff: 31.2261 / Time: 8.98s
+======================================================================================================
+
+= Test = round: 190 / acc: 92.940% / loss: 0.2408 / Time: 0.78s
+======================================================================================================
+
+round 190 local learning rate = 0.01
+round 191 local learning rate = 0.01
+round 192 local learning rate = 0.01
+round 193 local learning rate = 0.01
+round 194 local learning rate = 0.01
+
+>>> Round:  195 / Acc: 92.511% / Loss: 0.2551 / Grad Norm: 0.4157 / Grad Diff: 30.7864 / Time: 8.95s
+======================================================================================================
+
+= Test = round: 195 / acc: 93.110% / loss: 0.2368 / Time: 0.76s
+======================================================================================================
+
+round 195 local learning rate = 0.01
+round 196 local learning rate = 0.01
+round 197 local learning rate = 0.01
+round 198 local learning rate = 0.01
+round 199 local learning rate = 0.01
+
+>>> Round:  200 / Acc: 92.642% / Loss: 0.2501 / Grad Norm: 0.2909 / Grad Diff: 29.9697 / Time: 8.93s
+======================================================================================================
+
+= Test = round: 200 / acc: 93.220% / loss: 0.2321 / Time: 0.77s
+======================================================================================================
+
+>>> Training model_ft
+Epoch: 001, Train_loss: 1.1372, Train_acc: 0.6466, Test_loss: 1.1193, Test_acc: 0.6565
+Epoch: 006, Train_loss: 0.8742, Train_acc: 0.7211, Test_loss: 0.8716, Test_acc: 0.7254
+Epoch: 011, Train_loss: 0.8092, Train_acc: 0.7459, Test_loss: 0.8210, Test_acc: 0.7425
+Epoch: 016, Train_loss: 0.7888, Train_acc: 0.7511, Test_loss: 0.8066, Test_acc: 0.7496
+Epoch: 021, Train_loss: 0.7587, Train_acc: 0.7590, Test_loss: 0.7922, Test_acc: 0.7499
+Epoch: 026, Train_loss: 0.7382, Train_acc: 0.7667, Test_loss: 0.7731, Test_acc: 0.7626
+Epoch: 031, Train_loss: 0.7141, Train_acc: 0.7743, Test_loss: 0.7572, Test_acc: 0.7629
+Epoch: 036, Train_loss: 0.7099, Train_acc: 0.7738, Test_loss: 0.7606, Test_acc: 0.7607
+Epoch: 041, Train_loss: 0.7029, Train_acc: 0.7762, Test_loss: 0.7574, Test_acc: 0.7611
+Epoch: 046, Train_loss: 0.6794, Train_acc: 0.7833, Test_loss: 0.7394, Test_acc: 0.7692
+Epoch: 051, Train_loss: 0.6704, Train_acc: 0.7863, Test_loss: 0.7356, Test_acc: 0.7700
+Epoch: 056, Train_loss: 0.6817, Train_acc: 0.7807, Test_loss: 0.7511, Test_acc: 0.7654
+Epoch: 061, Train_loss: 0.6604, Train_acc: 0.7878, Test_loss: 0.7361, Test_acc: 0.7657
+Epoch: 066, Train_loss: 0.6509, Train_acc: 0.7926, Test_loss: 0.7286, Test_acc: 0.7711
+Epoch: 071, Train_loss: 0.6465, Train_acc: 0.7920, Test_loss: 0.7207, Test_acc: 0.7744
+Epoch: 076, Train_loss: 0.6452, Train_acc: 0.7924, Test_loss: 0.7216, Test_acc: 0.7710
+Epoch: 081, Train_loss: 0.6380, Train_acc: 0.7952, Test_loss: 0.7229, Test_acc: 0.7757
+Epoch: 086, Train_loss: 0.6632, Train_acc: 0.7842, Test_loss: 0.7444, Test_acc: 0.7644
+Epoch: 091, Train_loss: 0.6376, Train_acc: 0.7945, Test_loss: 0.7268, Test_acc: 0.7722
+Epoch: 096, Train_loss: 0.6417, Train_acc: 0.7923, Test_loss: 0.7279, Test_acc: 0.7689
+Epoch: 101, Train_loss: 0.6428, Train_acc: 0.7910, Test_loss: 0.7396, Test_acc: 0.7664
+Epoch: 106, Train_loss: 0.6178, Train_acc: 0.8024, Test_loss: 0.7123, Test_acc: 0.7794
+Epoch: 111, Train_loss: 0.6337, Train_acc: 0.7934, Test_loss: 0.7321, Test_acc: 0.7702
+Fine-tuning early stopped. Model saved at ./models/ft_checkpoints/20230925111800_model_ft.pt.
+Model saved at ./models/ft_checkpoints/20230925111800_model_ft.pt.
+>>> Fine-tuning done!
+>>> Evaluating model_source_only
+model_ft: [0.6177857601338125, 0.802359282046067, 0.7123223997502708, 0.7793578491278746]
+model_source_only: [2.347339388330161, 0.4368739512889612, 2.371361587063735, 0.43628485723808463]
+fl_test_acc_mean 0.932
+model_source_only_test_acc_mean 0.43628485723808463
+model_ft_test_acc_mean 0.7793578491278746

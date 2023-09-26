@@ -32,6 +32,10 @@ class Worker(object):
         else:
             self.reg_J_coef = 0.0
             self.alpha = 0.0
+        
+        self.reg_J_norm_coef = options['reg_J_norm_coef']
+        self.reg_J_ind_coef = options['reg_J_ind_coef']
+        
         # Setup local model and evaluate its statics
         self.flops, self.params_num, self.model_bytes = \
             get_model_complexity_info(self.model, options['input_shape'], gpu=options['gpu'])
@@ -185,22 +189,39 @@ class Worker(object):
 class LrdWorker(Worker):
     def __init__(self, model, optimizer, options):
         self.num_epoch = options['num_epoch']
+        self.repeat_epoch = options['repeat_epoch']
+        self.clip = options['clip']
         super(LrdWorker, self).__init__(model, optimizer, options)
     
-    def local_train(self, train_dataloader, last_round_avg_local_grad_norm=None, **kwargs):
+    def local_train(self, train_dataloader, last_round_avg_local_grad_norm=None,  last_round_global_grad = None, **kwargs):
         # current_step = kwargs['T']
         self.model.train()
         train_loss = train_acc = train_total = 0
-        for i in range(self.num_epoch * 10):
+        for i in range(self.num_epoch * self.repeat_epoch):
             x, y = next(iter(train_dataloader))
 
+            
+            loss_reg_J = loss_reg_J_ind = loss_reg_J_norm = 0
+            
+            
+            latest_model_local_grad = self.get_flat_grads_from_data(x, y)
+            
             # loss term for reg_J
             if self.reg_J_coef != 0 and last_round_avg_local_grad_norm is not None:
-                latest_model_local_grad = self.get_flat_grads_from_data(x, y)
+                # print("Applying UB reg with coef = ", self.reg_J_coef)
                 cur_lr = self.optimizer.get_current_lr()
                 loss_reg_J = self.alpha * (cur_lr ** 2) / 2 * torch.norm(latest_model_local_grad) ** 2 - cur_lr * last_round_avg_local_grad_norm ** 2
-            else:
-                loss_reg_J = 0.0
+            
+            if self.reg_J_norm_coef!= 0 and last_round_avg_local_grad_norm is not None:
+                # print("Applying J norm reg with coef = ", self.reg_J_norm_coef)
+                local_gradnorm = torch.norm(latest_model_local_grad)
+                loss_reg_J_norm = (last_round_avg_local_grad_norm - local_gradnorm)**2
+
+            if self.reg_J_ind_coef != 0 and last_round_global_grad is not None:
+                # print("Applying J reg with coef = ", self.reg_J_ind_coef)
+                loss_reg_J_ind = torch.norm(last_round_global_grad - latest_model_local_grad)**2
+            
+            
 
             x = self.flatten_data(x)
             if self.gpu:
@@ -208,9 +229,20 @@ class LrdWorker(Worker):
             
             self.optimizer.zero_grad()
             pred = self.model(x)
-            loss = criterion(pred, y) + self.reg_J_coef * loss_reg_J
+            loss = criterion(pred, y)
+            
+            if self.reg_J_coef != 0 and last_round_avg_local_grad_norm is not None: 
+                loss += self.reg_J_coef * loss_reg_J
+            
+            if self.reg_J_norm_coef!= 0 and last_round_avg_local_grad_norm is not None:
+                loss += self.reg_J_norm_coef * loss_reg_J_norm
+            
+            if self.reg_J_ind_coef!= 0 and last_round_global_grad is not None:
+                loss += self.reg_J_ind_coef * loss_reg_J_ind
+            
             loss.backward()
-            torch.nn.utils.clip_grad_norm_(self.model.parameters(), 60)
+            if self.clip:
+                torch.nn.utils.clip_grad_norm_(self.model.parameters(), 60)
             self.optimizer.step()
             
             _, predicted = torch.max(pred, 1)

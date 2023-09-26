@@ -1,0 +1,41 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "main_mnist_mnist_m.py", line 6, in <module>
+    import torch
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/torch/__init__.py", line 29, in <module>
+    from .torch_version import __version__ as __version__
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/torch/torch_version.py", line 3, in <module>
+    from pkg_resources import packaging  # type: ignore[attr-defined]
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/pkg_resources/__init__.py", line 82, in <module>
+    __import__('pkg_resources.extern.packaging.version')
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/pkg_resources/_vendor/packaging/version.py", line 257, in <module>
+    class Version(_BaseVersion):
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/pkg_resources/_vendor/packaging/version.py", line 259, in Version
+    _regex = re.compile(r"^\s*" + VERSION_PATTERN + r"\s*$", re.VERBOSE | re.IGNORECASE)
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/re.py", line 236, in compile
+    return _compile(pattern, flags)
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/re.py", line 288, in _compile
+    p = sre_compile.compile(pattern, flags)
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/sre_compile.py", line 764, in compile
+    p = sre_parse.parse(p, flags)
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/sre_parse.py", line 924, in parse
+    p = _parse_sub(source, pattern, flags & SRE_FLAG_VERBOSE, 0)
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/sre_parse.py", line 420, in _parse_sub
+    not nested and not items))
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/sre_parse.py", line 810, in _parse
+    p = _parse_sub(source, state, sub_verbose, nested + 1)
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/sre_parse.py", line 420, in _parse_sub
+    not nested and not items))
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/sre_parse.py", line 810, in _parse
+    p = _parse_sub(source, state, sub_verbose, nested + 1)
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/sre_parse.py", line 420, in _parse_sub
+    not nested and not items))
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/sre_parse.py", line 810, in _parse
+    p = _parse_sub(source, state, sub_verbose, nested + 1)
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/sre_parse.py", line 420, in _parse_sub
+    not nested and not items))
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/sre_parse.py", line 471, in _parse
+    subpattern = SubPattern(state)
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/sre_parse.py", line 111, in __init__
+    def __init__(self, pattern, data=None):
+KeyboardInterrupt

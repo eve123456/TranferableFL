@@ -1,0 +1,7 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "main_mnist_mnist_m.py", line 6, in <module>
+    import torch
+  File "/home/chaopan2/miniconda3/envs/graph_unlearn/lib/python3.7/site-packages/torch/__init__.py", line 197, in <module>
+    from torch._C import *  # noqa: F403
+RuntimeError: KeyboardInterrupt: 

@@ -35,6 +35,8 @@ class FedAvgTLTrainer(BaseTrainer):
         # Fetch latest flat model parameter
         self.latest_model = self.worker.get_flat_model_params().detach()
         last_round_avg_local_grad_norm = None
+        last_round_global_grad= None
+
         best_train_loss = float('inf')
         best_test_acc = 0
         patience = 0
@@ -77,7 +79,9 @@ class FedAvgTLTrainer(BaseTrainer):
                     self.optimizer.set_lr(new_lr)
             print(f'round {round_i} local learning rate = {self.optimizer.get_current_lr()}')
             
-            solns, stats, local_grads = self.local_train(round_i, selected_clients, last_round_avg_local_grad_norm=last_round_avg_local_grad_norm)
+            
+            solns, stats, local_grads = self.local_train(round_i, selected_clients, last_round_avg_local_grad_norm=last_round_avg_local_grad_norm, 
+                                                   last_round_global_grad= last_round_global_grad)
 
             # Track communication cost
             self.metrics.extend_commu_stats(round_i, stats)
@@ -87,7 +91,9 @@ class FedAvgTLTrainer(BaseTrainer):
             # self.optimizer.inverse_prop_decay_learning_rate(round_i)
 
             # aggregate the local gradients and compute the norm
+            last_round_global_grad = torch.mean(torch.stack(local_grads, dim=0), dim=0)
             last_round_avg_local_grad_norm = torch.norm(torch.mean(torch.stack(local_grads, dim=0), dim=0))
+
 
         # Test final model on train data
         self.test_latest_model_on_traindata(self.num_round)

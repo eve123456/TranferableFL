@@ -90,7 +90,7 @@ class BaseTrainer(object):
         np.random.seed(seed)
         return np.random.choice(self.clients, num_clients, replace=False).tolist()
 
-    def local_train(self, round_i, selected_clients, last_round_avg_local_grad_norm=None, **kwargs):
+    def local_train(self, round_i, selected_clients, last_round_avg_local_grad_norm=None, last_round_global_grad = None, **kwargs):
         """Training procedure for selected local clients
 
         Args:
@@ -109,7 +109,8 @@ class BaseTrainer(object):
             c.set_flat_model_params(self.latest_model)
 
             # Solve minimization locally
-            soln, stat, local_grad = c.local_train(last_round_avg_local_grad_norm=last_round_avg_local_grad_norm)
+            soln, stat, local_grad = c.local_train(last_round_avg_local_grad_norm=last_round_avg_local_grad_norm, 
+                                                   last_round_global_grad= last_round_global_grad)
             if self.print_result and False:
                 print("Round: {:>2d} | CID: {: >3d} ({:>2d}/{:>2d})| "
                       "Param: norm {:>.4f} ({:>.4f}->{:>.4f})| "
