@@ -42,7 +42,7 @@ class FedAvgTLTrainer(BaseTrainer):
         for round_i in range(self.num_round):
 
             # Test latest model on train data
-            _, local_grads_norm_square = self.test_latest_model_on_traindata(round_i)
+            self.test_latest_model_on_traindata(round_i)
             self.test_latest_model_on_evaldata(round_i)
             
             # check for early stopping after we evaluate the loss on training data
@@ -71,12 +71,12 @@ class FedAvgTLTrainer(BaseTrainer):
 
             # Solve minimization locally
             # check if we need to optimize the learning rate at each round
-            if self.opt_lr:
-                # if last_round_avg_local_grad_norm is not None:
-                #     new_lr = self.clients_per_round * last_round_avg_local_grad_norm ** 2 / self.alpha / local_grads_norm_square
-                #     self.optimizer.set_lr(new_lr)
-                pass
-            print(f'round {round_i} local learning rate = {self.optimizer.get_current_lr()}')
+            # if self.opt_lr:
+            #     # if last_round_avg_local_grad_norm is not None:
+            #     #     new_lr = self.clients_per_round * last_round_avg_local_grad_norm ** 2 / self.alpha / local_grads_norm_square
+            #     #     self.optimizer.set_lr(new_lr)
+            #     pass
+            # print(f'round {round_i} local learning rate = {self.optimizer.get_current_lr()}')
             
             
             solns, stats = self.local_train(round_i, selected_clients)
@@ -87,8 +87,6 @@ class FedAvgTLTrainer(BaseTrainer):
             # Update latest model
             self.latest_model = self.aggregate(solns, repeated_times=repeated_times)
             # self.optimizer.inverse_prop_decay_learning_rate(round_i)
-
-            
 
 
         # Test final model on train data

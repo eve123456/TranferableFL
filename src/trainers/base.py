@@ -35,6 +35,9 @@ class BaseTrainer(object):
         self.metrics = Metrics(self.clients, options, self.name)
         self.print_result = not options['noprint']
         self.latest_model = self.worker.get_flat_model_params()
+        self.opt_lr = options['opt_lr']
+        self.reg_max = options['reg_max']
+        self.lr = options['lr']
 
     @staticmethod
     def move_model_to_gpu(model, options):
@@ -103,31 +106,72 @@ class BaseTrainer(object):
         """
         solns = []  # Buffer for receiving client solutions
         stats = []  # Buffer for receiving client communication costs
-        
+
+
+
         # calculate avg_grad_at_global_weight_last_round and its norm
+        # calculate avg_grad_norm_at_global_last_round
         if round_i == 0:
-            norm_avg_grad_at_global_weight_last_round = avg_grad_at_global_weight_last_round = None
+            norm_avg_grad_at_global_weight_last_round = avg_grad_at_global_weight_last_round = max_grad_norm_sq_at_global_weight_last_round = max_grad_for_reg = sqrt_max_grad_norm_sq_at_global_weight_last_round = None
+        
         else:
             local_grads_at_global_weight = []
-        
+            # if self.opt_lr:
+            # local_grad_norms_at_gloobal_weight = []
+            local_grad_norms_sq_at_gloobal_weight = []
             for i, c in enumerate(selected_clients, start=1):
                 # Communicate the latest model
                 c.set_flat_model_params(self.latest_model)
                 c_grad_at_global_weights = c.worker.get_flat_grads(c.train_dataloader).detach()
                 local_grads_at_global_weight.append(c_grad_at_global_weights)
+                
+                # if self.opt_lr:
+                # local_grad_norms_at_gloobal_weight.append(torch.norm(c_grad_at_global_weights))
+                local_grad_norms_sq_at_gloobal_weight.append(torch.norm(c_grad_at_global_weights)**2)
             
             avg_grad_at_global_weight_last_round = torch.mean(torch.stack(local_grads_at_global_weight, dim=0), dim=0)
             
             norm_avg_grad_at_global_weight_last_round = torch.norm(avg_grad_at_global_weight_last_round)
+            # if self.opt_lr:
+            # avg_grad_norm_at_global_weight_last_round = torch.mean(torch.stack(local_grad_norms_at_gloobal_weight, dim=0), dim=0)
+            avg_grad_norm_sq_at_global_weight_last_round = torch.mean(torch.stack(local_grad_norms_sq_at_gloobal_weight, dim=0), dim=0)
+            # max_grad_norm_at_global_weight_last_round = torch.max(torch.stack(local_grad_norms_at_gloobal_weight, dim=0))
+            max_grad_norm_sq_at_global_weight_last_round = torch.max(torch.stack(local_grad_norms_sq_at_gloobal_weight, dim=0))
 
+            sqrt_max_grad_norm_sq_at_global_weight_last_round = torch.sqrt(max_grad_norm_sq_at_global_weight_last_round)
+
+            max_grad_for_reg = avg_grad_at_global_weight_last_round * sqrt_max_grad_norm_sq_at_global_weight_last_round / norm_avg_grad_at_global_weight_last_round
+
+            var_grad_at_global = avg_grad_norm_sq_at_global_weight_last_round - norm_avg_grad_at_global_weight_last_round**2
+
+        if self.opt_lr and round_i != 0:
+            # new_lr = (1/self.alpha) *  (norm_avg_grad_at_global_weight_last_round / avg_grad_norm_at_global_weight_last_round)
+            new_lr = (1/self.alpha) *  (norm_avg_grad_at_global_weight_last_round**2 / avg_grad_norm_sq_at_global_weight_last_round)
+            if new_lr > self.lr: 
+                self.optimizer.set_lr(new_lr)
+              
+        if round_i == 0:
+            # print(f'round {round_i}: local lr = {round(self.optimizer.get_current_lr(), 4)}')
+            print(f'round {round_i}: local lr = {self.optimizer.get_current_lr()}')
+        else:
+            # print(f'round {round_i}: local lr = {self.optimizer.get_current_lr()}, norm_avg_grad = {norm_avg_grad_at_global_weight_last_round}, avg_norm_grad = {avg_grad_norm_at_global_weight_last_round},\
+                #   max_norm_grad = {max_grad_norm_at_global_weight_last_round}')
+            print(f'round {round_i}: local lr = {self.optimizer.get_current_lr()}, sq_norm_avg_grad = {norm_avg_grad_at_global_weight_last_round**2}, avg_sq_norm_grad = {avg_grad_norm_sq_at_global_weight_last_round},\
+                  max_norm_grad = {sqrt_max_grad_norm_sq_at_global_weight_last_round}, var_grad = {var_grad_at_global}')
         
+
         for i, c in enumerate(selected_clients, start=1):
             # Communicate the latest model
             c.set_flat_model_params(self.latest_model)
 
             # Solve minimization locally
-            soln, stat = c.local_train(last_round_avg_local_grad_norm = norm_avg_grad_at_global_weight_last_round, 
+            if self.reg_max:
+                soln, stat = c.local_train(last_round_avg_local_grad_norm = sqrt_max_grad_norm_sq_at_global_weight_last_round , 
+                                                   last_round_global_grad = max_grad_for_reg)
+            else:
+                soln, stat = c.local_train(last_round_avg_local_grad_norm = norm_avg_grad_at_global_weight_last_round, 
                                                    last_round_global_grad = avg_grad_at_global_weight_last_round)
+
             if self.print_result and False:
                 print("Round: {:>2d} | CID: {: >3d} ({:>2d}/{:>2d})| "
                       "Param: norm {:>.4f} ({:>.4f}->{:>.4f})| "
@@ -172,41 +216,45 @@ class BaseTrainer(object):
     def test_latest_model_on_traindata(self, round_i):
         # Collect stats from total train data
         begin_time = time.time()
-        # this step already sets the client model to be the latest model (i.e., server model)
+        # # this step already sets the client model to be the latest model (i.e., server model)
         stats_from_train_data = self.local_test(use_eval_data=False)
 
         # Record the global gradient
-        model_len = len(self.latest_model)
-        global_grads = np.zeros(model_len)
-        num_samples = []
-        local_grads = []
-        local_grads_norm_square = 0
+        # model_len = len(self.latest_model)
+        # global_grads = np.zeros(model_len)
+        # num_samples = []
+        # local_grads = []
+        # local_grads_norm_square = 0
 
-        for c in self.clients:
-            (num, client_grad), stat = c.solve_grad()
-            local_grads.append(client_grad)
-            local_grads_norm_square += np.linalg.norm(client_grad) ** 2
-            num_samples.append(num)
-            global_grads += client_grad * num
-        global_grads /= np.sum(np.asarray(num_samples))
-        stats_from_train_data['gradnorm'] = np.linalg.norm(global_grads)
+        # for c in self.clients:
+        #     (num, client_grad), stat = c.solve_grad()
+        #     local_grads.append(client_grad)
+        #     local_grads_norm_square += np.linalg.norm(client_grad) ** 2
+        #     num_samples.append(num)
+        #     global_grads += client_grad * num
+        # global_grads /= np.sum(np.asarray(num_samples))
+        # stats_from_train_data['gradnorm'] = np.linalg.norm(global_grads)
 
-        # Measure the gradient difference
-        difference = 0.
-        for idx in range(len(self.clients)):
-            difference += np.sum(np.square(global_grads - local_grads[idx]))
-        difference /= len(self.clients)
-        stats_from_train_data['graddiff'] = difference
+        # # Measure the gradient difference
+        # difference = 0.
+        # for idx in range(len(self.clients)):
+        #     difference += np.sum(np.square(global_grads - local_grads[idx]))
+        # difference /= len(self.clients)
+        # stats_from_train_data['graddiff'] = difference
         end_time = time.time()
 
         self.metrics.update_train_stats(round_i, stats_from_train_data)
         if self.print_result and round_i % self.eval_every == 0:
+            # print('\n>>> Round: {: >4d} / Acc: {:.3%} / Loss: {:.4f} /'
+            #       ' Grad Norm: {:.4f} / Grad Diff: {:.4f} / Time: {:.2f}s'.format(
+            #        round_i, stats_from_train_data['acc'], stats_from_train_data['loss'],
+            #        stats_from_train_data['gradnorm'], difference, end_time-begin_time))
             print('\n>>> Round: {: >4d} / Acc: {:.3%} / Loss: {:.4f} /'
-                  ' Grad Norm: {:.4f} / Grad Diff: {:.4f} / Time: {:.2f}s'.format(
+                  'Time: {:.2f}s'.format(
                    round_i, stats_from_train_data['acc'], stats_from_train_data['loss'],
-                   stats_from_train_data['gradnorm'], difference, end_time-begin_time))
+                   end_time-begin_time))
             print('=' * 102 + '\n')
-        return global_grads, local_grads_norm_square
+        # return global_grads, local_grads_norm_square
 
     def test_latest_model_on_evaldata(self, round_i):
         # Collect stats from total eval data

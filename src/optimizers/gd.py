@@ -53,6 +53,7 @@ class GD(Optimizer):
             param_group['lr'] = self.lr / (round_i+1)
 
     def set_lr(self, lr):
+        self.lr = lr
         for param_group in self.param_groups:
             param_group['lr'] = lr
 

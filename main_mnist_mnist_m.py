@@ -67,7 +67,7 @@ def read_options():
     parser.add_argument('--num_round',
                         help='number of rounds to simulate;',
                         type=int,
-                        default=2)
+                        default=200)
     parser.add_argument('--eval_every',
                         help='evaluate every ____ rounds;',
                         type=int,
@@ -99,18 +99,25 @@ def read_options():
                         help='add more information;',
                         type=str,
                         default='')
+    
     parser.add_argument('--opt_lr',
                         help='flag for optimizing local learning rate at each round (default: False);',
                         action='store_true',
-                        default=False)
-    parser.add_argument('--reg_J',
-                        help='flag for regularizing Jacobian in the form of upper bound (default: False); not used in later code, code only uses coef to control.',
+                        default=True)
+    
+    parser.add_argument('--reg_max',
+                        help='flag for regularizing J with max-norm local J.',
                         action='store_true',
                         default=True)
+    
+    parser.add_argument('--reg_J',
+                        help='flag for regularizing Jacobian in the form of upper bound (default: False).',
+                        action='store_true',
+                        default=False)
     parser.add_argument('--reg_J_coef',
                         help='coefficient for regularization on Jacobian;',
                         type=float,
-                        default=0.01)
+                        default=0.0)
     
     parser.add_argument('--reg_J_norm_coef',
                         help='coefficient for regularization on Jacobian norm;',
@@ -120,7 +127,7 @@ def read_options():
     parser.add_argument('--reg_J_ind_coef',
                         help='coefficient for regularization on Jacobian (indexwise);',
                         type=float,
-                        default=0.0)
+                        default=0.001)
 
     parser.add_argument('--clip',
                         help = 'flag for whether do grad norm clip',
@@ -331,19 +338,19 @@ def main():
 
             # Initialize new models
             model_source_only = choose_model(options)  # baseline: lower bound (f on source, g on source)
-            model_ft = choose_model(options)  # baseline: standard fine-tune (f on source, g on target)
+            # model_ft = choose_model(options)  # baseline: standard fine-tune (f on source, g on target)
             # model_target_only = choose_model(options)  # baseline: upper bound (f on target, g on target)
             # model_random = choose_model(options)  # baseline: lower bound (f random, g on target)
 
             # Assign model params
             set_flat_params_to(model_source_only, flat_model_params)
-            set_flat_params_to(model_ft, flat_model_params)
+            # set_flat_params_to(model_ft, flat_model_params)
 
             # Now model is set with flat_model_params
             # Start fine-tuning below
             # First, freeze all but last k fc layers
             # freeze(model_random, options['last_k'])
-            freeze(model_ft, options['last_k'])
+            # freeze(model_ft, options['last_k'])
 
             checkpoint_prefix = f'./models/ft_checkpoints/{uid}_'
             # # Train model_target_only
@@ -352,7 +359,7 @@ def main():
 
             # fine-tuning
             print('>>> Training model_ft')
-            _, model_ft_results = ft_train(model_ft, options, options['device'], ft_train_loader, ft_test_loader, checkpoint_prefix + 'model_ft.pt')
+            # _, model_ft_results = ft_train(model_ft, options, options['device'], ft_train_loader, ft_test_loader, checkpoint_prefix + 'model_ft.pt')
 
             # # fine-tuning random model
             # print('>>> Training model_random')
@@ -368,7 +375,7 @@ def main():
                                                                               ft_test_loader, criterion=criterion)
 
             # print(f'model_target_only: {model_target_only_results}')
-            print(f'model_ft: {model_ft_results}')
+            # print(f'model_ft: {model_ft_results}')
             # print(f'model_random: {model_random_results}')
             print(f'model_source_only: {model_source_only_results}')
             
@@ -379,7 +386,7 @@ def main():
     
     print('fl_test_acc_mean', np.mean(fl_test_acc))
     print('model_source_only_test_acc_mean', np.mean(model_source_only_test_acc))
-    print('model_ft_test_acc_mean', np.mean(model_ft_test_acc))
+    # print('model_ft_test_acc_mean', np.mean(model_ft_test_acc))
     # print('model_target_only_test_acc_mean', np.mean(model_target_only_test_acc))
     # print('model_random_test_acc_mean', np.mean(model_random_test_acc))
     

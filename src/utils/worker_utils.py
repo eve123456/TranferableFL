@@ -179,13 +179,13 @@ class Metrics(object):
     def update_train_stats(self, round_i, train_stats):
         self.loss_on_train_data[round_i] = train_stats['loss']
         self.acc_on_train_data[round_i] = train_stats['acc']
-        self.gradnorm_on_train_data[round_i] = train_stats['gradnorm']
-        self.graddiff_on_train_data[round_i] = train_stats['graddiff']
+        # self.gradnorm_on_train_data[round_i] = train_stats['gradnorm']
+        # self.graddiff_on_train_data[round_i] = train_stats['graddiff']
 
         self.train_writer.add_scalar('train_loss', train_stats['loss'], round_i)
         self.train_writer.add_scalar('train_acc', train_stats['acc'], round_i)
-        self.train_writer.add_scalar('gradnorm', train_stats['gradnorm'], round_i)
-        self.train_writer.add_scalar('graddiff', train_stats['graddiff'], round_i)
+        # self.train_writer.add_scalar('gradnorm', train_stats['gradnorm'], round_i)
+        # self.train_writer.add_scalar('graddiff', train_stats['graddiff'], round_i)
 
     def update_eval_stats(self, round_i, eval_stats):
         self.loss_on_eval_data[round_i] = eval_stats['loss']
