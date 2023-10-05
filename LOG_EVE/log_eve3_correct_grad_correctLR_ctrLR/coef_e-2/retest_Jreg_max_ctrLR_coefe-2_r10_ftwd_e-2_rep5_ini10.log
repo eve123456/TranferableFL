@@ -1,0 +1,415 @@
+nohup: ignoring input
+working!
+Using device: cuda:0
+>>> Arguments:
+	             algo : fedavgtl
+	            alpha : 13.2316427
+	       batch_size : 64
+	clients_per_round : 100
+	             clip : False
+	          dataset : mnist_all_data_1_equal_niid
+	           device : cuda:0
+	              dis : 
+	   early_stopping : 10
+	       eval_every : 5
+	    ft_batch_size : 128
+	       ft_dataset : mnist-m
+	        ft_epochs : 200
+	            ft_lr : 0.001
+	            ft_wd : 0.01
+	              gpu : True
+	      input_shape : (1, 28, 28)
+	           last_k : 1
+	               lr : 0.01
+	            model : lenet
+	           n_init : 10
+	        noaverage : False
+	             noft : False
+	          noprint : False
+	        num_class : 10
+	        num_epoch : 1
+	        num_round : 10
+	           opt_lr : True
+	            reg_J : False
+	       reg_J_coef : 0.0
+	   reg_J_ind_coef : 0.01
+	  reg_J_norm_coef : 0.0
+	          reg_max : True
+	           repeat : 5
+	     repeat_epoch : 10
+	             seed : 0
+	               wd : 0.0
+>>> Read data from:
+     ./data/mnist/data/all_data_1.pkl
+>>> The estimate of constant alpha is 13.2316427.
+>>> Read data from:
+     ./data/mnist/data/train/all_data_1_equal_niid.pkl
+     ./data/mnist/data/test/all_data_1_equal_niid.pkl
+
+************************************************************************************************************************
+
+uid: 20231002154201
+FL pretrained model will be saved at ./models/lenet_mnist_20231002154201.pt
+>>> Use gpu on device cuda:0
+>>> Model statistic per layer
+LeNet_MNIST(
+  286.12 KMac, 100.000% MACs, 
+  (conv1): Conv2d(89.856 KMac, 31.405% MACs, 1, 6, kernel_size=(5, 5), stride=(1, 1))
+  (conv2): Conv2d(154.624 KMac, 54.042% MACs, 6, 16, kernel_size=(5, 5), stride=(1, 1))
+  (fc1): Linear(30.72 KMac, 10.737% MACs, in_features=256, out_features=120, bias=True)
+  (fc2): Linear(10.08 KMac, 3.523% MACs, in_features=120, out_features=84, bias=True)
+  (fc3): Linear(840.0 Mac, 0.294% MACs, in_features=84, out_features=10, bias=True)
+)
+>>> Activate a worker for training
+>>> Initialize 100 clients in total
+>>> Weigh updates by simple average
+>>> Select 100 clients per round 
+
+
+>>> Round:    0 / Acc: 11.875% / Loss: 2.3020 /Time: 4.58s
+======================================================================================================
+
+= Test = round: 0 / acc: 12.230% / loss: 2.3006 / Time: 0.87s
+======================================================================================================
+
+round 0: local lr = 0.01
+round 1: local lr = 0.01, sq_norm_avg_grad = 0.038008321076631546, avg_sq_norm_grad = 1.5352767705917358,                  max_norm_grad = 1.465564250946045, var_grad = 1.4972684383392334
+round 2: local lr = 0.01, sq_norm_avg_grad = 0.041318379342556, avg_sq_norm_grad = 1.749237298965454,                  max_norm_grad = 1.5755444765090942, var_grad = 1.7079188823699951
+round 3: local lr = 0.01, sq_norm_avg_grad = 0.04669297859072685, avg_sq_norm_grad = 2.078928232192993,                  max_norm_grad = 1.7259328365325928, var_grad = 2.0322351455688477
+round 4: local lr = 0.01, sq_norm_avg_grad = 0.05854259431362152, avg_sq_norm_grad = 2.6016533374786377,                  max_norm_grad = 1.9431439638137817, var_grad = 2.5431108474731445
+
+>>> Round:    5 / Acc: 19.000% / Loss: 2.2784 /Time: 4.72s
+======================================================================================================
+
+= Test = round: 5 / acc: 19.750% / loss: 2.2758 / Time: 0.88s
+======================================================================================================
+
+round 5: local lr = 0.01, sq_norm_avg_grad = 0.07511395215988159, avg_sq_norm_grad = 3.4135167598724365,                  max_norm_grad = 2.222200632095337, var_grad = 3.33840274810791
+round 6: local lr = 0.01, sq_norm_avg_grad = 0.09738237410783768, avg_sq_norm_grad = 4.739804744720459,                  max_norm_grad = 2.6455483436584473, var_grad = 4.642422199249268
+round 7: local lr = 0.01, sq_norm_avg_grad = 0.13305386900901794, avg_sq_norm_grad = 7.186844348907471,                  max_norm_grad = 3.282769203186035, var_grad = 7.05379056930542
+round 8: local lr = 0.01, sq_norm_avg_grad = 0.20441050827503204, avg_sq_norm_grad = 12.331295013427734,                  max_norm_grad = 4.320088863372803, var_grad = 12.126884460449219
+round 9: local lr = 0.01, sq_norm_avg_grad = 0.407109797000885, avg_sq_norm_grad = 25.838075637817383,                  max_norm_grad = 6.173474311828613, var_grad = 25.430965423583984
+
+>>> Round:   10 / Acc: 22.190% / Loss: 2.1897 /Time: 5.51s
+======================================================================================================
+
+= Test = round: 10 / acc: 23.440% / loss: 2.1784 / Time: 1.20s
+======================================================================================================
+
+>>> Training model_ft
+Epoch: 001, Train_loss: 2.0824, Train_acc: 0.2637, Test_loss: 2.0824, Test_acc: 0.2590
+Epoch: 006, Train_loss: 1.7399, Train_acc: 0.4503, Test_loss: 1.7358, Test_acc: 0.4487
+Epoch: 011, Train_loss: 1.7159, Train_acc: 0.4636, Test_loss: 1.7084, Test_acc: 0.4724
+Epoch: 016, Train_loss: 1.7027, Train_acc: 0.4737, Test_loss: 1.6952, Test_acc: 0.4811
+Epoch: 021, Train_loss: 1.6978, Train_acc: 0.4757, Test_loss: 1.6885, Test_acc: 0.4871
+Epoch: 026, Train_loss: 1.6852, Train_acc: 0.4839, Test_loss: 1.6745, Test_acc: 0.4989
+Epoch: 031, Train_loss: 1.6769, Train_acc: 0.4968, Test_loss: 1.6692, Test_acc: 0.5025
+Epoch: 036, Train_loss: 1.6766, Train_acc: 0.4803, Test_loss: 1.6663, Test_acc: 0.4892
+Epoch: 041, Train_loss: 1.6855, Train_acc: 0.4910, Test_loss: 1.6756, Test_acc: 0.4966
+Epoch: 046, Train_loss: 1.6673, Train_acc: 0.5019, Test_loss: 1.6571, Test_acc: 0.5086
+Epoch: 051, Train_loss: 1.6634, Train_acc: 0.5042, Test_loss: 1.6556, Test_acc: 0.5099
+Epoch: 056, Train_loss: 1.6626, Train_acc: 0.5018, Test_loss: 1.6530, Test_acc: 0.5081
+Epoch: 061, Train_loss: 1.6625, Train_acc: 0.5028, Test_loss: 1.6542, Test_acc: 0.5087
+Fine-tuning early stopped. Model saved at ./models/ft_checkpoints/20231002154201_model_ft.pt.
+Model saved at ./models/ft_checkpoints/20231002154201_model_ft.pt.
+>>> Fine-tuning done!
+>>> Evaluating model_source_only
+model_ft: [1.6619397294765605, 0.5058219352214369, 1.653085656052708, 0.5123875124986113]
+model_source_only: [2.2852852316509336, 0.1271503872815715, 2.2867043747291103, 0.12909676702588602]
+
+************************************************************************************************************************
+
+uid: 20231002160938
+FL pretrained model will be saved at ./models/lenet_mnist_20231002160938.pt
+>>> Use gpu on device cuda:0
+>>> Model statistic per layer
+LeNet_MNIST(
+  286.12 KMac, 100.000% MACs, 
+  (conv1): Conv2d(89.856 KMac, 31.405% MACs, 1, 6, kernel_size=(5, 5), stride=(1, 1))
+  (conv2): Conv2d(154.624 KMac, 54.042% MACs, 6, 16, kernel_size=(5, 5), stride=(1, 1))
+  (fc1): Linear(30.72 KMac, 10.737% MACs, in_features=256, out_features=120, bias=True)
+  (fc2): Linear(10.08 KMac, 3.523% MACs, in_features=120, out_features=84, bias=True)
+  (fc3): Linear(840.0 Mac, 0.294% MACs, in_features=84, out_features=10, bias=True)
+)
+>>> Activate a worker for training
+>>> Initialize 100 clients in total
+>>> Weigh updates by simple average
+>>> Select 100 clients per round 
+
+
+>>> Round:    0 / Acc: 11.875% / Loss: 2.3020 /Time: 6.92s
+======================================================================================================
+
+= Test = round: 0 / acc: 12.230% / loss: 2.3006 / Time: 1.22s
+======================================================================================================
+
+round 0: local lr = 0.01
+round 1: local lr = 0.01, sq_norm_avg_grad = 0.03798116743564606, avg_sq_norm_grad = 1.5345771312713623,                  max_norm_grad = 1.4648473262786865, var_grad = 1.4965959787368774
+round 2: local lr = 0.01, sq_norm_avg_grad = 0.04124809429049492, avg_sq_norm_grad = 1.7470991611480713,                  max_norm_grad = 1.5740010738372803, var_grad = 1.7058510780334473
+round 3: local lr = 0.01, sq_norm_avg_grad = 0.046619072556495667, avg_sq_norm_grad = 2.076392889022827,                  max_norm_grad = 1.7245612144470215, var_grad = 2.029773712158203
+round 4: local lr = 0.01, sq_norm_avg_grad = 0.05854424834251404, avg_sq_norm_grad = 2.6036489009857178,                  max_norm_grad = 1.9438197612762451, var_grad = 2.545104742050171
+
+>>> Round:    5 / Acc: 19.282% / Loss: 2.2784 /Time: 6.90s
+======================================================================================================
+
+= Test = round: 5 / acc: 20.110% / loss: 2.2758 / Time: 1.42s
+======================================================================================================
+
+round 5: local lr = 0.01, sq_norm_avg_grad = 0.07501977682113647, avg_sq_norm_grad = 3.4157772064208984,                  max_norm_grad = 2.2239811420440674, var_grad = 3.340757369995117
+round 6: local lr = 0.01, sq_norm_avg_grad = 0.09755638241767883, avg_sq_norm_grad = 4.747838973999023,                  max_norm_grad = 2.6480844020843506, var_grad = 4.650282382965088
+round 7: local lr = 0.01, sq_norm_avg_grad = 0.1336362659931183, avg_sq_norm_grad = 7.204359531402588,                  max_norm_grad = 3.2894842624664307, var_grad = 7.070723056793213
+round 8: local lr = 0.01, sq_norm_avg_grad = 0.2059379518032074, avg_sq_norm_grad = 12.36443042755127,                  max_norm_grad = 4.324318885803223, var_grad = 12.158492088317871
+round 9: local lr = 0.01, sq_norm_avg_grad = 0.4088062345981598, avg_sq_norm_grad = 25.916717529296875,                  max_norm_grad = 6.1739501953125, var_grad = 25.507911682128906
+
+>>> Round:   10 / Acc: 22.293% / Loss: 2.1903 /Time: 7.16s
+======================================================================================================
+
+= Test = round: 10 / acc: 23.590% / loss: 2.1790 / Time: 1.69s
+======================================================================================================
+
+>>> Training model_ft
+Epoch: 001, Train_loss: 2.0619, Train_acc: 0.3032, Test_loss: 2.0631, Test_acc: 0.2949
+Epoch: 006, Train_loss: 1.7422, Train_acc: 0.4561, Test_loss: 1.7360, Test_acc: 0.4637
+Epoch: 011, Train_loss: 1.7115, Train_acc: 0.4781, Test_loss: 1.7046, Test_acc: 0.4853
+Epoch: 016, Train_loss: 1.6987, Train_acc: 0.4860, Test_loss: 1.6888, Test_acc: 0.4931
+Epoch: 021, Train_loss: 1.6842, Train_acc: 0.4904, Test_loss: 1.6759, Test_acc: 0.4999
+Epoch: 026, Train_loss: 1.6852, Train_acc: 0.4882, Test_loss: 1.6761, Test_acc: 0.4951
+Epoch: 031, Train_loss: 1.6860, Train_acc: 0.4761, Test_loss: 1.6754, Test_acc: 0.4869
+Epoch: 036, Train_loss: 1.6764, Train_acc: 0.4945, Test_loss: 1.6669, Test_acc: 0.4995
+Epoch: 041, Train_loss: 1.6692, Train_acc: 0.4956, Test_loss: 1.6603, Test_acc: 0.5038
+Epoch: 046, Train_loss: 1.6720, Train_acc: 0.4783, Test_loss: 1.6639, Test_acc: 0.4867
+Epoch: 051, Train_loss: 1.6688, Train_acc: 0.4947, Test_loss: 1.6605, Test_acc: 0.4967
+Epoch: 056, Train_loss: 1.6679, Train_acc: 0.4934, Test_loss: 1.6592, Test_acc: 0.4995
+Epoch: 061, Train_loss: 1.6689, Train_acc: 0.5001, Test_loss: 1.6585, Test_acc: 0.5117
+Fine-tuning early stopped. Model saved at ./models/ft_checkpoints/20231002160938_model_ft.pt.
+Model saved at ./models/ft_checkpoints/20231002160938_model_ft.pt.
+>>> Fine-tuning done!
+>>> Evaluating model_source_only
+model_ft: [1.6643688127195686, 0.491940814562465, 1.6543607760794812, 0.5000555493834018]
+model_source_only: [2.2854245792669583, 0.12789613735360417, 2.286826410342317, 0.12965226085990444]
+
+************************************************************************************************************************
+
+uid: 20231002165549
+FL pretrained model will be saved at ./models/lenet_mnist_20231002165549.pt
+>>> Use gpu on device cuda:0
+>>> Model statistic per layer
+LeNet_MNIST(
+  286.12 KMac, 100.000% MACs, 
+  (conv1): Conv2d(89.856 KMac, 31.405% MACs, 1, 6, kernel_size=(5, 5), stride=(1, 1))
+  (conv2): Conv2d(154.624 KMac, 54.042% MACs, 6, 16, kernel_size=(5, 5), stride=(1, 1))
+  (fc1): Linear(30.72 KMac, 10.737% MACs, in_features=256, out_features=120, bias=True)
+  (fc2): Linear(10.08 KMac, 3.523% MACs, in_features=120, out_features=84, bias=True)
+  (fc3): Linear(840.0 Mac, 0.294% MACs, in_features=84, out_features=10, bias=True)
+)
+>>> Activate a worker for training
+>>> Initialize 100 clients in total
+>>> Weigh updates by simple average
+>>> Select 100 clients per round 
+
+
+>>> Round:    0 / Acc: 11.875% / Loss: 2.3020 /Time: 6.81s
+======================================================================================================
+
+= Test = round: 0 / acc: 12.230% / loss: 2.3006 / Time: 1.08s
+======================================================================================================
+
+round 0: local lr = 0.01
+round 1: local lr = 0.01, sq_norm_avg_grad = 0.037974197417497635, avg_sq_norm_grad = 1.5361518859863281,                  max_norm_grad = 1.4656174182891846, var_grad = 1.4981776475906372
+round 2: local lr = 0.01, sq_norm_avg_grad = 0.04125342145562172, avg_sq_norm_grad = 1.749621868133545,                  max_norm_grad = 1.5754022598266602, var_grad = 1.7083684206008911
+round 3: local lr = 0.01, sq_norm_avg_grad = 0.046718936413526535, avg_sq_norm_grad = 2.0823371410369873,                  max_norm_grad = 1.7263429164886475, var_grad = 2.035618305206299
+round 4: local lr = 0.01, sq_norm_avg_grad = 0.05872881039977074, avg_sq_norm_grad = 2.6092898845672607,                  max_norm_grad = 1.9454408884048462, var_grad = 2.5505611896514893
+
+>>> Round:    5 / Acc: 18.924% / Loss: 2.2784 /Time: 6.16s
+======================================================================================================
+
+= Test = round: 5 / acc: 19.740% / loss: 2.2758 / Time: 1.27s
+======================================================================================================
+
+round 5: local lr = 0.01, sq_norm_avg_grad = 0.0753079354763031, avg_sq_norm_grad = 3.4222004413604736,                  max_norm_grad = 2.223883628845215, var_grad = 3.3468925952911377
+round 6: local lr = 0.01, sq_norm_avg_grad = 0.09782657027244568, avg_sq_norm_grad = 4.757824420928955,                  max_norm_grad = 2.6496479511260986, var_grad = 4.659997940063477
+round 7: local lr = 0.01, sq_norm_avg_grad = 0.1338975876569748, avg_sq_norm_grad = 7.228529930114746,                  max_norm_grad = 3.294590950012207, var_grad = 7.094632148742676
+round 8: local lr = 0.01, sq_norm_avg_grad = 0.20510612428188324, avg_sq_norm_grad = 12.39391803741455,                  max_norm_grad = 4.327044486999512, var_grad = 12.188812255859375
+round 9: local lr = 0.01, sq_norm_avg_grad = 0.4100222885608673, avg_sq_norm_grad = 26.05459213256836,                  max_norm_grad = 6.187782287597656, var_grad = 25.644569396972656
+
+>>> Round:   10 / Acc: 21.673% / Loss: 2.1897 /Time: 5.80s
+======================================================================================================
+
+= Test = round: 10 / acc: 22.960% / loss: 2.1782 / Time: 1.24s
+======================================================================================================
+
+>>> Training model_ft
+Epoch: 001, Train_loss: 2.0621, Train_acc: 0.3042, Test_loss: 2.0615, Test_acc: 0.3095
+Epoch: 006, Train_loss: 1.7518, Train_acc: 0.4486, Test_loss: 1.7468, Test_acc: 0.4473
+Epoch: 011, Train_loss: 1.7176, Train_acc: 0.4757, Test_loss: 1.7120, Test_acc: 0.4811
+Epoch: 016, Train_loss: 1.7029, Train_acc: 0.4707, Test_loss: 1.6946, Test_acc: 0.4785
+Epoch: 021, Train_loss: 1.6857, Train_acc: 0.4847, Test_loss: 1.6776, Test_acc: 0.4896
+Epoch: 026, Train_loss: 1.6778, Train_acc: 0.4852, Test_loss: 1.6676, Test_acc: 0.4928
+Epoch: 031, Train_loss: 1.6749, Train_acc: 0.4856, Test_loss: 1.6664, Test_acc: 0.4912
+Epoch: 036, Train_loss: 1.6719, Train_acc: 0.4925, Test_loss: 1.6627, Test_acc: 0.4961
+Epoch: 041, Train_loss: 1.6686, Train_acc: 0.4972, Test_loss: 1.6600, Test_acc: 0.5032
+Epoch: 046, Train_loss: 1.6682, Train_acc: 0.4855, Test_loss: 1.6601, Test_acc: 0.4864
+Epoch: 051, Train_loss: 1.6674, Train_acc: 0.4893, Test_loss: 1.6589, Test_acc: 0.4977
+Epoch: 056, Train_loss: 1.6675, Train_acc: 0.4884, Test_loss: 1.6578, Test_acc: 0.4954
+Epoch: 061, Train_loss: 1.6637, Train_acc: 0.4907, Test_loss: 1.6539, Test_acc: 0.5019
+Epoch: 066, Train_loss: 1.6618, Train_acc: 0.4980, Test_loss: 1.6530, Test_acc: 0.5078
+Epoch: 071, Train_loss: 1.6676, Train_acc: 0.5030, Test_loss: 1.6582, Test_acc: 0.5094
+Epoch: 076, Train_loss: 1.6643, Train_acc: 0.4994, Test_loss: 1.6531, Test_acc: 0.5075
+Fine-tuning early stopped. Model saved at ./models/ft_checkpoints/20231002165549_model_ft.pt.
+Model saved at ./models/ft_checkpoints/20231002165549_model_ft.pt.
+>>> Fine-tuning done!
+>>> Evaluating model_source_only
+model_ft: [1.661541856482252, 0.5020423382654531, 1.6526774143380676, 0.5122764137318075]
+model_source_only: [2.2851732123942883, 0.12701479635938373, 2.2864997129204037, 0.1282079768914565]
+
+************************************************************************************************************************
+
+uid: 20231002173929
+FL pretrained model will be saved at ./models/lenet_mnist_20231002173929.pt
+>>> Use gpu on device cuda:0
+>>> Model statistic per layer
+LeNet_MNIST(
+  286.12 KMac, 100.000% MACs, 
+  (conv1): Conv2d(89.856 KMac, 31.405% MACs, 1, 6, kernel_size=(5, 5), stride=(1, 1))
+  (conv2): Conv2d(154.624 KMac, 54.042% MACs, 6, 16, kernel_size=(5, 5), stride=(1, 1))
+  (fc1): Linear(30.72 KMac, 10.737% MACs, in_features=256, out_features=120, bias=True)
+  (fc2): Linear(10.08 KMac, 3.523% MACs, in_features=120, out_features=84, bias=True)
+  (fc3): Linear(840.0 Mac, 0.294% MACs, in_features=84, out_features=10, bias=True)
+)
+>>> Activate a worker for training
+>>> Initialize 100 clients in total
+>>> Weigh updates by simple average
+>>> Select 100 clients per round 
+
+
+>>> Round:    0 / Acc: 11.875% / Loss: 2.3020 /Time: 6.37s
+======================================================================================================
+
+= Test = round: 0 / acc: 12.230% / loss: 2.3006 / Time: 1.42s
+======================================================================================================
+
+round 0: local lr = 0.01
+round 1: local lr = 0.01, sq_norm_avg_grad = 0.03799816966056824, avg_sq_norm_grad = 1.5352468490600586,                  max_norm_grad = 1.4653637409210205, var_grad = 1.497248649597168
+round 2: local lr = 0.01, sq_norm_avg_grad = 0.041217267513275146, avg_sq_norm_grad = 1.7470675706863403,                  max_norm_grad = 1.5740623474121094, var_grad = 1.70585036277771
+round 3: local lr = 0.01, sq_norm_avg_grad = 0.04663453623652458, avg_sq_norm_grad = 2.077155113220215,                  max_norm_grad = 1.7242915630340576, var_grad = 2.0305206775665283
+round 4: local lr = 0.01, sq_norm_avg_grad = 0.058472100645303726, avg_sq_norm_grad = 2.600525379180908,                  max_norm_grad = 1.942561149597168, var_grad = 2.54205322265625
+
+>>> Round:    5 / Acc: 18.869% / Loss: 2.2783 /Time: 5.65s
+======================================================================================================
+
+= Test = round: 5 / acc: 19.750% / loss: 2.2757 / Time: 1.05s
+======================================================================================================
+
+round 5: local lr = 0.01, sq_norm_avg_grad = 0.07503330707550049, avg_sq_norm_grad = 3.414846181869507,                  max_norm_grad = 2.219604969024658, var_grad = 3.339812755584717
+round 6: local lr = 0.01, sq_norm_avg_grad = 0.09739950299263, avg_sq_norm_grad = 4.74149751663208,                  max_norm_grad = 2.6432013511657715, var_grad = 4.644097805023193
+round 7: local lr = 0.01, sq_norm_avg_grad = 0.13346226513385773, avg_sq_norm_grad = 7.200490474700928,                  max_norm_grad = 3.2853939533233643, var_grad = 7.067028045654297
+round 8: local lr = 0.01, sq_norm_avg_grad = 0.2057468444108963, avg_sq_norm_grad = 12.362943649291992,                  max_norm_grad = 4.323923587799072, var_grad = 12.157196998596191
+round 9: local lr = 0.01, sq_norm_avg_grad = 0.4100070297718048, avg_sq_norm_grad = 25.911849975585938,                  max_norm_grad = 6.176760673522949, var_grad = 25.501842498779297
+
+>>> Round:   10 / Acc: 22.192% / Loss: 2.1890 /Time: 6.04s
+======================================================================================================
+
+= Test = round: 10 / acc: 23.450% / loss: 2.1777 / Time: 1.21s
+======================================================================================================
+
+>>> Training model_ft
+Epoch: 001, Train_loss: 2.0711, Train_acc: 0.2964, Test_loss: 2.0696, Test_acc: 0.2943
+Epoch: 006, Train_loss: 1.7423, Train_acc: 0.4535, Test_loss: 1.7372, Test_acc: 0.4547
+Epoch: 011, Train_loss: 1.7089, Train_acc: 0.4786, Test_loss: 1.7021, Test_acc: 0.4858
+Epoch: 016, Train_loss: 1.6937, Train_acc: 0.4813, Test_loss: 1.6854, Test_acc: 0.4888
+Epoch: 021, Train_loss: 1.6834, Train_acc: 0.4859, Test_loss: 1.6736, Test_acc: 0.4893
+Epoch: 026, Train_loss: 1.6736, Train_acc: 0.5002, Test_loss: 1.6637, Test_acc: 0.5021
+Epoch: 031, Train_loss: 1.6737, Train_acc: 0.4956, Test_loss: 1.6645, Test_acc: 0.4998
+Epoch: 036, Train_loss: 1.6658, Train_acc: 0.4992, Test_loss: 1.6541, Test_acc: 0.5111
+Epoch: 041, Train_loss: 1.6614, Train_acc: 0.5031, Test_loss: 1.6536, Test_acc: 0.5095
+Epoch: 046, Train_loss: 1.6636, Train_acc: 0.5129, Test_loss: 1.6535, Test_acc: 0.5154
+Epoch: 051, Train_loss: 1.6617, Train_acc: 0.4954, Test_loss: 1.6529, Test_acc: 0.4992
+Epoch: 056, Train_loss: 1.6586, Train_acc: 0.5026, Test_loss: 1.6492, Test_acc: 0.5126
+Epoch: 061, Train_loss: 1.6559, Train_acc: 0.5160, Test_loss: 1.6462, Test_acc: 0.5242
+Epoch: 066, Train_loss: 1.6581, Train_acc: 0.4899, Test_loss: 1.6484, Test_acc: 0.4994
+Epoch: 071, Train_loss: 1.6605, Train_acc: 0.4920, Test_loss: 1.6512, Test_acc: 0.4962
+Epoch: 076, Train_loss: 1.6566, Train_acc: 0.4983, Test_loss: 1.6487, Test_acc: 0.5035
+Epoch: 081, Train_loss: 1.6597, Train_acc: 0.4983, Test_loss: 1.6496, Test_acc: 0.5062
+Epoch: 086, Train_loss: 1.6590, Train_acc: 0.4894, Test_loss: 1.6502, Test_acc: 0.4988
+Fine-tuning early stopped. Model saved at ./models/ft_checkpoints/20231002173929_model_ft.pt.
+Model saved at ./models/ft_checkpoints/20231002173929_model_ft.pt.
+>>> Fine-tuning done!
+>>> Evaluating model_source_only
+model_ft: [1.6542029638811362, 0.5093472991983187, 1.644449668491619, 0.5161648705699367]
+model_source_only: [2.2851297451648445, 0.12757410891340826, 2.28654048276231, 0.1280968781246528]
+
+************************************************************************************************************************
+
+uid: 20231002181541
+FL pretrained model will be saved at ./models/lenet_mnist_20231002181541.pt
+>>> Use gpu on device cuda:0
+>>> Model statistic per layer
+LeNet_MNIST(
+  286.12 KMac, 100.000% MACs, 
+  (conv1): Conv2d(89.856 KMac, 31.405% MACs, 1, 6, kernel_size=(5, 5), stride=(1, 1))
+  (conv2): Conv2d(154.624 KMac, 54.042% MACs, 6, 16, kernel_size=(5, 5), stride=(1, 1))
+  (fc1): Linear(30.72 KMac, 10.737% MACs, in_features=256, out_features=120, bias=True)
+  (fc2): Linear(10.08 KMac, 3.523% MACs, in_features=120, out_features=84, bias=True)
+  (fc3): Linear(840.0 Mac, 0.294% MACs, in_features=84, out_features=10, bias=True)
+)
+>>> Activate a worker for training
+>>> Initialize 100 clients in total
+>>> Weigh updates by simple average
+>>> Select 100 clients per round 
+
+
+>>> Round:    0 / Acc: 11.875% / Loss: 2.3020 /Time: 5.16s
+======================================================================================================
+
+= Test = round: 0 / acc: 12.230% / loss: 2.3006 / Time: 1.18s
+======================================================================================================
+
+round 0: local lr = 0.01
+round 1: local lr = 0.01, sq_norm_avg_grad = 0.03794798627495766, avg_sq_norm_grad = 1.5344005823135376,                  max_norm_grad = 1.4639952182769775, var_grad = 1.4964525699615479
+round 2: local lr = 0.01, sq_norm_avg_grad = 0.04126079007983208, avg_sq_norm_grad = 1.7492568492889404,                  max_norm_grad = 1.5753177404403687, var_grad = 1.7079960107803345
+round 3: local lr = 0.01, sq_norm_avg_grad = 0.04666601121425629, avg_sq_norm_grad = 2.0797150135040283,                  max_norm_grad = 1.7255662679672241, var_grad = 2.0330491065979004
+round 4: local lr = 0.01, sq_norm_avg_grad = 0.058576952666044235, avg_sq_norm_grad = 2.60504412651062,                  max_norm_grad = 1.9439592361450195, var_grad = 2.5464670658111572
+
+>>> Round:    5 / Acc: 18.854% / Loss: 2.2784 /Time: 5.59s
+======================================================================================================
+
+= Test = round: 5 / acc: 19.660% / loss: 2.2758 / Time: 0.91s
+======================================================================================================
+
+round 5: local lr = 0.01, sq_norm_avg_grad = 0.07522247731685638, avg_sq_norm_grad = 3.421482563018799,                  max_norm_grad = 2.2195496559143066, var_grad = 3.3462600708007812
+round 6: local lr = 0.01, sq_norm_avg_grad = 0.09751676768064499, avg_sq_norm_grad = 4.757723808288574,                  max_norm_grad = 2.646075963973999, var_grad = 4.660207271575928
+round 7: local lr = 0.01, sq_norm_avg_grad = 0.13282200694084167, avg_sq_norm_grad = 7.227474689483643,                  max_norm_grad = 3.288893461227417, var_grad = 7.0946526527404785
+round 8: local lr = 0.01, sq_norm_avg_grad = 0.20430149137973785, avg_sq_norm_grad = 12.44261646270752,                  max_norm_grad = 4.332916736602783, var_grad = 12.238314628601074
+round 9: local lr = 0.01, sq_norm_avg_grad = 0.40791547298431396, avg_sq_norm_grad = 26.282716751098633,                  max_norm_grad = 6.203341007232666, var_grad = 25.874801635742188
+
+>>> Round:   10 / Acc: 22.688% / Loss: 2.1887 /Time: 4.27s
+======================================================================================================
+
+= Test = round: 10 / acc: 24.150% / loss: 2.1775 / Time: 0.80s
+======================================================================================================
+
+>>> Training model_ft
+Epoch: 001, Train_loss: 2.0596, Train_acc: 0.2894, Test_loss: 2.0591, Test_acc: 0.2883
+Epoch: 006, Train_loss: 1.7386, Train_acc: 0.4616, Test_loss: 1.7316, Test_acc: 0.4673
+Epoch: 011, Train_loss: 1.7127, Train_acc: 0.4682, Test_loss: 1.7067, Test_acc: 0.4686
+Epoch: 016, Train_loss: 1.6959, Train_acc: 0.4844, Test_loss: 1.6885, Test_acc: 0.4889
+Epoch: 021, Train_loss: 1.6978, Train_acc: 0.4802, Test_loss: 1.6905, Test_acc: 0.4812
+Epoch: 026, Train_loss: 1.6851, Train_acc: 0.4793, Test_loss: 1.6748, Test_acc: 0.4855
+Epoch: 031, Train_loss: 1.6760, Train_acc: 0.4952, Test_loss: 1.6676, Test_acc: 0.5009
+Epoch: 036, Train_loss: 1.6779, Train_acc: 0.4814, Test_loss: 1.6683, Test_acc: 0.4883
+Epoch: 041, Train_loss: 1.6772, Train_acc: 0.4959, Test_loss: 1.6655, Test_acc: 0.5024
+Epoch: 046, Train_loss: 1.6684, Train_acc: 0.4969, Test_loss: 1.6572, Test_acc: 0.5057
+Epoch: 051, Train_loss: 1.6691, Train_acc: 0.4925, Test_loss: 1.6593, Test_acc: 0.4996
+Epoch: 056, Train_loss: 1.6654, Train_acc: 0.4943, Test_loss: 1.6556, Test_acc: 0.5055
+Epoch: 061, Train_loss: 1.6677, Train_acc: 0.4927, Test_loss: 1.6592, Test_acc: 0.4964
+Epoch: 066, Train_loss: 1.6613, Train_acc: 0.5025, Test_loss: 1.6516, Test_acc: 0.5108
+Epoch: 071, Train_loss: 1.6650, Train_acc: 0.4908, Test_loss: 1.6567, Test_acc: 0.4941
+Fine-tuning early stopped. Model saved at ./models/ft_checkpoints/20231002181541_model_ft.pt.
+Model saved at ./models/ft_checkpoints/20231002181541_model_ft.pt.
+>>> Fine-tuning done!
+>>> Evaluating model_source_only
+model_ft: [1.6613134461110637, 0.5024830087625634, 1.6516358544860676, 0.5108321297633597]
+model_source_only: [2.2852991976230195, 0.12708259182047763, 2.28663819327035, 0.12865237195867127]
+fl_test_acc_mean 0.35019999999999996
+model_source_only_test_acc_mean 0.12874125097211422
+model_ft_test_acc_mean 0.5103432951894235

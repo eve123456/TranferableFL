@@ -1,0 +1,1 @@
+{"fl_test_acc": [0.0982, 0.0982], "model_source_only_test_acc": [0.09687812465281635, 0.09676702588601266], "model_ft_test_acc": [0.31218753471836463, 0.31652038662370846], "model_target_only_test_acc": [0.0, 0.0], "model_random_test_acc": [0.0, 0.0]}

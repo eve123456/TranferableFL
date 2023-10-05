@@ -1,0 +1,52 @@
+nohup: ignoring input
+uid: 20231001170848
+Using device: cuda:0
+>>> Arguments:
+	               algo : fedavgtl
+	              alpha : 13.2316427
+	         batch_size : 64
+	  clients_per_round : 100
+	            dataset : mnist_all_data_1_equal_niid
+	             device : cuda:0
+	                dis : 
+	     early_stopping : 10
+	         eval_every : 5
+	      ft_batch_size : 128
+	         ft_dataset : mnist-m
+	          ft_epochs : 200
+	              ft_lr : 0.001
+	              ft_wd : 0.01
+	                gpu : True
+	        input_shape : (1, 28, 28)
+	             last_k : 1
+	                 lr : 0.01
+	              model : lenet
+	             n_init : 10
+	          noaverage : False
+	               noft : False
+	            noprint : False
+	          num_class : 10
+	          num_epoch : 1
+	          num_round : 200
+	             opt_lr : False
+	pretrain_model_path : ./models/lenet_mnist_20230928202628.pt
+	              reg_J : True
+	         reg_J_coef : 0.01
+	             repeat : 1
+	               seed : 0
+	                 wd : 0.0
+load pretrained model from ./models/lenet_mnist_20230928202628.pt
+>>> Evaluating model_random_init
+init_model_random: [2.3051215041599216, 0.09718479347807664, 2.3058951850361775, 0.09887790245528275]
+>>> Training model_random
+Epoch: 001, Train_loss: 2.2123, Train_acc: 0.2272, Test_loss: 2.2068, Test_acc: 0.2379
+Epoch: 006, Train_loss: 2.1353, Train_acc: 0.2971, Test_loss: 2.1293, Test_acc: 0.3043
+Epoch: 011, Train_loss: 2.1259, Train_acc: 0.2869, Test_loss: 2.1191, Test_acc: 0.2952
+Epoch: 016, Train_loss: 2.1235, Train_acc: 0.2731, Test_loss: 2.1171, Test_acc: 0.2799
+Epoch: 021, Train_loss: 2.1209, Train_acc: 0.2971, Test_loss: 2.1146, Test_acc: 0.3002
+Epoch: 026, Train_loss: 2.1213, Train_acc: 0.2988, Test_loss: 2.1158, Test_acc: 0.3005
+Epoch: 031, Train_loss: 2.1202, Train_acc: 0.2989, Test_loss: 2.1144, Test_acc: 0.3040
+Fine-tuning early stopped. Model saved at ./models/ft_checkpoints/20231001170848_model_random.pt.
+Model saved at ./models/ft_checkpoints/20231001170848_model_random.pt.
+>>> Fine-tuning done!
+ft_model_random: [2.1192545438143755, 0.29823223335197707, 2.113155725465564, 0.30174425063881793]

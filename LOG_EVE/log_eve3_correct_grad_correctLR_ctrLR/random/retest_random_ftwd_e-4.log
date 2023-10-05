@@ -1,0 +1,84 @@
+nohup: ignoring input
+uid: 20231001170915
+Using device: cuda:0
+>>> Arguments:
+	               algo : fedavgtl
+	              alpha : 13.2316427
+	         batch_size : 64
+	  clients_per_round : 100
+	            dataset : mnist_all_data_1_equal_niid
+	             device : cuda:0
+	                dis : 
+	     early_stopping : 10
+	         eval_every : 5
+	      ft_batch_size : 128
+	         ft_dataset : mnist-m
+	          ft_epochs : 200
+	              ft_lr : 0.001
+	              ft_wd : 0.0001
+	                gpu : True
+	        input_shape : (1, 28, 28)
+	             last_k : 1
+	                 lr : 0.01
+	              model : lenet
+	             n_init : 10
+	          noaverage : False
+	               noft : False
+	            noprint : False
+	          num_class : 10
+	          num_epoch : 1
+	          num_round : 200
+	             opt_lr : False
+	pretrain_model_path : ./models/lenet_mnist_20230928202628.pt
+	              reg_J : True
+	         reg_J_coef : 0.01
+	             repeat : 1
+	               seed : 0
+	                 wd : 0.0
+load pretrained model from ./models/lenet_mnist_20230928202628.pt
+>>> Evaluating model_random_init
+init_model_random: [2.303382380287804, 0.10426941916238708, 2.303173981220401, 0.10087768025774914]
+>>> Training model_random
+Epoch: 001, Train_loss: 1.9528, Train_acc: 0.3488, Test_loss: 1.9455, Test_acc: 0.3484
+Epoch: 006, Train_loss: 1.5360, Train_acc: 0.4990, Test_loss: 1.5143, Test_acc: 0.5089
+Epoch: 011, Train_loss: 1.4326, Train_acc: 0.5344, Test_loss: 1.4132, Test_acc: 0.5441
+Epoch: 016, Train_loss: 1.3609, Train_acc: 0.5587, Test_loss: 1.3450, Test_acc: 0.5693
+Epoch: 021, Train_loss: 1.3139, Train_acc: 0.5748, Test_loss: 1.2978, Test_acc: 0.5852
+Epoch: 026, Train_loss: 1.2770, Train_acc: 0.5880, Test_loss: 1.2609, Test_acc: 0.5965
+Epoch: 031, Train_loss: 1.2483, Train_acc: 0.5973, Test_loss: 1.2350, Test_acc: 0.6106
+Epoch: 036, Train_loss: 1.2271, Train_acc: 0.6050, Test_loss: 1.2161, Test_acc: 0.6103
+Epoch: 041, Train_loss: 1.2072, Train_acc: 0.6128, Test_loss: 1.2007, Test_acc: 0.6190
+Epoch: 046, Train_loss: 1.1975, Train_acc: 0.6138, Test_loss: 1.1940, Test_acc: 0.6158
+Epoch: 051, Train_loss: 1.1848, Train_acc: 0.6160, Test_loss: 1.1852, Test_acc: 0.6213
+Epoch: 056, Train_loss: 1.1737, Train_acc: 0.6192, Test_loss: 1.1776, Test_acc: 0.6229
+Epoch: 061, Train_loss: 1.1636, Train_acc: 0.6240, Test_loss: 1.1692, Test_acc: 0.6244
+Epoch: 066, Train_loss: 1.1548, Train_acc: 0.6283, Test_loss: 1.1625, Test_acc: 0.6295
+Epoch: 071, Train_loss: 1.1472, Train_acc: 0.6311, Test_loss: 1.1570, Test_acc: 0.6322
+Epoch: 076, Train_loss: 1.1417, Train_acc: 0.6305, Test_loss: 1.1544, Test_acc: 0.6312
+Epoch: 081, Train_loss: 1.1367, Train_acc: 0.6338, Test_loss: 1.1510, Test_acc: 0.6326
+Epoch: 086, Train_loss: 1.1308, Train_acc: 0.6356, Test_loss: 1.1451, Test_acc: 0.6378
+Epoch: 091, Train_loss: 1.1254, Train_acc: 0.6370, Test_loss: 1.1420, Test_acc: 0.6378
+Epoch: 096, Train_loss: 1.1241, Train_acc: 0.6370, Test_loss: 1.1430, Test_acc: 0.6314
+Epoch: 101, Train_loss: 1.1184, Train_acc: 0.6427, Test_loss: 1.1383, Test_acc: 0.6387
+Epoch: 106, Train_loss: 1.1145, Train_acc: 0.6415, Test_loss: 1.1358, Test_acc: 0.6383
+Epoch: 111, Train_loss: 1.1140, Train_acc: 0.6434, Test_loss: 1.1364, Test_acc: 0.6395
+Epoch: 116, Train_loss: 1.1093, Train_acc: 0.6423, Test_loss: 1.1326, Test_acc: 0.6407
+Epoch: 121, Train_loss: 1.1107, Train_acc: 0.6414, Test_loss: 1.1355, Test_acc: 0.6334
+Epoch: 126, Train_loss: 1.1045, Train_acc: 0.6455, Test_loss: 1.1303, Test_acc: 0.6396
+Epoch: 131, Train_loss: 1.1023, Train_acc: 0.6461, Test_loss: 1.1285, Test_acc: 0.6396
+Epoch: 136, Train_loss: 1.0978, Train_acc: 0.6474, Test_loss: 1.1258, Test_acc: 0.6445
+Epoch: 141, Train_loss: 1.0989, Train_acc: 0.6442, Test_loss: 1.1257, Test_acc: 0.6390
+Epoch: 146, Train_loss: 1.0958, Train_acc: 0.6468, Test_loss: 1.1236, Test_acc: 0.6438
+Epoch: 151, Train_loss: 1.0923, Train_acc: 0.6483, Test_loss: 1.1207, Test_acc: 0.6407
+Epoch: 156, Train_loss: 1.0910, Train_acc: 0.6496, Test_loss: 1.1203, Test_acc: 0.6447
+Epoch: 161, Train_loss: 1.0888, Train_acc: 0.6510, Test_loss: 1.1199, Test_acc: 0.6425
+Epoch: 166, Train_loss: 1.0862, Train_acc: 0.6538, Test_loss: 1.1191, Test_acc: 0.6473
+Epoch: 171, Train_loss: 1.0882, Train_acc: 0.6503, Test_loss: 1.1219, Test_acc: 0.6435
+Epoch: 176, Train_loss: 1.0818, Train_acc: 0.6519, Test_loss: 1.1147, Test_acc: 0.6448
+Epoch: 181, Train_loss: 1.0814, Train_acc: 0.6525, Test_loss: 1.1136, Test_acc: 0.6456
+Epoch: 186, Train_loss: 1.0794, Train_acc: 0.6521, Test_loss: 1.1132, Test_acc: 0.6460
+Epoch: 191, Train_loss: 1.0799, Train_acc: 0.6531, Test_loss: 1.1147, Test_acc: 0.6436
+Epoch: 196, Train_loss: 1.0801, Train_acc: 0.6536, Test_loss: 1.1142, Test_acc: 0.6485
+Model saved at ./models/ft_checkpoints/20231001170915_model_random.pt.
+>>> Fine-tuning done!
+ft_model_random: [1.077312536004119, 0.6538533245199234, 1.1114262184452022, 0.644817242528608]

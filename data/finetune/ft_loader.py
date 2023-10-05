@@ -4,7 +4,8 @@ from PIL import Image
 
 from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as transforms
-
+import torchvision
+import scipy
 
 class FTDataset(Dataset):
     def __init__(self, data_root, data_list, transform=None):
@@ -38,7 +39,9 @@ class FTDataset(Dataset):
         return self.n_data
 
 
-def get_loader(image_dir, dataset_name, batch_size, **kwargs):
+    
+
+def get_loader_mnist_m(image_dir, dataset_name, batch_size, **kwargs):
     assert dataset_name == 'mnist-m'
 
     train_list = os.path.join(image_dir, 'mnist_m_train_labels.txt')
@@ -75,5 +78,68 @@ def get_loader(image_dir, dataset_name, batch_size, **kwargs):
         batch_size=batch_size,
         shuffle=False,
         **kwargs)
+
+    return train_loader, test_loader
+
+
+
+
+def get_loader_svhn(dataset_name, batch_size, **kwargs):
+    assert dataset_name == 'svhn'
+
+    print('>>> Get SVHN data.')
+    
+
+    # # Next fine-tune the model on svhn:
+
+    data_path = './data/SVHN'
+    kwargs = {'num_workers': 16}
+    transform = transforms.Compose([
+        transforms.Resize((28, 28)),
+        transforms.Grayscale(num_output_channels=1),
+        transforms.ToTensor(),
+    #     transforms.Normalize((0.5, 0.5, 0.5), (1.0, 1.0, 1.0)),
+    ])
+    trainset = torchvision.datasets.SVHN(root=data_path, split='train', download=False, transform=transform)
+    # extraset = torchvision.datasets.SVHN(root=data_path, split='extra', download=True, transform=transform)
+    # trainset = torch.utils.data.ConcatDataset([trainset, extraset])
+    testset = torchvision.datasets.SVHN(root=data_path, split='test', download=False, transform=transform)
+
+
+
+    train_loader = torch.utils.data.DataLoader(trainset, batch_size=batch_size, shuffle=True, **kwargs)
+    test_loader = torch.utils.data.DataLoader(testset, batch_size=batch_size, shuffle=True, **kwargs)
+
+
+    return train_loader, test_loader
+
+
+
+def get_loader_mnist(dataset_name, batch_size, **kwargs):
+    assert dataset_name == 'mnist'
+
+    print('>>> Get MNIST data.')
+    
+
+    # # Next fine-tune the model on svhn:
+
+    data_path = './data/MNIST'
+    kwargs = {'num_workers': 16}
+    transform = transforms.Compose([
+        transforms.Resize((28, 28)),
+        transforms.Grayscale(num_output_channels=1),
+        transforms.ToTensor(),
+    #     transforms.Normalize((0.5, 0.5, 0.5), (1.0, 1.0, 1.0)),
+    ])
+    trainset = torchvision.datasets.MNIST(root=data_path, split='train', download=False, transform=transform)
+    # extraset = torchvision.datasets.SVHN(root=data_path, split='extra', download=True, transform=transform)
+    # trainset = torch.utils.data.ConcatDataset([trainset, extraset])
+    testset = torchvision.datasets.MNIST(root=data_path, split='test', download=False, transform=transform)
+
+
+
+    train_loader = torch.utils.data.DataLoader(trainset, batch_size=batch_size, shuffle=True, **kwargs)
+    test_loader = torch.utils.data.DataLoader(testset, batch_size=batch_size, shuffle=True, **kwargs)
+
 
     return train_loader, test_loader

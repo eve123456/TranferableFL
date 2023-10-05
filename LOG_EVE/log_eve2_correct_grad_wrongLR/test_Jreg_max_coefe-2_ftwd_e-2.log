@@ -1,0 +1,117 @@
+nohup: ignoring input
+uid: 20231001175927
+Using device: cuda:0
+>>> Arguments:
+	               algo : fedavgtl
+	              alpha : 13.2316427
+	         batch_size : 64
+	  clients_per_round : 100
+	            dataset : mnist_all_data_1_equal_niid
+	             device : cuda:0
+	                dis : 
+	     early_stopping : 10
+	         eval_every : 5
+	      ft_batch_size : 128
+	         ft_dataset : mnist-m
+	          ft_epochs : 200
+	              ft_lr : 0.001
+	              ft_wd : 0.01
+	                gpu : True
+	        input_shape : (1, 28, 28)
+	             last_k : 1
+	                 lr : 0.01
+	              model : lenet
+	             n_init : 10
+	          noaverage : False
+	               noft : False
+	            noprint : False
+	          num_class : 10
+	          num_epoch : 1
+	          num_round : 200
+	             opt_lr : False
+	pretrain_model_path : ./models/lenet_mnist_20230927234912.pt
+	              reg_J : True
+	         reg_J_coef : 0.01
+	             repeat : 1
+	               seed : 0
+	                 wd : 0.0
+load pretrained model from ./models/lenet_mnist_20230927234912.pt
+
+************************************************************************************************************************
+
+>>> Training model_ft
+>>> Evaluating model_source_only
+model_source_only: [1.6424519954213683, 0.4841273876713954, 1.6449098744507353, 0.48194645039440065]
+model_source_only_test_acc_mean 0.48194645039440065
+>>> Training model_ft
+Traceback (most recent call last):
+  File "/home/pingm/miniconda3/envs/TRANS-FL/lib/python3.7/multiprocessing/resource_sharer.py", line 142, in _serve
+    with self._listener.accept() as conn:
+  File "/home/pingm/miniconda3/envs/TRANS-FL/lib/python3.7/multiprocessing/connection.py", line 456, in accept
+    answer_challenge(c, self._authkey)
+  File "/home/pingm/miniconda3/envs/TRANS-FL/lib/python3.7/multiprocessing/connection.py", line 746, in answer_challenge
+    response = connection.recv_bytes(256)        # reject large message
+  File "/home/pingm/miniconda3/envs/TRANS-FL/lib/python3.7/multiprocessing/connection.py", line 216, in recv_bytes
+    buf = self._recv_bytes(maxlength)
+  File "/home/pingm/miniconda3/envs/TRANS-FL/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/home/pingm/miniconda3/envs/TRANS-FL/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+ConnectionResetError: [Errno 104] Connection reset by peer
+nohup: ignoring input
+uid: 20231001180005
+Using device: cuda:0
+>>> Arguments:
+	               algo : fedavgtl
+	              alpha : 13.2316427
+	         batch_size : 64
+	  clients_per_round : 100
+	            dataset : mnist_all_data_1_equal_niid
+	             device : cuda:0
+	                dis : 
+	     early_stopping : 10
+	         eval_every : 5
+	      ft_batch_size : 128
+	         ft_dataset : mnist-m
+	          ft_epochs : 200
+	              ft_lr : 0.001
+	              ft_wd : 0.01
+	                gpu : True
+	        input_shape : (1, 28, 28)
+	             last_k : 1
+	                 lr : 0.01
+	              model : lenet
+	             n_init : 10
+	          noaverage : False
+	               noft : False
+	            noprint : False
+	          num_class : 10
+	          num_epoch : 1
+	          num_round : 200
+	             opt_lr : False
+	pretrain_model_path : ./models/lenet_mnist_20230927234912.pt
+	              reg_J : True
+	         reg_J_coef : 0.01
+	             repeat : 1
+	               seed : 0
+	                 wd : 0.0
+load pretrained model from ./models/lenet_mnist_20230927234912.pt
+
+************************************************************************************************************************
+
+>>> Training model_ft
+>>> Evaluating model_source_only
+model_source_only: [1.6424519954213683, 0.4841273876713954, 1.6449098744507353, 0.48194645039440065]
+model_source_only_test_acc_mean 0.48194645039440065
+>>> Training model_ft
+Epoch: 001, Train_loss: 1.1305, Train_acc: 0.6628, Test_loss: 1.1086, Test_acc: 0.6671
+Epoch: 006, Train_loss: 1.0474, Train_acc: 0.6863, Test_loss: 1.0276, Test_acc: 0.6921
+Epoch: 011, Train_loss: 1.0418, Train_acc: 0.6926, Test_loss: 1.0222, Test_acc: 0.6987
+Epoch: 016, Train_loss: 1.0371, Train_acc: 0.6904, Test_loss: 1.0166, Test_acc: 0.6938
+Epoch: 021, Train_loss: 1.0323, Train_acc: 0.6956, Test_loss: 1.0115, Test_acc: 0.6981
+Epoch: 026, Train_loss: 1.0338, Train_acc: 0.6917, Test_loss: 1.0121, Test_acc: 0.6984
+Fine-tuning early stopped. Model saved at ./models/ft_checkpoints/20231001180005_model_ft.pt.
+Model saved at ./models/ft_checkpoints/20231001180005_model_ft.pt.
+>>> Fine-tuning done!
+model_ft: [1.0317637802899864, 0.6947678852900798, 1.0123823174978943, 0.6984779468947895]
+model_ft_test_acc_mean 0.6984779468947895

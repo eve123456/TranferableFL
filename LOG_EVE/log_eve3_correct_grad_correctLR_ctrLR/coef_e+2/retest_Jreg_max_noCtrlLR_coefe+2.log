@@ -1,0 +1,88 @@
+nohup: ignoring input
+working!
+check why cannot sync
+Using device: cuda:0
+>>> Arguments:
+	             algo : fedavgtl
+	            alpha : 13.2316427
+	       batch_size : 64
+	clients_per_round : 100
+	             clip : False
+	          dataset : mnist_all_data_1_equal_niid
+	           device : cuda:0
+	              dis : 
+	   early_stopping : 10
+	       eval_every : 5
+	    ft_batch_size : 128
+	       ft_dataset : mnist-m
+	        ft_epochs : 200
+	            ft_lr : 0.001
+	            ft_wd : 0.0001
+	              gpu : True
+	      input_shape : (1, 28, 28)
+	           last_k : 1
+	               lr : 0.01
+	            model : lenet
+	           n_init : 1
+	        noaverage : False
+	             noft : False
+	          noprint : False
+	        num_class : 10
+	        num_epoch : 1
+	        num_round : 200
+	           opt_lr : True
+	            reg_J : False
+	       reg_J_coef : 0.0
+	   reg_J_ind_coef : 100.0
+	  reg_J_norm_coef : 0.0
+	          reg_max : True
+	           repeat : 1
+	     repeat_epoch : 10
+	             seed : 0
+	               wd : 0.0
+>>> Read data from:
+     ./data/mnist/data/all_data_1.pkl
+>>> The estimate of constant alpha is 13.2316427.
+>>> Read data from:
+     ./data/mnist/data/train/all_data_1_equal_niid.pkl
+     ./data/mnist/data/test/all_data_1_equal_niid.pkl
+
+************************************************************************************************************************
+
+uid: 20230928193028
+FL pretrained model will be saved at ./models/lenet_mnist_20230928193028.pt
+>>> Use gpu on device cuda:0
+>>> Model statistic per layer
+LeNet_MNIST(
+  286.12 KMac, 100.000% MACs, 
+  (conv1): Conv2d(89.856 KMac, 31.405% MACs, 1, 6, kernel_size=(5, 5), stride=(1, 1))
+  (conv2): Conv2d(154.624 KMac, 54.042% MACs, 6, 16, kernel_size=(5, 5), stride=(1, 1))
+  (fc1): Linear(30.72 KMac, 10.737% MACs, in_features=256, out_features=120, bias=True)
+  (fc2): Linear(10.08 KMac, 3.523% MACs, in_features=120, out_features=84, bias=True)
+  (fc3): Linear(840.0 Mac, 0.294% MACs, in_features=84, out_features=10, bias=True)
+)
+>>> Activate a worker for training
+>>> Initialize 100 clients in total
+>>> Weigh updates by simple average
+>>> Select 100 clients per round 
+
+
+>>> Round:    0 / Acc: 8.836% / Loss: 2.3046 /Time: 4.10s
+======================================================================================================
+
+= Test = round: 0 / acc: 7.870% / loss: 2.3046 / Time: 0.77s
+======================================================================================================
+
+round 0: local lr = 0.01
+round 1: local lr = 0.0014464298728853464, sq_norm_avg_grad = 0.030042393133044243, avg_sq_norm_grad = 1.569724202156067,                  max_norm_grad = 1.4075332880020142, var_grad = 1.5396817922592163
+round 2: local lr = 0.0001273906818823889, sq_norm_avg_grad = 0.000769210746511817, avg_sq_norm_grad = 0.45634564757347107,                  max_norm_grad = 0.7047874331474304, var_grad = 0.45557644963264465
+round 3: local lr = 0.0001491598814027384, sq_norm_avg_grad = 0.0008968476904556155, avg_sq_norm_grad = 0.4544152021408081,                  max_norm_grad = 0.7037245631217957, var_grad = 0.4535183608531952
+round 4: local lr = 0.0001768307847669348, sq_norm_avg_grad = 0.0010584810515865684, avg_sq_norm_grad = 0.45238837599754333,                  max_norm_grad = 0.7024019360542297, var_grad = 0.45132988691329956
+
+>>> Round:    5 / Acc: 10.000% / Loss: 2.3060 /Time: 4.18s
+======================================================================================================
+
+= Test = round: 5 / acc: 8.920% / loss: 2.3056 / Time: 0.79s
+======================================================================================================
+
+round 5: local lr = 0.00021250374265946448, sq_norm_avg_grad = 0.001265206839889288, avg_sq_norm_grad = 0.44996753334999084,                  max_norm_grad = 0.7004695534706116, var_grad = 0.448702335357666

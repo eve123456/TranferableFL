@@ -1,0 +1,98 @@
+nohup: ignoring input
+uid: 20231001185318
+Using device: cuda:0
+>>> Arguments:
+	               algo : fedavgtl
+	              alpha : 13.2316427
+	         batch_size : 64
+	  clients_per_round : 100
+	            dataset : mnist_all_data_1_equal_niid
+	             device : cuda:0
+	                dis : 
+	     early_stopping : 10
+	         eval_every : 5
+	      ft_batch_size : 128
+	         ft_dataset : mnist-m
+	          ft_epochs : 200
+	              ft_lr : 0.001
+	              ft_wd : 0.01
+	                gpu : True
+	        input_shape : (1, 28, 28)
+	             last_k : 1
+	                 lr : 0.01
+	              model : lenet
+	             n_init : 10
+	          noaverage : False
+	               noft : False
+	            noprint : False
+	          num_class : 10
+	          num_epoch : 1
+	          num_round : 200
+	             opt_lr : False
+	pretrain_model_path : ./models/lenet_mnist_20230928194205.pt
+	              reg_J : True
+	         reg_J_coef : 0.01
+	             repeat : 5
+	               seed : 200
+	                 wd : 0.0
+load pretrained model from ./models/lenet_mnist_20230928194205.pt
+>>> Evaluating model_random_init
+init_model_random: [2.3069457841851735, 0.0982186742597583, 2.3060543520717327, 0.09465614931674259]
+>>> Training model_random
+Epoch: 001, Train_loss: 2.2079, Train_acc: 0.2108, Test_loss: 2.2034, Test_acc: 0.2122
+nohup: ignoring input
+uid: 20231001185556
+Using device: cuda:0
+>>> Arguments:
+	               algo : fedavgtl
+	              alpha : 13.2316427
+	         batch_size : 64
+	  clients_per_round : 100
+	            dataset : mnist_all_data_1_equal_niid
+	             device : cuda:0
+	                dis : 
+	     early_stopping : 10
+	         eval_every : 5
+	      ft_batch_size : 128
+	         ft_dataset : mnist-m
+	          ft_epochs : 200
+	              ft_lr : 0.001
+	              ft_wd : 0.01
+	                gpu : True
+	        input_shape : (1, 28, 28)
+	             last_k : 1
+	                 lr : 0.01
+	              model : lenet
+	             n_init : 10
+	          noaverage : False
+	               noft : False
+	            noprint : False
+	          num_class : 10
+	          num_epoch : 1
+	          num_round : 200
+	             opt_lr : False
+	pretrain_model_path : ./models/lenet_mnist_20230928194205.pt
+	              reg_J : True
+	         reg_J_coef : 0.01
+	             repeat : 5
+	               seed : 200
+	                 wd : 0.0
+load pretrained model from ./models/lenet_mnist_20230928194205.pt
+>>> Evaluating model_random_init
+init_model_random: [2.3054990134088307, 0.10077795291605227, 2.305082655763536, 0.10454393956227086]
+>>> Training model_random
+Epoch: 001, Train_loss: 2.2532, Train_acc: 0.2131, Test_loss: 2.2530, Test_acc: 0.2090
+Epoch: 006, Train_loss: 2.1916, Train_acc: 0.2473, Test_loss: 2.1900, Test_acc: 0.2458
+Epoch: 011, Train_loss: 2.1880, Train_acc: 0.2524, Test_loss: 2.1867, Test_acc: 0.2521
+Epoch: 016, Train_loss: 2.1895, Train_acc: 0.2660, Test_loss: 2.1884, Test_acc: 0.2605
+Epoch: 021, Train_loss: 2.1863, Train_acc: 0.2633, Test_loss: 2.1855, Test_acc: 0.2616
+Epoch: 026, Train_loss: 2.1873, Train_acc: 0.2569, Test_loss: 2.1863, Test_acc: 0.2576
+Epoch: 031, Train_loss: 2.1849, Train_acc: 0.2600, Test_loss: 2.1835, Test_acc: 0.2582
+Epoch: 036, Train_loss: 2.1838, Train_acc: 0.2595, Test_loss: 2.1826, Test_acc: 0.2583
+Epoch: 041, Train_loss: 2.1849, Train_acc: 0.2547, Test_loss: 2.1833, Test_acc: 0.2509
+Epoch: 046, Train_loss: 2.1844, Train_acc: 0.2499, Test_loss: 2.1830, Test_acc: 0.2488
+Epoch: 051, Train_loss: 2.1843, Train_acc: 0.2805, Test_loss: 2.1833, Test_acc: 0.2777
+Fine-tuning early stopped. Model saved at ./models/ft_checkpoints/20231001185556_model_random.pt.
+Model saved at ./models/ft_checkpoints/20231001185556_model_random.pt.
+>>> Fine-tuning done!
+ft_model_random: [2.1830302730390327, 0.26201250826257183, 2.1818948474119484, 0.25863792911898675]

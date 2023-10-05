@@ -1,0 +1,110 @@
+nohup: ignoring input
+uid: 20231001181143
+Using device: cuda:0
+>>> Arguments:
+	               algo : fedavgtl
+	              alpha : 13.2316427
+	         batch_size : 64
+	  clients_per_round : 100
+	            dataset : mnist_all_data_1_equal_niid
+	             device : cuda:0
+	                dis : 
+	     early_stopping : 10
+	         eval_every : 5
+	      ft_batch_size : 128
+	         ft_dataset : mnist-m
+	          ft_epochs : 200
+	              ft_lr : 0.001
+	              ft_wd : 0.01
+	                gpu : True
+	        input_shape : (1, 28, 28)
+	             last_k : 1
+	                 lr : 0.01
+	              model : lenet
+	             n_init : 10
+	          noaverage : False
+	               noft : False
+	            noprint : False
+	          num_class : 10
+	          num_epoch : 1
+	          num_round : 200
+	             opt_lr : False
+	pretrain_model_path : ./models/lenet_mnist_20230928194134.pt
+	              reg_J : True
+	         reg_J_coef : 0.01
+	             repeat : 1
+	               seed : 0
+	                 wd : 0.0
+load pretrained model from ./models/lenet_mnist_20230928194134.pt
+
+************************************************************************************************************************
+
+Traceback (most recent call last):
+  File "temp_load_test.py", line 326, in <module>
+    main()
+  File "temp_load_test.py", line 260, in main
+    flat_model_params = torch.load(model_path)
+  File "/home/pingm/miniconda3/envs/TRANS-FL/lib/python3.7/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/home/pingm/miniconda3/envs/TRANS-FL/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/pingm/miniconda3/envs/TRANS-FL/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './models/lenet_mnist_20230928194134.pt'
+nohup: ignoring input
+uid: 20231001181417
+Using device: cuda:0
+>>> Arguments:
+	               algo : fedavgtl
+	              alpha : 13.2316427
+	         batch_size : 64
+	  clients_per_round : 100
+	            dataset : mnist_all_data_1_equal_niid
+	             device : cuda:0
+	                dis : 
+	     early_stopping : 10
+	         eval_every : 5
+	      ft_batch_size : 128
+	         ft_dataset : mnist-m
+	          ft_epochs : 200
+	              ft_lr : 0.001
+	              ft_wd : 0.01
+	                gpu : True
+	        input_shape : (1, 28, 28)
+	             last_k : 1
+	                 lr : 0.01
+	              model : lenet
+	             n_init : 10
+	          noaverage : False
+	               noft : False
+	            noprint : False
+	          num_class : 10
+	          num_epoch : 1
+	          num_round : 200
+	             opt_lr : False
+	pretrain_model_path : ./models/lenet_mnist_20230928194205.pt
+	              reg_J : True
+	         reg_J_coef : 0.01
+	             repeat : 1
+	               seed : 0
+	                 wd : 0.0
+load pretrained model from ./models/lenet_mnist_20230928194205.pt
+
+************************************************************************************************************************
+
+>>> Training model_ft
+>>> Evaluating model_source_only
+model_source_only: [2.4962594463381493, 0.40326435145167033, 2.5208210347559885, 0.40206643706254863]
+model_source_only_test_acc_mean 0.40206643706254863
+>>> Training model_ft
+Epoch: 001, Train_loss: 1.3682, Train_acc: 0.5739, Test_loss: 1.3470, Test_acc: 0.5823
+Epoch: 006, Train_loss: 1.1539, Train_acc: 0.6482, Test_loss: 1.1393, Test_acc: 0.6508
+Epoch: 011, Train_loss: 1.1282, Train_acc: 0.6605, Test_loss: 1.1183, Test_acc: 0.6615
+Epoch: 016, Train_loss: 1.1314, Train_acc: 0.6519, Test_loss: 1.1151, Test_acc: 0.6538
+Epoch: 021, Train_loss: 1.1029, Train_acc: 0.6707, Test_loss: 1.0907, Test_acc: 0.6716
+Epoch: 026, Train_loss: 1.1096, Train_acc: 0.6674, Test_loss: 1.0993, Test_acc: 0.6693
+Fine-tuning early stopped. Model saved at ./models/ft_checkpoints/20231001181417_model_ft.pt.
+Model saved at ./models/ft_checkpoints/20231001181417_model_ft.pt.
+>>> Fine-tuning done!
+model_ft: [1.1028775430182676, 0.6707343943322994, 1.0906654082593779, 0.6715920453282969]
+model_ft_test_acc_mean 0.6715920453282969

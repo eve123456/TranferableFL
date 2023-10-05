@@ -1,0 +1,179 @@
+nohup: ignoring input
+working!
+check why cannot sync
+Using device: cuda:0
+>>> Arguments:
+	             algo : fedavgtl
+	            alpha : 13.2316427
+	       batch_size : 64
+	clients_per_round : 100
+	             clip : False
+	          dataset : mnist_all_data_1_equal_niid
+	           device : cuda:0
+	              dis : 
+	   early_stopping : 10
+	       eval_every : 5
+	    ft_batch_size : 128
+	       ft_dataset : mnist-m
+	        ft_epochs : 200
+	            ft_lr : 0.001
+	            ft_wd : 0.0001
+	              gpu : True
+	      input_shape : (1, 28, 28)
+	           last_k : 1
+	               lr : 0.01
+	            model : lenet
+	           n_init : 1
+	        noaverage : False
+	             noft : False
+	          noprint : False
+	        num_class : 10
+	        num_epoch : 1
+	        num_round : 200
+	           opt_lr : True
+	            reg_J : False
+	       reg_J_coef : 0.0
+	   reg_J_ind_coef : 100.0
+	  reg_J_norm_coef : 0.0
+	          reg_max : True
+	           repeat : 1
+	     repeat_epoch : 10
+	             seed : 0
+	               wd : 0.0
+>>> Read data from:
+     ./data/mnist/data/all_data_1.pkl
+>>> The estimate of constant alpha is 13.2316427.
+>>> Read data from:
+     ./data/mnist/data/train/all_data_1_equal_niid.pkl
+     ./data/mnist/data/test/all_data_1_equal_niid.pkl
+
+************************************************************************************************************************
+
+uid: 20230927235308
+FL pretrained model will be saved at ./models/lenet_mnist_20230927235308.pt
+>>> Use gpu on device cuda:0
+>>> Model statistic per layer
+LeNet_MNIST(
+  286.12 KMac, 100.000% MACs, 
+  (conv1): Conv2d(89.856 KMac, 31.405% MACs, 1, 6, kernel_size=(5, 5), stride=(1, 1))
+  (conv2): Conv2d(154.624 KMac, 54.042% MACs, 6, 16, kernel_size=(5, 5), stride=(1, 1))
+  (fc1): Linear(30.72 KMac, 10.737% MACs, in_features=256, out_features=120, bias=True)
+  (fc2): Linear(10.08 KMac, 3.523% MACs, in_features=120, out_features=84, bias=True)
+  (fc3): Linear(840.0 Mac, 0.294% MACs, in_features=84, out_features=10, bias=True)
+)
+>>> Activate a worker for training
+>>> Initialize 100 clients in total
+>>> Weigh updates by simple average
+>>> Select 100 clients per round 
+
+
+>>> Round:    0 / Acc: 11.046% / Loss: 2.3040 /Time: 4.45s
+======================================================================================================
+
+= Test = round: 0 / acc: 10.180% / loss: 2.3061 / Time: 0.86s
+======================================================================================================
+
+round 0: local lr = 0.01
+round 1: local lr = 0.008328333497047424, norm_avg_grad = 0.11320853233337402, avg_norm_grad = 1.027323603630066,                  max_norm_grad = 1.1889736652374268
+WARNING:root:NaN or Inf found in input tensor.
+WARNING:root:NaN or Inf found in input tensor.
+round 2: local lr = nan, norm_avg_grad = nan, avg_norm_grad = nan,                  max_norm_grad = nan
+WARNING:root:NaN or Inf found in input tensor.
+WARNING:root:NaN or Inf found in input tensor.
+round 3: local lr = nan, norm_avg_grad = nan, avg_norm_grad = nan,                  max_norm_grad = nan
+WARNING:root:NaN or Inf found in input tensor.
+WARNING:root:NaN or Inf found in input tensor.
+round 4: local lr = nan, norm_avg_grad = nan, avg_norm_grad = nan,                  max_norm_grad = nan
+WARNING:root:NaN or Inf found in input tensor.
+
+>>> Round:    5 / Acc: 10.000% / Loss: nan /Time: 4.21s
+======================================================================================================
+
+= Test = round: 5 / acc: 9.800% / loss: nan / Time: 0.81s
+======================================================================================================
+
+WARNING:root:NaN or Inf found in input tensor.
+round 5: local lr = nan, norm_avg_grad = nan, avg_norm_grad = nan,                  max_norm_grad = nan
+WARNING:root:NaN or Inf found in input tensor.
+WARNING:root:NaN or Inf found in input tensor.
+round 6: local lr = nan, norm_avg_grad = nan, avg_norm_grad = nan,                  max_norm_grad = nan
+WARNING:root:NaN or Inf found in input tensor.
+WARNING:root:NaN or Inf found in input tensor.
+round 7: local lr = nan, norm_avg_grad = nan, avg_norm_grad = nan,                  max_norm_grad = nan
+WARNING:root:NaN or Inf found in input tensor.
+WARNING:root:NaN or Inf found in input tensor.
+round 8: local lr = nan, norm_avg_grad = nan, avg_norm_grad = nan,                  max_norm_grad = nan
+WARNING:root:NaN or Inf found in input tensor.
+WARNING:root:NaN or Inf found in input tensor.
+round 9: local lr = nan, norm_avg_grad = nan, avg_norm_grad = nan,                  max_norm_grad = nan
+WARNING:root:NaN or Inf found in input tensor.
+
+>>> Round:   10 / Acc: 10.000% / Loss: nan /Time: 4.23s
+======================================================================================================
+
+= Test = round: 10 / acc: 9.800% / loss: nan / Time: 0.80s
+======================================================================================================
+
+WARNING:root:NaN or Inf found in input tensor.
+round 10: local lr = nan, norm_avg_grad = nan, avg_norm_grad = nan,                  max_norm_grad = nan
+WARNING:root:NaN or Inf found in input tensor.
+WARNING:root:NaN or Inf found in input tensor.
+Training early stopped. Model saved at ./models/lenet_mnist_20230927235308.pt.
+WARNING:root:NaN or Inf found in input tensor.
+
+>>> Round:  200 / Acc: 10.000% / Loss: nan /Time: 4.28s
+======================================================================================================
+
+= Test = round: 200 / acc: 9.800% / loss: nan / Time: 0.83s
+======================================================================================================
+
+WARNING:root:NaN or Inf found in input tensor.
+>>> Training model_ft
+Epoch: 001, Train_loss: 1.8685, Train_acc: 0.4000, Test_loss: 1.8641, Test_acc: 0.4078
+Epoch: 006, Train_loss: 1.3832, Train_acc: 0.5519, Test_loss: 1.3723, Test_acc: 0.5558
+Epoch: 011, Train_loss: 1.2946, Train_acc: 0.5836, Test_loss: 1.2879, Test_acc: 0.5876
+Epoch: 016, Train_loss: 1.2470, Train_acc: 0.6005, Test_loss: 1.2447, Test_acc: 0.6042
+Epoch: 021, Train_loss: 1.2080, Train_acc: 0.6142, Test_loss: 1.2090, Test_acc: 0.6167
+Epoch: 026, Train_loss: 1.1789, Train_acc: 0.6219, Test_loss: 1.1833, Test_acc: 0.6265
+Epoch: 031, Train_loss: 1.1577, Train_acc: 0.6263, Test_loss: 1.1663, Test_acc: 0.6317
+Epoch: 036, Train_loss: 1.1382, Train_acc: 0.6367, Test_loss: 1.1520, Test_acc: 0.6397
+Epoch: 041, Train_loss: 1.1209, Train_acc: 0.6395, Test_loss: 1.1358, Test_acc: 0.6398
+Epoch: 046, Train_loss: 1.1128, Train_acc: 0.6431, Test_loss: 1.1333, Test_acc: 0.6404
+Epoch: 051, Train_loss: 1.0975, Train_acc: 0.6463, Test_loss: 1.1234, Test_acc: 0.6489
+Epoch: 056, Train_loss: 1.0889, Train_acc: 0.6513, Test_loss: 1.1149, Test_acc: 0.6478
+Epoch: 061, Train_loss: 1.0761, Train_acc: 0.6568, Test_loss: 1.1038, Test_acc: 0.6504
+Epoch: 066, Train_loss: 1.0681, Train_acc: 0.6579, Test_loss: 1.0962, Test_acc: 0.6510
+Epoch: 071, Train_loss: 1.0632, Train_acc: 0.6569, Test_loss: 1.0929, Test_acc: 0.6528
+Epoch: 076, Train_loss: 1.0598, Train_acc: 0.6605, Test_loss: 1.0923, Test_acc: 0.6523
+Epoch: 081, Train_loss: 1.0479, Train_acc: 0.6638, Test_loss: 1.0821, Test_acc: 0.6547
+Epoch: 086, Train_loss: 1.0461, Train_acc: 0.6660, Test_loss: 1.0812, Test_acc: 0.6604
+Epoch: 091, Train_loss: 1.0423, Train_acc: 0.6637, Test_loss: 1.0806, Test_acc: 0.6591
+Epoch: 096, Train_loss: 1.0387, Train_acc: 0.6657, Test_loss: 1.0788, Test_acc: 0.6574
+Epoch: 101, Train_loss: 1.0318, Train_acc: 0.6694, Test_loss: 1.0747, Test_acc: 0.6620
+Epoch: 106, Train_loss: 1.0285, Train_acc: 0.6701, Test_loss: 1.0689, Test_acc: 0.6615
+Epoch: 111, Train_loss: 1.0246, Train_acc: 0.6726, Test_loss: 1.0669, Test_acc: 0.6618
+Epoch: 116, Train_loss: 1.0210, Train_acc: 0.6703, Test_loss: 1.0633, Test_acc: 0.6599
+Epoch: 121, Train_loss: 1.0200, Train_acc: 0.6718, Test_loss: 1.0659, Test_acc: 0.6616
+Epoch: 126, Train_loss: 1.0142, Train_acc: 0.6760, Test_loss: 1.0603, Test_acc: 0.6673
+Epoch: 131, Train_loss: 1.0149, Train_acc: 0.6765, Test_loss: 1.0611, Test_acc: 0.6660
+Epoch: 136, Train_loss: 1.0111, Train_acc: 0.6768, Test_loss: 1.0606, Test_acc: 0.6655
+Epoch: 141, Train_loss: 1.0121, Train_acc: 0.6744, Test_loss: 1.0597, Test_acc: 0.6656
+Epoch: 146, Train_loss: 1.0062, Train_acc: 0.6771, Test_loss: 1.0563, Test_acc: 0.6655
+Epoch: 151, Train_loss: 1.0076, Train_acc: 0.6771, Test_loss: 1.0601, Test_acc: 0.6648
+Epoch: 156, Train_loss: 1.0035, Train_acc: 0.6787, Test_loss: 1.0544, Test_acc: 0.6673
+Epoch: 161, Train_loss: 1.0086, Train_acc: 0.6749, Test_loss: 1.0603, Test_acc: 0.6605
+Epoch: 166, Train_loss: 0.9991, Train_acc: 0.6799, Test_loss: 1.0550, Test_acc: 0.6641
+Epoch: 171, Train_loss: 1.0000, Train_acc: 0.6798, Test_loss: 1.0530, Test_acc: 0.6676
+Epoch: 176, Train_loss: 0.9976, Train_acc: 0.6824, Test_loss: 1.0496, Test_acc: 0.6674
+Epoch: 181, Train_loss: 1.0007, Train_acc: 0.6786, Test_loss: 1.0550, Test_acc: 0.6646
+Epoch: 186, Train_loss: 0.9978, Train_acc: 0.6817, Test_loss: 1.0537, Test_acc: 0.6669
+Epoch: 191, Train_loss: 0.9944, Train_acc: 0.6808, Test_loss: 1.0511, Test_acc: 0.6645
+Epoch: 196, Train_loss: 0.9910, Train_acc: 0.6830, Test_loss: 1.0483, Test_acc: 0.6649
+Model saved at ./models/ft_checkpoints/20230927235308_model_ft.pt.
+>>> Fine-tuning done!
+>>> Evaluating model_source_only
+model_ft: [0.9903597153648862, 0.6850561854883815, 1.0488829567172555, 0.6677035884901678]
+model_source_only: [2.3064316355437153, 0.09684581617260725, 2.3062773534104952, 0.09610043328519054]
+fl_test_acc_mean 0.1062
+model_source_only_test_acc_mean 0.09610043328519054
+model_ft_test_acc_mean 0.6677035884901678

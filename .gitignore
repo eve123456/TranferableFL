@@ -1,8 +1,12 @@
 data/
 ./models/
+./models_chao/
 ./result/
 __pycache__/
 .ipynb_checkpoints/
 ./mnist_m/
 ./LOG_EVE/
 ./log_chao/
+./aaa_eve/
+./plot/
+
