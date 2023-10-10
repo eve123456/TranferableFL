@@ -33,7 +33,7 @@ class LeNet_MNIST(nn.Module):
         super(LeNet_MNIST, self).__init__()
         self.conv1 = nn.Conv2d(input_shape[0], 6, 5)
         self.conv2 = nn.Conv2d(6, 16, 5)
-        self.fc1 = nn.Linear(256, 120)  # 400 is replaced with 256 here
+        self.fc1 = nn.Linear(256, 120)  # 256 is for mnist and mnist-m (1, 28, 28)
         self.fc2 = nn.Linear(120, 84)
         self.fc3 = nn.Linear(84, out_dim)
 
@@ -54,7 +54,7 @@ class LeNet(nn.Module):
         super(LeNet, self).__init__()
         self.conv1 = nn.Conv2d(input_shape[0], 6, 5)
         self.conv2 = nn.Conv2d(6, 16, 5)
-        self.fc1 = nn.Linear(16*5*5, 120)
+        self.fc1 = nn.Linear(16*5*5, 120)  # 400 is for svhn, cifar10 and cifar 100 (3, 32, 32)
         self.fc2 = nn.Linear(120, 84)
         self.fc3 = nn.Linear(84, out_dim)
 
