@@ -18,7 +18,7 @@ def mkdir(path):
     return path
 
 
-def read_data(train_data_dir, test_data_dir=None, key=None):
+def read_data(train_data_dir, test_data_dir=None, key=None, dataset_name='mnist'):
     """Parses data in given train and test data directories
 
     Assumes:
@@ -55,7 +55,7 @@ def read_data(train_data_dir, test_data_dir=None, key=None):
         train_data.update(cdata['user_data'])
 
     for cid, v in train_data.items():
-        train_data[cid] = MiniDataset(v['x'], v['y'])
+        train_data[cid] = MiniDataset(v['x'], v['y'], dataset_name)
 
     if test_data_dir is not None:
         test_files = os.listdir(test_data_dir)
@@ -72,7 +72,7 @@ def read_data(train_data_dir, test_data_dir=None, key=None):
             test_data.update(cdata['user_data'])
 
         for cid, v in test_data.items():
-            test_data[cid] = MiniDataset(v['x'], v['y'])
+            test_data[cid] = MiniDataset(v['x'], v['y'], dataset_name)
     else:
         test_data = None
 
@@ -82,37 +82,60 @@ def read_data(train_data_dir, test_data_dir=None, key=None):
 
 
 class MiniDataset(Dataset):
-    def __init__(self, data, labels):
+    def __init__(self, data, labels, dataset_name):
         super(MiniDataset, self).__init__()
-        self.data = np.array(data)
+        self.data = np.array(data).astype("uint8")  # images
         self.labels = np.array(labels).astype("int64")
-
-        if self.data.ndim == 4 and self.data.shape[3] == 3:
-            self.data = self.data.astype("uint8")
+        
+        if dataset_name == "cifar10":
+            # 32 * 32
             self.transform = transforms.Compose(
-                [transforms.RandomHorizontalFlip(),
-                 transforms.RandomCrop(32, 4),
-                 transforms.ToTensor(),
-                 transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-                 ]
+                [
+                    transforms.ToTensor(),
+                    transforms.Normalize([0.49139968, 0.48215841, 0.44653091], [0.24703223, 0.24348513, 0.26158784])
+                ]
             )
-        elif self.data.ndim == 4 and self.data.shape[3] == 1:
+            
+        elif dataset_name == "cifar100":
+            # 32 * 32
             self.transform = transforms.Compose(
-                [transforms.ToTensor(),
-                 transforms.Normalize((0.1307,), (0.3081,))
-                 ]
+                [
+                    transforms.ToTensor(),
+                    transforms.Normalize([0.50707516, 0.48654887, 0.44091784], [0.26733429, 0.25643846, 0.27615047])
+                ]
             )
-        elif self.data.ndim == 3:
-            self.data = self.data.reshape((-1, 28, 28, 1)).astype("uint8")
+            
+        elif dataset_name == "svhn":
+            # 32 * 32
             self.transform = transforms.Compose(
-                [transforms.ToTensor(),
-                 transforms.Normalize((0.1307,), (0.3081,))
-                 ]
+                [
+                    transforms.ToTensor(),
+                    transforms.Normalize([0.4377, 0.4438, 0.4728], [0.1980, 0.2010, 0.1970])
+                ]
             )
+            
+        elif dataset_name == "mnist":
+            # 28 * 28
+            if self.data.ndim == 4 and self.data.shape[3] == 1:
+                self.transform = transforms.Compose(
+                    [transforms.ToTensor(),
+                     transforms.Normalize((0.1307,), (0.3081,))
+                     ]
+                )
+            elif self.data.ndim == 3:
+                self.data = self.data.reshape((-1, 28, 28, 1)).astype("uint8")
+                self.transform = transforms.Compose(
+                    [transforms.ToTensor(),
+                     transforms.Normalize((0.1307,), (0.3081,))
+                     ]
+                )
+            else:
+                raise NotImplementedError
+                
         else:
-            self.data = self.data.astype("float32")
-            self.transform = None
-
+            
+            raise NotImplementedError
+        
     def __len__(self):
         return len(self.labels)
 
