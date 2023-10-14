@@ -107,70 +107,62 @@ class BaseTrainer(object):
         solns = []  # Buffer for receiving client solutions
         stats = []  # Buffer for receiving client communication costs
 
-
-
-        # calculate avg_grad_at_global_weight_last_round and its norm
-        # calculate avg_grad_norm_at_global_last_round
         if round_i == 0:
-            norm_avg_grad_at_global_weight_last_round = avg_grad_at_global_weight_last_round = max_grad_norm_sq_at_global_weight_last_round = max_grad_for_reg = sqrt_max_grad_norm_sq_at_global_weight_last_round = None
-        
+            # initialization
+            norm_avg_grad_at_global_weight_last_round = None
+            avg_grad_at_global_weight_last_round = None
+            max_grad_norm_sq_at_global_weight_last_round = None
+            max_grad_for_reg = None
+            sqrt_max_grad_norm_sq_at_global_weight_last_round = None
         else:
+            # calculate avg_grad_at_global_weight_last_round and its norm
             local_grads_at_global_weight = []
-            # if self.opt_lr:
-            # local_grad_norms_at_gloobal_weight = []
-            local_grad_norms_sq_at_gloobal_weight = []
+            local_grad_norms_sq_at_global_weight = []
             for i, c in enumerate(selected_clients, start=1):
                 # Communicate the latest model
                 c.set_flat_model_params(self.latest_model)
-                c_grad_at_global_weights = c.worker.get_flat_grads(c.train_dataloader).detach()
-                local_grads_at_global_weight.append(c_grad_at_global_weights)
-                
-                # if self.opt_lr:
-                # local_grad_norms_at_gloobal_weight.append(torch.norm(c_grad_at_global_weights))
-                local_grad_norms_sq_at_gloobal_weight.append(torch.norm(c_grad_at_global_weights)**2)
+                c_grad_at_global_weight = c.worker.get_flat_grads(c.train_dataloader).detach()  # tensor at device
+                local_grads_at_global_weight.append(c_grad_at_global_weight)
+                local_grad_norms_sq_at_global_weight.append(torch.norm(c_grad_at_global_weight)**2)
             
-            avg_grad_at_global_weight_last_round = torch.mean(torch.stack(local_grads_at_global_weight, dim=0), dim=0)
+            avg_grad_at_global_weight_last_round = torch.mean(torch.stack(local_grads_at_global_weight, dim=0), dim=0)  # J_p
             
-            norm_avg_grad_at_global_weight_last_round = torch.norm(avg_grad_at_global_weight_last_round)
-            # if self.opt_lr:
-            # avg_grad_norm_at_global_weight_last_round = torch.mean(torch.stack(local_grad_norms_at_gloobal_weight, dim=0), dim=0)
-            avg_grad_norm_sq_at_global_weight_last_round = torch.mean(torch.stack(local_grad_norms_sq_at_gloobal_weight, dim=0), dim=0)
-            # max_grad_norm_at_global_weight_last_round = torch.max(torch.stack(local_grad_norms_at_gloobal_weight, dim=0))
-            max_grad_norm_sq_at_global_weight_last_round = torch.max(torch.stack(local_grad_norms_sq_at_gloobal_weight, dim=0))
+            norm_avg_grad_at_global_weight_last_round = torch.norm(avg_grad_at_global_weight_last_round)  # \|J_p\|
+            
+            avg_grad_norm_sq_at_global_weight_last_round = torch.mean(torch.stack(local_grad_norms_sq_at_global_weight, dim=0), dim=0)  # 1/K * \sum \|J^(k)\|^2
+            
+            max_grad_norm_sq_at_global_weight_last_round = torch.max(torch.stack(local_grad_norms_sq_at_global_weight, dim=0))  # max \|J^(k)\|^2
 
-            sqrt_max_grad_norm_sq_at_global_weight_last_round = torch.sqrt(max_grad_norm_sq_at_global_weight_last_round)
+            sqrt_max_grad_norm_sq_at_global_weight_last_round = torch.sqrt(max_grad_norm_sq_at_global_weight_last_round)  # max \|J^(k)\|
 
-            max_grad_for_reg = avg_grad_at_global_weight_last_round * sqrt_max_grad_norm_sq_at_global_weight_last_round / norm_avg_grad_at_global_weight_last_round
+            max_grad_for_reg = avg_grad_at_global_weight_last_round * sqrt_max_grad_norm_sq_at_global_weight_last_round / norm_avg_grad_at_global_weight_last_round  # J_p * \|J^(k)\| / \|J_p\|
 
-            var_grad_at_global = avg_grad_norm_sq_at_global_weight_last_round - norm_avg_grad_at_global_weight_last_round**2
+            var_grad_at_global = avg_grad_norm_sq_at_global_weight_last_round - norm_avg_grad_at_global_weight_last_round**2  # sigma^2
 
         if self.opt_lr and round_i != 0:
-            # new_lr = (1/self.alpha) *  (norm_avg_grad_at_global_weight_last_round / avg_grad_norm_at_global_weight_last_round)
-            new_lr = (1/self.alpha) *  (norm_avg_grad_at_global_weight_last_round**2 / avg_grad_norm_sq_at_global_weight_last_round)
-            if new_lr > self.lr: 
+            new_lr = (1 / self.alpha) * (norm_avg_grad_at_global_weight_last_round**2 / avg_grad_norm_sq_at_global_weight_last_round)
+            # in case the lr gets too small
+            if new_lr > self.lr:
                 self.optimizer.set_lr(new_lr)
-              
+        
         if round_i == 0:
-            # print(f'round {round_i}: local lr = {round(self.optimizer.get_current_lr(), 4)}')
             print(f'round {round_i}: local lr = {self.optimizer.get_current_lr()}')
         else:
-            # print(f'round {round_i}: local lr = {self.optimizer.get_current_lr()}, norm_avg_grad = {norm_avg_grad_at_global_weight_last_round}, avg_norm_grad = {avg_grad_norm_at_global_weight_last_round},\
-                #   max_norm_grad = {max_grad_norm_at_global_weight_last_round}')
-            print(f'round {round_i}: local lr = {self.optimizer.get_current_lr()}, sq_norm_avg_grad = {norm_avg_grad_at_global_weight_last_round**2}, avg_sq_norm_grad = {avg_grad_norm_sq_at_global_weight_last_round},\
-                  max_norm_grad = {sqrt_max_grad_norm_sq_at_global_weight_last_round}, var_grad = {var_grad_at_global}')
+            print(f'round {round_i}: local lr = {self.optimizer.get_current_lr()}, '
+                  f'sq_norm_avg_grad = {norm_avg_grad_at_global_weight_last_round**2}, avg_sq_norm_grad = {avg_grad_norm_sq_at_global_weight_last_round}, '
+                  f'max_norm_grad = {sqrt_max_grad_norm_sq_at_global_weight_last_round}, var_grad = {var_grad_at_global}')
         
-
         for i, c in enumerate(selected_clients, start=1):
             # Communicate the latest model
             c.set_flat_model_params(self.latest_model)
 
             # Solve minimization locally
             if self.reg_max:
-                soln, stat = c.local_train(last_round_avg_local_grad_norm = sqrt_max_grad_norm_sq_at_global_weight_last_round , 
-                                                   last_round_global_grad = max_grad_for_reg)
+                soln, stat = c.local_train(last_round_avg_local_grad_norm=sqrt_max_grad_norm_sq_at_global_weight_last_round, 
+                                           last_round_global_grad=max_grad_for_reg)
             else:
-                soln, stat = c.local_train(last_round_avg_local_grad_norm = norm_avg_grad_at_global_weight_last_round, 
-                                                   last_round_global_grad = avg_grad_at_global_weight_last_round)
+                soln, stat = c.local_train(last_round_avg_local_grad_norm=norm_avg_grad_at_global_weight_last_round,
+                                           last_round_global_grad=avg_grad_at_global_weight_last_round)
 
             if self.print_result and False:
                 print("Round: {:>2d} | CID: {: >3d} ({:>2d}/{:>2d})| "
@@ -183,7 +175,6 @@ class BaseTrainer(object):
             # Add solutions and stats
             solns.append(soln)
             stats.append(stat)
-            
 
         return solns, stats
 
@@ -219,7 +210,7 @@ class BaseTrainer(object):
         # # this step already sets the client model to be the latest model (i.e., server model)
         stats_from_train_data = self.local_test(use_eval_data=False)
 
-        # Record the global gradient
+        # Record the global gradient, keep for future use
         # model_len = len(self.latest_model)
         # global_grads = np.zeros(model_len)
         # num_samples = []

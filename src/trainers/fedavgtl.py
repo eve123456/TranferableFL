@@ -36,6 +36,8 @@ class FedAvgTLTrainer(BaseTrainer):
         self.latest_model = self.worker.get_flat_model_params().detach()
 
         best_train_loss = float('inf')
+        best_train_acc = 0
+        best_test_loss = float('inf')
         best_test_acc = 0
         patience = 0
         
@@ -47,8 +49,11 @@ class FedAvgTLTrainer(BaseTrainer):
             
             # check for early stopping after we evaluate the loss on training data
             if self.metrics.loss_on_train_data[round_i] < best_train_loss:
+                # save the model to the given path
                 torch.save(self.latest_model, self.checkpoint_path)
                 best_train_loss = self.metrics.loss_on_train_data[round_i]
+                best_train_acc = self.metrics.acc_on_train_data[round_i]
+                best_test_loss = self.metrics.loss_on_eval_data[round_i]
                 best_test_acc = self.metrics.acc_on_eval_data[round_i]
                 patience = 0
             else:
@@ -58,27 +63,19 @@ class FedAvgTLTrainer(BaseTrainer):
                 print(f"Training early stopped. Model saved at {self.checkpoint_path}.")
                 break
             
-            # Choose K clients prop to data size
-            # if self.simple_average:
-            #     selected_clients, repeated_times = self.select_clients_with_prob(seed=round_i)
-            # else:
-            #     selected_clients = self.select_clients(seed=round_i)
-            #     repeated_times = None
+            if self.clients_per_round < len(self.clients):
+                # subsample K clients prop to data size
+                if self.simple_average:
+                    selected_clients, repeated_times = self.select_clients_with_prob(seed=round_i)
+                else:
+                    selected_clients = self.select_clients(seed=round_i)
+                    repeated_times = None
+            else:
+                # use all clients
+                selected_clients = [self.clients[i] for i in range(len(self.clients))]
+                repeated_times = [1] * len(self.clients)
 
-            # use all clients for simplicity
-            selected_clients = [self.clients[i] for i in range(len(self.clients))]
-            repeated_times = [1] * len(self.clients)
-
-            # Solve minimization locally
-            # check if we need to optimize the learning rate at each round
-            # if self.opt_lr:
-            #     # if last_round_avg_local_grad_norm is not None:
-            #     #     new_lr = self.clients_per_round * last_round_avg_local_grad_norm ** 2 / self.alpha / local_grads_norm_square
-            #     #     self.optimizer.set_lr(new_lr)
-            #     pass
-            # print(f'round {round_i} local learning rate = {self.optimizer.get_current_lr()}')
-            
-            
+            # lr are determined at base class
             solns, stats = self.local_train(round_i, selected_clients)
 
             # Track communication cost
@@ -88,14 +85,22 @@ class FedAvgTLTrainer(BaseTrainer):
             self.latest_model = self.aggregate(solns, repeated_times=repeated_times)
             # self.optimizer.inverse_prop_decay_learning_rate(round_i)
 
-
         # Test final model on train data
         self.test_latest_model_on_traindata(self.num_round)
         self.test_latest_model_on_evaldata(self.num_round)
+        
+        # final check in case the latest model is the best one
+        if self.metrics.loss_on_train_data[self.num_round] < best_train_loss:
+            torch.save(self.latest_model, self.checkpoint_path)
+            best_train_loss = self.metrics.loss_on_train_data[self.num_round]
+            best_train_acc = self.metrics.acc_on_train_data[self.num_round]
+            best_test_loss = self.metrics.loss_on_eval_data[self.num_round]
+            best_test_acc = self.metrics.acc_on_eval_data[self.num_round]
 
         # Save tracked information
         self.metrics.write()
-        return best_test_acc
+        
+        return best_train_loss, best_train_acc, best_test_loss, best_test_acc
 
     def compute_prob(self):
         probs = []

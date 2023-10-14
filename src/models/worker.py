@@ -193,36 +193,32 @@ class LrdWorker(Worker):
         self.clip = options['clip']
         super(LrdWorker, self).__init__(model, optimizer, options)
     
-    def local_train(self, train_dataloader, last_round_avg_local_grad_norm=None,  last_round_global_grad = None, **kwargs):
+    def local_train(self, train_dataloader, last_round_avg_local_grad_norm=None,  last_round_global_grad=None, **kwargs):
         # current_step = kwargs['T']
         self.model.train()
         train_loss = train_acc = train_total = 0
         for i in range(self.num_epoch * self.repeat_epoch):
             x, y = next(iter(train_dataloader))
-
-            
-            loss_reg_J = loss_reg_J_ind = loss_reg_J_norm = 0
-            
+            loss_reg_J = None
+            loss_reg_J_ind = None
+            loss_reg_J_norm = None
             
             latest_model_local_grad = self.get_flat_grads_from_data(x, y)
             
-            # loss term for reg_J
             if self.reg_J_coef != 0 and last_round_avg_local_grad_norm is not None:
                 # print("Applying UB reg with coef = ", self.reg_J_coef)
                 cur_lr = self.optimizer.get_current_lr()
                 loss_reg_J = self.alpha * (cur_lr ** 2) / 2 * torch.norm(latest_model_local_grad) ** 2 - cur_lr * last_round_avg_local_grad_norm ** 2
             
-            if self.reg_J_norm_coef!= 0 and last_round_avg_local_grad_norm is not None:
+            if self.reg_J_norm_coef != 0 and last_round_avg_local_grad_norm is not None:
                 # print("Applying J norm reg with coef = ", self.reg_J_norm_coef)
                 local_gradnorm = torch.norm(latest_model_local_grad)
-                loss_reg_J_norm = (last_round_avg_local_grad_norm - local_gradnorm)**2
+                loss_reg_J_norm = (last_round_avg_local_grad_norm - local_gradnorm) ** 2
 
             if self.reg_J_ind_coef != 0 and last_round_global_grad is not None:
-                # print("Applying J reg with coef = ", self.reg_J_ind_coef)
-                loss_reg_J_ind = torch.norm(last_round_global_grad - latest_model_local_grad)**2
+                # print("Applying J reg max with coef = ", self.reg_J_ind_coef)
+                loss_reg_J_ind = torch.norm(last_round_global_grad - latest_model_local_grad) ** 2
             
-            
-
             x = self.flatten_data(x)
             if self.gpu:
                 x, y = x.cuda(), y.cuda()
@@ -231,18 +227,19 @@ class LrdWorker(Worker):
             pred = self.model(x)
             loss = criterion(pred, y)
             
-            if self.reg_J_coef != 0 and last_round_avg_local_grad_norm is not None: 
+            if self.reg_J_coef != 0 and loss_reg_J is not None:
                 loss += self.reg_J_coef * loss_reg_J
             
-            if self.reg_J_norm_coef!= 0 and last_round_avg_local_grad_norm is not None:
+            if self.reg_J_norm_coef != 0 and loss_reg_J_norm is not None:
                 loss += self.reg_J_norm_coef * loss_reg_J_norm
             
-            if self.reg_J_ind_coef!= 0 and last_round_global_grad is not None:
+            if self.reg_J_ind_coef != 0 and loss_reg_J_ind is not None:
                 loss += self.reg_J_ind_coef * loss_reg_J_ind
             
             loss.backward()
+            
             if self.clip:
-                torch.nn.utils.clip_grad_norm_(self.model.parameters(), 60)
+                torch.nn.utils.clip_grad_norm_(self.model.parameters(), 60)  # 60 is a heuristic here
             self.optimizer.step()
             
             _, predicted = torch.max(pred, 1)
@@ -262,9 +259,6 @@ class LrdWorker(Worker):
                        "loss": train_loss / train_total,
                        "acc": train_acc / train_total}
         return_dict.update(param_dict)
-
-        # in the end, we need to compute the gradient again on the local dataset
-        # local_grad = self.get_flat_grads(train_dataloader).detach()
 
         return local_solution, return_dict
 

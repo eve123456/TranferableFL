@@ -118,16 +118,18 @@ class MiniDataset(Dataset):
             # 28 * 28
             if self.data.ndim == 4 and self.data.shape[3] == 1:
                 self.transform = transforms.Compose(
-                    [transforms.ToTensor(),
-                     transforms.Normalize((0.1307,), (0.3081,))
-                     ]
+                    [
+                        transforms.ToTensor(),
+                        transforms.Normalize((0.1307,), (0.3081,))
+                    ]
                 )
             elif self.data.ndim == 3:
                 self.data = self.data.reshape((-1, 28, 28, 1)).astype("uint8")
                 self.transform = transforms.Compose(
-                    [transforms.ToTensor(),
-                     transforms.Normalize((0.1307,), (0.3081,))
-                     ]
+                    [
+                        transforms.ToTensor(),
+                        transforms.Normalize((0.1307,), (0.3081,))
+                    ]
                 )
             else:
                 raise NotImplementedError
