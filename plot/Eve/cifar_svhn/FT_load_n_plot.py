@@ -93,18 +93,17 @@ def plot_contrast(coef_paths, mtx_nm, DT_flag, FL_bsline = None):
 
 
 if __name__ == "__main__":
-    cof_pths = {"0": "./result/cifar10_all_data_equal_niid/20231116150737.json",
-                "1e-4": "./result/cifar10_all_data_equal_niid/20231116150316.json",
-                "1e-3": "./result/cifar10_all_data_equal_niid/20231116151058.json"} 
+    cof_pths = {"0": "./result/cifar10_all_data_equal_niid/20231116215523.json",
+                "5e-4": "./result/cifar10_all_data_equal_niid/20231116215107.json",
+                "1e-4": "./result/cifar10_all_data_equal_niid/20231116214655.json",
+                "1e-3": "./result/cifar10_all_data_equal_niid/20231116213823.json"} 
+    # FL_bsline = {"tst_loss":{"0": 1.51,
+    #                             "1e-4": 1.50,
+    #                             "1e-3": 1.53},
+    #                 "tst_acc":{"0":0.4822,
+    #                             "1e-4": 0.4840,
+    #                             "1e-3": 0.4618}}
 
-    # FL_bsline = {"tst_loss":{"0": 1.33,
-    #                                 "1e-4": 1.32,
-    #                                 "5e-4": 1.41,
-    #                                 "1e-3": 1.60},
-    #                     "tst_acc":{"0":0.53,
-    #                                 "1e-4": 0.53,
-    #                                 "5e-4": 0.49,
-    #                                 "1e-3": 0.42}}
 
     for i_nm in mtrx_nm:
         plot_contrast(cof_pths, i_nm, False, None)

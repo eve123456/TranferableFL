@@ -11,13 +11,14 @@ mseloss = nn.MSELoss()
 
 class Worker(object):
     """
-    Base worker for all algorithm. Only need to rewrite `self.local_train` method.
+    BASE worker for all algorithm. Only need to rewrite `self.local_train` method.
 
     All solution, parameter or grad are Tensor type.
     """
-    def __init__(self, model, optimizer, options):
+    def __init__(self, model, BASE_model, optimizer, options):
         # Basic parameters
         self.model = model
+        self.BASE_model = BASE_model
         self.optimizer = optimizer
         self.batch_size = options['batch_size']
         self.num_epoch = options['num_epoch']
@@ -61,6 +62,12 @@ class Worker(object):
             state_dict[key] = model_params_dict[key]
         self.model.load_state_dict(state_dict)
 
+    def set_BASE_model_params(self, model_params_dict: dict):
+        state_dict = self.BASE_model.state_dict()
+        for key, value in state_dict.items():
+            state_dict[key] = model_params_dict[key]
+        self.BASE_model.load_state_dict(state_dict)
+
     def load_model_params(self, file):
         model_params_dict = get_state_dict(file)
         self.set_model_params(model_params_dict)
@@ -69,8 +76,15 @@ class Worker(object):
         flat_params = get_flat_params_from(self.model)
         return flat_params.detach()
 
+    def get_flat_BASE_model_params(self):
+        flat_params = get_flat_params_from(self.BASE_model)
+        return flat_params.detach()
+
     def set_flat_model_params(self, flat_params):
         set_flat_params_to(self.model, flat_params)
+
+    def set_flat_BASE_model_params(self, flat_params):
+        set_flat_params_to(self.BASE_model, flat_params)
 
     def get_flat_grads(self, dataloader):
         self.optimizer.zero_grad()
@@ -86,6 +100,22 @@ class Worker(object):
 
         flat_grads = get_flat_grad(loss, self.model.parameters(), create_graph=True)
         return flat_grads
+
+    def get_flat_BASE_grads(self, dataloader):
+        self.optimizer.zero_grad()
+        loss, total_num = 0., 0
+        for x, y in dataloader:            
+            x = self.flatten_data(x)
+            if self.gpu:
+                x, y = x.cuda(), y.cuda()
+            pred = self.BASE_model(x)
+            loss += criterion(pred, y) * y.size(0)
+            total_num += y.size(0)
+        loss /= total_num
+
+        flat_grads = get_flat_grad(loss, self.BASE_model.parameters(), create_graph=True)
+        return flat_grads
+
 
     def get_flat_grads_from_data(self, x, y):
         self.optimizer.zero_grad()
@@ -187,13 +217,13 @@ class Worker(object):
 
 
 class LrdWorker(Worker):
-    def __init__(self, model, optimizer, options):
+    def __init__(self, model, BASE_model, optimizer, options):
         self.num_epoch = options['num_epoch']
         self.repeat_epoch = options['repeat_epoch']
         self.clip = options['clip']
-        super(LrdWorker, self).__init__(model, optimizer, options)
+        super(LrdWorker, self).__init__(model, BASE_model, optimizer, options)
     
-    def local_train(self, train_dataloader, last_round_avg_local_grad_norm=None,  last_round_global_grad=None, **kwargs):
+    def local_train(self, train_dataloader, RegPole_NORM=None,  RegPole=None, **kwargs):
         # current_step = kwargs['T']
         self.model.train()
         train_loss = train_acc = train_total = 0
@@ -205,19 +235,19 @@ class LrdWorker(Worker):
             
             latest_model_local_grad = self.get_flat_grads_from_data(x, y)
             
-            if self.reg_J_coef != 0 and last_round_avg_local_grad_norm is not None:
+            if self.reg_J_coef != 0 and RegPole_NORM is not None:
                 # print("Applying UB reg with coef = ", self.reg_J_coef)
                 cur_lr = self.optimizer.get_current_lr()
-                loss_reg_J = self.alpha * (cur_lr ** 2) / 2 * torch.norm(latest_model_local_grad) ** 2 - cur_lr * last_round_avg_local_grad_norm ** 2
+                loss_reg_J = self.alpha * (cur_lr ** 2) / 2 * torch.norm(latest_model_local_grad) ** 2 - cur_lr * RegPole_NORM ** 2
             
-            if self.reg_J_norm_coef != 0 and last_round_avg_local_grad_norm is not None:
+            if self.reg_J_norm_coef != 0 and RegPole_NORM is not None:
                 # print("Applying J norm reg with coef = ", self.reg_J_norm_coef)
                 local_gradnorm = torch.norm(latest_model_local_grad)
-                loss_reg_J_norm = (last_round_avg_local_grad_norm - local_gradnorm) ** 2
+                loss_reg_J_norm = (RegPole_NORM - local_gradnorm) ** 2
 
-            if self.reg_J_ind_coef != 0 and last_round_global_grad is not None:
+            if self.reg_J_ind_coef != 0 and RegPole is not None:
                 # print("Applying J reg max with coef = ", self.reg_J_ind_coef)
-                loss_reg_J_ind = torch.norm(last_round_global_grad - latest_model_local_grad) ** 2
+                loss_reg_J_ind = torch.norm(RegPole - latest_model_local_grad) ** 2
             
             x = self.flatten_data(x)
             if self.gpu:
@@ -261,6 +291,38 @@ class LrdWorker(Worker):
         return_dict.update(param_dict)
 
         return local_solution, return_dict
+
+    def BASE_local_train(self, train_dataloader, **kwargs):
+        # current_step = kwargs['T']
+        self.BASE_model.train()
+        BASE_train_loss = BASE_train_acc = BASE_train_total = 0
+        for i in range(self.num_epoch * self.repeat_epoch):
+            x, y = next(iter(train_dataloader))
+            
+            x = self.flatten_data(x)
+            if self.gpu:
+                x, y = x.cuda(), y.cuda()
+            
+            self.optimizer.zero_grad()
+            BASE_pred = self.BASE_model(x)
+            BASE_loss = criterion(BASE_pred, y)            
+            BASE_loss.backward()
+            
+            if self.clip:
+                torch.nn.utils.clip_grad_norm_(self.BASE_model.parameters(), 60)  # 60 is a heuristic here
+            self.optimizer.step()
+            
+            _, BASE_predicted = torch.max(BASE_pred, 1)
+            BASE_correct = BASE_predicted.eq(y).sum().item()
+            target_size = y.size(0)
+            
+            BASE_train_loss += BASE_loss.item() * y.size(0)
+            BASE_train_acc += BASE_correct
+            BASE_train_total += target_size
+        
+        BASE_local_solution = self.get_flat_BASE_model_params()
+
+        return BASE_local_solution
 
 
 class LrAdjustWorker(Worker):

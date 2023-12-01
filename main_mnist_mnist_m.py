@@ -104,12 +104,12 @@ def read_options():
     parser.add_argument('--opt_lr',
                         help='flag for optimizing local learning rate at each round (default: False);',
                         action='store_true',
-                        default=False)
+                        default=True)
     
     parser.add_argument('--reg_max',
                         help='flag for regularizing J with max-norm local J.',
                         action='store_true',
-                        default=False)
+                        default=True)
     
     parser.add_argument('--reg_J',
                         help='flag for regularizing Jacobian in the form of upper bound (default: False).',

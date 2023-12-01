@@ -41,14 +41,6 @@ def read_options():
                         help='name of model;',
                         type=str,
                         default='lenet')
-    parser.add_argument('--wd',
-                        help='weight decay parameter;',
-                        type=float,
-                        default=0.0)
-    parser.add_argument('--lr',
-                        help='learning rate for inner solver;',
-                        type=float,
-                        default=0.01)
     parser.add_argument('--gpu',
                         action='store_true',
                         default=True,
@@ -65,30 +57,6 @@ def read_options():
                         help='selected CUDA device',
                         default='0',
                         type=str)
-    parser.add_argument('--num_round',
-                        help='number of rounds to simulate;',
-                        type=int,
-                        default=2)
-    parser.add_argument('--eval_every',
-                        help='evaluate every X rounds;',
-                        type=int,
-                        default=5)
-    parser.add_argument('--clients_per_round',
-                        help='number of clients trained per round;',
-                        type=int,
-                        default=100)
-    parser.add_argument('--batch_size',
-                        help='batch size when clients train on data;',
-                        type=int,
-                        default=64)
-    parser.add_argument('--repeat_epoch',
-                        help = 'scale up num_epoch in local worker, ~10 for 100 clients with batch size 64, ~1 for clients with batch size > local datasize',
-                        type = int,
-                        default = 10)
-    parser.add_argument('--num_epoch',
-                        help='number of epochs when clients train on data;',
-                        type=int,
-                        default=1)
     parser.add_argument('--seed',
                         help='seed for randomness;',
                         type=int,
@@ -97,6 +65,44 @@ def read_options():
                         help='add more information;',
                         type=str,
                         default='')
+    parser.add_argument('--eval_every',
+                        help='evaluate every X rounds;',
+                        type=int,
+                        default=5)
+    parser.add_argument('--clients_per_round',
+                        help='number of clients trained per round;',
+                        type=int,
+                        default=100)
+        
+    parser.add_argument('--num_round',
+                        help='number of rounds to simulate;',
+                        type=int,
+                        default=600)
+                        # default = 2)
+    parser.add_argument('--num_epoch',
+                        help='number of epochs when clients train on data;',
+                        type=int,
+                        # default=1)
+                        default = 10)
+    parser.add_argument('--batch_size',
+                        help='batch size when clients train on data;',
+                        type=int,
+                        default=256)
+    parser.add_argument('--repeat_epoch',
+                        help = 'scale up num_epoch in local worker, ~10 for 100 clients with batch size 64, ~1 for clients with batch size > local datasize',
+                        type = int,
+                        # default = 10)
+                        default = 1)
+    
+    parser.add_argument('--lr',
+                        help='learning rate for inner solver;',
+                        type=float,
+                        default=0.01)
+    parser.add_argument('--wd',
+                        help='weight decay parameter;',
+                        type=float,
+                        default=0.0)
+    
     # important flags
     parser.add_argument('--opt_lr',
                         help='flag for optimizing local learning rate at each round (default: False);',
@@ -121,11 +127,16 @@ def read_options():
     parser.add_argument('--reg_J_ind_coef',
                         help='coefficient for regularization on Jacobian (indexwise);',
                         type=float,
-                        default=0.0)
+                        # default=0.0)
+                        default = 5e-4)
     parser.add_argument('--clip',
                         help='flag for whether do grad norm clip',
                         action='store_true',
                         default=False)
+    parser.add_argument('--copy_vanilla',
+                        help = 'flag for whether FedAVG is recorded for JNB',
+                        action = 'store_true',
+                        default = True)
     # fine-tuning
     parser.add_argument('--ft_dataset',
                         help='dataset for fine-tuning;',
@@ -138,7 +149,8 @@ def read_options():
     parser.add_argument('--ft_epochs',
                         help='epochs for fine-tuning;',
                         type=int,
-                        default=2)
+                        default=100)
+                        # default = 1)
     parser.add_argument('--ft_batch_size',
                         help='batch size for fine-tuning;',
                         type=int,
@@ -146,11 +158,13 @@ def read_options():
     parser.add_argument('--ft_lr',
                         help='learning rate for fine-tuning;',
                         type=float,
-                        default=1e-3)
+                        # default=1e-3)
+                        default = 0.01)
     parser.add_argument('--ft_wd',
                         help='weight decay for fine-tuning;',
                         type=float,
-                        default=1e-2)
+                        # default=1e-4)
+                        default = 0)
     # simulation setup
     parser.add_argument('--n_init',
                         help='number of initial models to consider;',
@@ -159,7 +173,7 @@ def read_options():
     parser.add_argument('--alpha',
                         help='estimate of lipschitz continuous gradient constant (0 means no estimate yet);',
                         type=float,
-                        default=13.2316427)
+                        default=0)
     parser.add_argument('--last_k',
                         help='number of fc layers to fine-tune;',
                         type=int,
@@ -275,7 +289,7 @@ def main():
     compute_alpha = True if options['alpha'] == 0 else False
     start = time.time()
 
-    for i_init in range(options['n_init']):
+    for _ in range(options['n_init']):
         # randomly initialize a new model
         random_model = choose_model(options)
         i_loss, i_alpha = eval_hessian(random_model, data_all_loader, criterion, options['device'], compute_alpha)
@@ -334,6 +348,7 @@ def main():
             # torch.save(flat_model_params, model_path)
             # latest model may not be the best model, we can load the saved best model from model_path directly
             flat_model_params = torch.load(model_path)
+            print("load from", model_path)
 
             # Initialize new models
             model_source_only = choose_model(options)  # baseline: lower bound (f on source, g on source)

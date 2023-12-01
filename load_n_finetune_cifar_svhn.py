@@ -152,11 +152,11 @@ def read_options():
     parser.add_argument('--ft_batch_size',
                         help='batch size for fine-tuning;',
                         type=int,
-                        default=64)
+                        default=128)
     parser.add_argument('--ft_lr',
                         help='learning rate for fine-tuning;',
                         type=float,
-                        default=1e-3)
+                        default=1e-2)
     parser.add_argument('--ft_wd',
                         help='weight decay for fine-tuning;',
                         type=float,

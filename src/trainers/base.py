@@ -7,9 +7,9 @@ from src.models.worker import Worker
 
 
 class BaseTrainer(object):
-    def __init__(self, options, dataset, model=None, optimizer=None, name='', worker=None):
+    def __init__(self, options, dataset, model=None, BASE_model = None, optimizer=None, name='', worker=None):
         if model is not None and optimizer is not None:
-            self.worker = Worker(model, optimizer, options)
+            self.worker = Worker(model, BASE_model, optimizer, options)
         elif worker is not None:
             self.worker = worker
         else:
@@ -38,6 +38,9 @@ class BaseTrainer(object):
         self.opt_lr = options['opt_lr']
         self.reg_max = options['reg_max']
         self.lr = options['lr']
+        self.copy_vanilla = options['copy_vanilla']
+        if self.copy_vanilla:
+            self.latest_BASE_model = self.worker.get_flat_BASE_model_params()
 
     @staticmethod
     def move_model_to_gpu(model, options):
@@ -51,7 +54,7 @@ class BaseTrainer(object):
             print('>>> Do not use gpu')
 
     def setup_clients(self, dataset):
-        """Instantiates clients based on given train and test data directories
+        """Instantiates clients BASEd on given train and test data directories
 
         Returns:
             all_clients: List of clients
@@ -104,65 +107,107 @@ class BaseTrainer(object):
             solns: local solutions, list of the tuple (num_sample, local_solution)
             stats: Dict of some statistics
         """
-        solns = []  # Buffer for receiving client solutions
-        stats = []  # Buffer for receiving client communication costs
-
+        
+        ##################################################
+        # Calculate Reg Pole for JNB Train
+        ##################################################
+        #### prepare statistics
         if round_i == 0:
             # initialization
-            norm_avg_grad_at_global_weight_last_round = None
-            avg_grad_at_global_weight_last_round = None
-            max_grad_norm_sq_at_global_weight_last_round = None
-            max_grad_for_reg = None
-            sqrt_max_grad_norm_sq_at_global_weight_last_round = None
+            AvgGrad_Norm = None
+            AVG_Grad = None
+            MAX_GradNormSQ = None
+            Grad_REG = None
+            MAX_GradNorm = None
+            BASE_Grad_REG = None
+
         else:
-            # calculate avg_grad_at_global_weight_last_round and its norm
-            local_grads_at_global_weight = []
-            local_grad_norms_sq_at_global_weight = []
+            # calculate AVG_Grad and its norm
+            Local_Grad_list = []
+            Local_GradNormSQ_list = []
+            
+            
+            
             for i, c in enumerate(selected_clients, start=1):
                 # Communicate the latest model
                 c.set_flat_model_params(self.latest_model)
-                c_grad_at_global_weight = c.worker.get_flat_grads(c.train_dataloader).detach()  # tensor at device
-                local_grads_at_global_weight.append(c_grad_at_global_weight)
-                local_grad_norms_sq_at_global_weight.append(torch.norm(c_grad_at_global_weight)**2)
-            
-            avg_grad_at_global_weight_last_round = torch.mean(torch.stack(local_grads_at_global_weight, dim=0), dim=0)  # J_p
-            
-            norm_avg_grad_at_global_weight_last_round = torch.norm(avg_grad_at_global_weight_last_round)  # \|J_p\|
-            
-            avg_grad_norm_sq_at_global_weight_last_round = torch.mean(torch.stack(local_grad_norms_sq_at_global_weight, dim=0), dim=0)  # 1/K * \sum \|J^(k)\|^2
-            
-            max_grad_norm_sq_at_global_weight_last_round = torch.max(torch.stack(local_grad_norms_sq_at_global_weight, dim=0))  # max \|J^(k)\|^2
+                c_grad = c.worker.get_flat_grads(c.train_dataloader).detach()  # tensor at device
+                Local_Grad_list.append(c_grad)
+                Local_GradNormSQ_list.append(torch.norm(c_grad)**2)
 
-            sqrt_max_grad_norm_sq_at_global_weight_last_round = torch.sqrt(max_grad_norm_sq_at_global_weight_last_round)  # max \|J^(k)\|
+            
+            AVG_Grad = torch.mean(torch.stack(Local_Grad_list, dim=0), dim=0)  # J_p
+            
+            AvgGrad_Norm = torch.norm(AVG_Grad)  # \|J_p\|
+            
+            AVG_GradNormSQ = torch.mean(torch.stack(Local_GradNormSQ_list, dim=0), dim=0)  # 1/K * \sum \|J^(k)\|^2
+            
+            MAX_GradNormSQ = torch.max(torch.stack(Local_GradNormSQ_list, dim=0))  # max \|J^(k)\|^2
 
-            max_grad_for_reg = avg_grad_at_global_weight_last_round * sqrt_max_grad_norm_sq_at_global_weight_last_round / norm_avg_grad_at_global_weight_last_round  # J_p * \|J^(k)\| / \|J_p\|
+            MAX_GradNorm = torch.sqrt(MAX_GradNormSQ)  # max \|J^(k)\|
 
-            var_grad_at_global = avg_grad_norm_sq_at_global_weight_last_round - norm_avg_grad_at_global_weight_last_round**2  # sigma^2
+            Grad_REG = AVG_Grad / AvgGrad_Norm * MAX_GradNorm  # J_p * \|J^(k)\| / \|J_p\|
 
+            VAR_Grad = AVG_GradNormSQ - AvgGrad_Norm**2  # sigma^2
+        
+        #### if self.copy_vanilla, prepare MAX_local_GradNorm from FedAVG 
+        if self.copy_vanilla:
+            if round_i == 0:
+            # initialization
+                BASE_MAX_GradNorm = None
+            else:
+                # calculate AVG_Grad and its norm
+                BASE_local_GradNorm_list = []
+                for i, c in enumerate(selected_clients, start=1):
+                    # Communicate the latest model
+                    c.set_flat_BASE_model_params(self.latest_BASE_model)
+                    BASE_c_grad = c.worker.get_flat_BASE_grads(c.train_dataloader).detach()  # tensor at device
+                    BASE_local_GradNorm_list.append(torch.norm(BASE_c_grad))
+                
+                BASE_MAX_GradNorm = torch.max(torch.stack(BASE_local_GradNorm_list, dim=0))  # max \|J^(k)\|^2
+                Chosen_MAX_GradNorm = max(MAX_GradNorm, BASE_MAX_GradNorm)             
+                BASE_Grad_REG = AVG_Grad / AvgGrad_Norm * Chosen_MAX_GradNorm  # J_p * \|J^(k)\| / \|J_p\|
+
+        #### if self.opt_lr, calculate adaptive lr 
         if self.opt_lr and round_i != 0:
-            new_lr = (1 / self.alpha) * (norm_avg_grad_at_global_weight_last_round**2 / avg_grad_norm_sq_at_global_weight_last_round)
+            new_lr = (1 / self.alpha) * (AvgGrad_Norm**2 / AVG_GradNormSQ)
             # in case the lr gets too small
             if new_lr > self.lr:
                 self.optimizer.set_lr(new_lr)
-        
+    
+        #### output statistics for sanity check
         if round_i == 0:
             print(f'round {round_i}: local lr = {self.optimizer.get_current_lr()}')
         else:
             print(f'round {round_i}: local lr = {self.optimizer.get_current_lr()}, '
-                  f'sq_norm_avg_grad = {norm_avg_grad_at_global_weight_last_round**2}, avg_sq_norm_grad = {avg_grad_norm_sq_at_global_weight_last_round}, '
-                  f'max_norm_grad = {sqrt_max_grad_norm_sq_at_global_weight_last_round}, var_grad = {var_grad_at_global}')
+                  f'AvgGrad_NormSQ = {AvgGrad_Norm**2}, AVG_GradNormSQ = {AVG_GradNormSQ}, '
+                  f'MAX_GradNorm = {MAX_GradNorm}, VAR_Grad = {VAR_Grad}')
+            if self.copy_vanilla:
+                print(f'FEDAVG_MAX_GradNorm = {BASE_MAX_GradNorm}, '
+                      f'Chosen_MAX_GradNorm = {Chosen_MAX_GradNorm}')
         
+        ##################################################
+        # Train JNB;
+        # If self.copy_vanilla, train FedAVG
+        ##################################################
+        solns = []  # Buffer for receiving client solutions
+        stats = []  # Buffer for receiving client communication costs
+        BASE_solns = []  # Buffer for receiving client BASE solutions
+            
         for i, c in enumerate(selected_clients, start=1):
+            #### Train JNB
+            ##################################################
             # Communicate the latest model
             c.set_flat_model_params(self.latest_model)
 
             # Solve minimization locally
+            ### if use pole norm enlarged
             if self.reg_max:
-                soln, stat = c.local_train(last_round_avg_local_grad_norm=sqrt_max_grad_norm_sq_at_global_weight_last_round, 
-                                           last_round_global_grad=max_grad_for_reg)
+                RegPole = BASE_Grad_REG if self.copy_vanilla else Grad_REG
+                soln, stat = c.local_train(RegPole_NORM = None, RegPole = RegPole)
+            ### normal pole (avg gradnorm or avg grad)
             else:
-                soln, stat = c.local_train(last_round_avg_local_grad_norm=norm_avg_grad_at_global_weight_last_round,
-                                           last_round_global_grad=avg_grad_at_global_weight_last_round)
+                soln, stat = c.local_train(RegPole_NORM=AvgGrad_Norm, RegPole=AVG_Grad)
 
             if self.print_result and False:
                 print("Round: {:>2d} | CID: {: >3d} ({:>2d}/{:>2d})| "
@@ -176,7 +221,26 @@ class BaseTrainer(object):
             solns.append(soln)
             stats.append(stat)
 
-        return solns, stats
+            #### Train FedAVG, if self.copy_vanilla
+            ##################################################
+            # Communicate the latest BASE model
+            if self.copy_vanilla:
+                c.set_flat_BASE_model_params(self.latest_BASE_model)
+                # Solve minimization locally
+                BASE_soln= c.BASE_local_train()
+
+                if self.print_result and False:
+                    print("Round: {:>2d} | CID: {: >3d} ({:>2d}/{:>2d})| "
+                        "Param: norm {:>.4f} ({:>.4f}->{:>.4f})| "
+                        "Loss {:>.4f} | Acc {:>5.2f}% | Time: {:>.2f}s".format(
+                        round_i, c.cid, i, self.clients_per_round,
+                        stat['norm'], stat['min'], stat['max'],
+                        stat['loss'], stat['acc']*100, stat['time']))
+
+                # Add solutions
+                BASE_solns.append(BASE_soln)
+
+        return solns, stats, BASE_solns
 
     def aggregate(self, solns, **kwargs):
         """Aggregate local solutions and output new global parameter

@@ -19,10 +19,17 @@ class FedAvgTLTrainer(BaseTrainer):
         # set the model parameters to the best so far
         set_flat_params_to(model, options['model_init'])
         self.move_model_to_gpu(model, options)
+        
+        BASE_model = None
+        if options['copy_vanilla']:
+            BASE_model = choose_model(options)
+            set_flat_params_to(BASE_model, options['model_init'])
+            self.move_model_to_gpu(BASE_model, options)
+        
         self.optimizer = GD(model.parameters(), lr=options['lr'], weight_decay=options['wd'])
         self.num_epoch = options['num_epoch']
         self.opt_lr = options['opt_lr']
-        worker = LrdWorker(model, self.optimizer, options)
+        worker = LrdWorker(model, BASE_model, self.optimizer, options)
         super(FedAvgTLTrainer, self).__init__(options, dataset, worker=worker)
         self.prob = self.compute_prob()
         self.alpha = options['alpha']
@@ -34,7 +41,7 @@ class FedAvgTLTrainer(BaseTrainer):
 
         # Fetch latest flat model parameter
         self.latest_model = self.worker.get_flat_model_params().detach()
-
+        self.latest_BASE_model = self.worker.get_flat_BASE_model_params().detach()
         best_train_loss = float('inf')
         best_train_acc = 0
         best_test_loss = float('inf')
@@ -76,13 +83,16 @@ class FedAvgTLTrainer(BaseTrainer):
                 repeated_times = [1] * len(self.clients)
 
             # lr are determined at base class
-            solns, stats = self.local_train(round_i, selected_clients)
+            solns, stats, BASE_solns = self.local_train(round_i, selected_clients)
 
             # Track communication cost
             self.metrics.extend_commu_stats(round_i, stats)
 
             # Update latest model
             self.latest_model = self.aggregate(solns, repeated_times=repeated_times)
+            if self.copy_vanilla:
+                self.latest_BASE_model = self.aggregate(BASE_solns, repeated_times=repeated_times)
+            
             # self.optimizer.inverse_prop_decay_learning_rate(round_i)
 
         # Test final model on train data

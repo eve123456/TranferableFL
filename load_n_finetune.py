@@ -159,7 +159,7 @@ def read_options():
     parser.add_argument('--pretrain_model_path',
                         help='',
                         type=str,
-                        default="./models/lenet_mnist_20230928202628.pt")
+                        default="./models/lenet_cifar10_20231026231133.pt")
     
     parsed = parser.parse_args()
     options = parsed.__dict__
