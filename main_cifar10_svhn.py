@@ -77,7 +77,7 @@ def read_options():
     parser.add_argument('--num_round',
                         help='number of rounds to simulate;',
                         type=int,
-                        default=600)
+                        default=500)
                         # default = 2)
     parser.add_argument('--num_epoch',
                         help='number of epochs when clients train on data;',

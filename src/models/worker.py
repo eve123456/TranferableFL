@@ -15,11 +15,12 @@ class Worker(object):
 
     All solution, parameter or grad are Tensor type.
     """
-    def __init__(self, model, BASE_model, optimizer, options):
+    def __init__(self, model, BASE_model, optimizer, BASE_optimizer, options):
         # Basic parameters
         self.model = model
         self.BASE_model = BASE_model
         self.optimizer = optimizer
+        self.BASE_optimizer = BASE_optimizer
         self.batch_size = options['batch_size']
         self.num_epoch = options['num_epoch']
         self.gpu = options['gpu'] if 'gpu' in options else False
@@ -217,11 +218,11 @@ class Worker(object):
 
 
 class LrdWorker(Worker):
-    def __init__(self, model, BASE_model, optimizer, options):
+    def __init__(self, model, BASE_model, optimizer, BASE_optimizer, options):
         self.num_epoch = options['num_epoch']
         self.repeat_epoch = options['repeat_epoch']
         self.clip = options['clip']
-        super(LrdWorker, self).__init__(model, BASE_model, optimizer, options)
+        super(LrdWorker, self).__init__(model, BASE_model, optimizer, BASE_optimizer, options)
     
     def local_train(self, train_dataloader, RegPole_NORM=None,  RegPole=None, **kwargs):
         # current_step = kwargs['T']
@@ -303,14 +304,14 @@ class LrdWorker(Worker):
             if self.gpu:
                 x, y = x.cuda(), y.cuda()
             
-            self.optimizer.zero_grad()
+            self.BASE_optimizer.zero_grad()
             BASE_pred = self.BASE_model(x)
             BASE_loss = criterion(BASE_pred, y)            
             BASE_loss.backward()
             
             if self.clip:
                 torch.nn.utils.clip_grad_norm_(self.BASE_model.parameters(), 60)  # 60 is a heuristic here
-            self.optimizer.step()
+            self.BASE_optimizer.step()
             
             _, BASE_predicted = torch.max(BASE_pred, 1)
             BASE_correct = BASE_predicted.eq(y).sum().item()

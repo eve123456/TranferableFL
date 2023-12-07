@@ -27,9 +27,14 @@ class FedAvgTLTrainer(BaseTrainer):
             self.move_model_to_gpu(BASE_model, options)
         
         self.optimizer = GD(model.parameters(), lr=options['lr'], weight_decay=options['wd'])
+
+        self.BASE_optimizer= None
+        if options['copy_vanilla']:
+            self.BASE_optimizer =GD(BASE_model.parameters(), lr=options['lr'], weight_decay=options['wd'])
+
         self.num_epoch = options['num_epoch']
         self.opt_lr = options['opt_lr']
-        worker = LrdWorker(model, BASE_model, self.optimizer, options)
+        worker = LrdWorker(model, BASE_model, self.optimizer, self.BASE_optimizer, options)
         super(FedAvgTLTrainer, self).__init__(options, dataset, worker=worker)
         self.prob = self.compute_prob()
         self.alpha = options['alpha']

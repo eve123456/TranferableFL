@@ -7,9 +7,9 @@ from src.models.worker import Worker
 
 
 class BaseTrainer(object):
-    def __init__(self, options, dataset, model=None, BASE_model = None, optimizer=None, name='', worker=None):
+    def __init__(self, options, dataset, model=None, BASE_model = None, optimizer=None, BASE_optimizer = None, name='', worker=None):
         if model is not None and optimizer is not None:
-            self.worker = Worker(model, BASE_model, optimizer, options)
+            self.worker = Worker(model, BASE_model, optimizer, BASE_optimizer, options)
         elif worker is not None:
             self.worker = worker
         else:
@@ -199,6 +199,7 @@ class BaseTrainer(object):
             ##################################################
             # Communicate the latest model
             c.set_flat_model_params(self.latest_model)
+            c.set_flat_BASE_model_params(self.latest_model)
 
             # Solve minimization locally
             ### if use pole norm enlarged
@@ -329,6 +330,7 @@ class BaseTrainer(object):
     def local_test(self, use_eval_data=True):
         assert self.latest_model is not None
         self.worker.set_flat_model_params(self.latest_model)
+        self.worker.set_flat_BASE_model_params(self.latest_BASE_model)
 
         num_samples = []
         tot_corrects = []
