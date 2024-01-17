@@ -18,7 +18,7 @@ def mkdir(path):
     return path
 
 
-def read_data(train_data_dir, test_data_dir=None, key=None, dataset_name='mnist'):
+def read_data(train_data_dir, test_data_dir=None, key=None, dataset_name='mnist', DA = None, DA_type = None):
     """Parses data in given train and test data directories
 
     Assumes:
@@ -55,7 +55,8 @@ def read_data(train_data_dir, test_data_dir=None, key=None, dataset_name='mnist'
         train_data.update(cdata['user_data'])
 
     for cid, v in train_data.items():
-        train_data[cid] = MiniDataset(v['x'], v['y'], dataset_name)
+        train_data[cid] = MiniDataset(v['x'], v['y'], dataset_name, DA = DA, DA_type = DA_type)
+        # transformation assigned, but no transformation implemented yet
 
     if test_data_dir is not None:
         test_files = os.listdir(test_data_dir)
@@ -72,7 +73,7 @@ def read_data(train_data_dir, test_data_dir=None, key=None, dataset_name='mnist'
             test_data.update(cdata['user_data'])
 
         for cid, v in test_data.items():
-            test_data[cid] = MiniDataset(v['x'], v['y'], dataset_name)
+            test_data[cid] = MiniDataset(v['x'], v['y'], dataset_name, DA = None)
     else:
         test_data = None
 
@@ -82,20 +83,81 @@ def read_data(train_data_dir, test_data_dir=None, key=None, dataset_name='mnist'
 
 
 class MiniDataset(Dataset):
-    def __init__(self, data, labels, dataset_name):
+    def __init__(self, data, labels, dataset_name, DA = None, DA_type = None):
         super(MiniDataset, self).__init__()
         self.data = np.array(data).astype("uint8")  # images
         self.labels = np.array(labels).astype("int64")
         
         if dataset_name == "cifar10":
             # 32 * 32
-            self.transform = transforms.Compose(
-                [
-                    transforms.ToTensor(),
-                    transforms.Normalize([0.49139968, 0.48215841, 0.44653091], [0.24703223, 0.24348513, 0.26158784])
-                ]
-            )
-            
+            if DA:
+                if DA_type == "HF":
+                    self.transform = self.transform = transforms.Compose(
+                        [
+                            transforms.RandomHorizontalFlip(),
+                            transforms.ToTensor(),
+                            transforms.Normalize([0.49139968, 0.48215841, 0.44653091], [0.24703223, 0.24348513, 0.26158784])
+                        ]
+                    )
+                
+                if DA_type == "VF":
+                    self.transform = transforms.Compose(
+                        [
+                            transforms.RandomVerticalFlip(),
+                            transforms.ToTensor(),
+                            transforms.Normalize([0.49139968, 0.48215841, 0.44653091], [0.24703223, 0.24348513, 0.26158784])
+                        ]
+                    )
+                
+                if DA_type == "R":
+                    self.transform = transforms.Compose(
+                        [
+                            transforms.RandomRotation(15),
+                            transforms.ToTensor(),
+                            transforms.Normalize([0.49139968, 0.48215841, 0.44653091], [0.24703223, 0.24348513, 0.26158784])
+                        ]
+                    )
+                
+                if DA_type == "CJ":
+                    self.transform = transforms.Compose(
+                        [
+                            transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.2),
+                            transforms.ToTensor(),
+                            transforms.Normalize([0.49139968, 0.48215841, 0.44653091], [0.24703223, 0.24348513, 0.26158784])
+                        ]
+                    )
+                
+                if DA_type == "Crop":
+                    self.transform = transforms.Compose(
+                        [
+                            transforms.RandomResizedCrop(32, scale=(0.8, 1.0)),
+                            transforms.ToTensor(),
+                            transforms.Normalize([0.49139968, 0.48215841, 0.44653091], [0.24703223, 0.24348513, 0.26158784])
+                        ]
+                    )
+
+                # self.transform = transforms.Compose(
+                #     [
+                #         # add data augmentation
+                #         transforms.RandomHorizontalFlip(),
+                #         # transforms.RandomVerticalFlip(),
+                #         # transforms.RandomRotation(15),
+                #         # transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.2),
+                #         # transforms.RandomResizedCrop(32, scale=(0.8, 1.0)),
+                #         # transforms.ToTensor(),
+                #         # transforms.Normalize([0.49139968, 0.48215841, 0.44653091], [0.24703223, 0.24348513, 0.26158784])
+                #     ]
+                # )
+            else:
+                self.transform = transforms.Compose(
+                    [
+                        transforms.ToTensor(),
+                        transforms.Normalize([0.49139968, 0.48215841, 0.44653091], [0.24703223, 0.24348513, 0.26158784])
+                    ]
+                )
+
+
+
         elif dataset_name == "cifar100":
             # 32 * 32
             self.transform = transforms.Compose(

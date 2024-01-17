@@ -72,18 +72,19 @@ def read_options():
     parser.add_argument('--clients_per_round',
                         help='number of clients trained per round;',
                         type=int,
-                        default=100)
+                        # default=100)
+                        default = 10)
         
     parser.add_argument('--num_round',
                         help='number of rounds to simulate;',
                         type=int,
-                        default=500)
+                        default=1000)
                         # default = 2)
     parser.add_argument('--num_epoch',
                         help='number of epochs when clients train on data;',
                         type=int,
-                        # default=1)
-                        default = 10)
+                        default=1)
+                        # default = 10)
     parser.add_argument('--batch_size',
                         help='batch size when clients train on data;',
                         type=int,
@@ -91,8 +92,8 @@ def read_options():
     parser.add_argument('--repeat_epoch',
                         help = 'scale up num_epoch in local worker, ~10 for 100 clients with batch size 64, ~1 for clients with batch size > local datasize',
                         type = int,
-                        # default = 10)
-                        default = 1)
+                        default = 10)
+                        # default = 1)
     
     parser.add_argument('--lr',
                         help='learning rate for inner solver;',
@@ -102,7 +103,6 @@ def read_options():
                         help='weight decay parameter;',
                         type=float,
                         default=0.0)
-    
     # important flags
     parser.add_argument('--opt_lr',
                         help='flag for optimizing local learning rate at each round (default: False);',
@@ -137,6 +137,16 @@ def read_options():
                         help = 'flag for whether FedAVG is recorded for JNB',
                         action = 'store_true',
                         default = True)
+    parser.add_argument('--DA',
+                        help='flag for DA.',
+                        action='store_true',
+                        default=True)
+    
+    parser.add_argument('--DA_type',
+                        help='DA type --HF, --VF, --R, --CJ, --Crop.',
+                        action='store_true',
+                        default='Crop')
+    
     # fine-tuning
     parser.add_argument('--ft_dataset',
                         help='dataset for fine-tuning;',
@@ -278,7 +288,7 @@ def main():
     # first estimate the value for alpha
     data_all_path = os.path.join('./data', dataset_name, 'data')
     _, _, data_all, _ = read_data(train_data_dir=data_all_path, key='all_data.pkl', dataset_name='cifar10')
-    data_all = data_all[0]
+    data_all = data_all[0] # a MiniDataset, with artributes data (60000,), labels (60000,), transform. Transform assigned but not implemented yet.
     data_all_loader = DataLoader(data_all, batch_size=1024, shuffle=False)
 
     # initialize several models to compute the lowest initial loss
@@ -311,7 +321,7 @@ def main():
     test_path = os.path.join('./data', dataset_name, 'data', 'test')
 
     # `dataset` is a tuple like (cids, groups, train_data, test_data)
-    all_data_info = read_data(train_path, test_path, sub_data, dataset_name='cifar10')
+    all_data_info = read_data(train_path, test_path, sub_data, dataset_name='cifar10', DA = options['DA'], DA_type = options['DA_type'])
     # load the fine-tuning dataset
     ft_train_loader, ft_test_loader = get_loader(options['ft_dataset_dir'], options['ft_dataset'], options['ft_batch_size'], num_workers=16)
     
