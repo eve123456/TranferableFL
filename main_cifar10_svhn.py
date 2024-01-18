@@ -40,7 +40,8 @@ def read_options():
     parser.add_argument('--model',
                         help='name of model;',
                         type=str,
-                        default='lenet')
+                        # default='lenet')
+                        default = 'resnet')
     parser.add_argument('--gpu',
                         action='store_true',
                         default=True,
@@ -74,6 +75,7 @@ def read_options():
                         type=int,
                         # default=100)
                         default = 10)
+                        # default = 2)
         
     parser.add_argument('--num_round',
                         help='number of rounds to simulate;',
@@ -107,7 +109,8 @@ def read_options():
     parser.add_argument('--opt_lr',
                         help='flag for optimizing local learning rate at each round (default: False);',
                         action='store_true',
-                        default=True)
+                        # default=True)
+                        default = False)
     parser.add_argument('--reg_max',
                         help='flag for regularizing J with max-norm local J.',
                         action='store_true',
@@ -127,8 +130,8 @@ def read_options():
     parser.add_argument('--reg_J_ind_coef',
                         help='coefficient for regularization on Jacobian (indexwise);',
                         type=float,
-                        # default=0.0)
-                        default = 5e-4)
+                        default=0.0)
+                        # default = 5e-4)
     parser.add_argument('--clip',
                         help='flag for whether do grad norm clip',
                         action='store_true',
@@ -140,7 +143,8 @@ def read_options():
     parser.add_argument('--DA',
                         help='flag for DA.',
                         action='store_true',
-                        default=True)
+                        # default=True)
+                        default = False)
     
     parser.add_argument('--DA_type',
                         help='DA type --HF, --VF, --R, --CJ, --Crop.',
@@ -160,7 +164,7 @@ def read_options():
                         help='epochs for fine-tuning;',
                         type=int,
                         default=100)
-                        # default = 1)
+                        # default = 2)
     parser.add_argument('--ft_batch_size',
                         help='batch size for fine-tuning;',
                         type=int,
@@ -176,6 +180,11 @@ def read_options():
                         # default=1e-4)
                         default = 0)
     # simulation setup
+    parser.add_argument('--optimal_init',
+                        help='optimize initial model (1) or not(0)',
+                        type=int,
+                        default=0)
+    
     parser.add_argument('--n_init',
                         help='number of initial models to consider;',
                         type=int,
@@ -298,21 +307,25 @@ def main():
     best_alpha = 0 if options['alpha'] == 0 else options['alpha']
     compute_alpha = True if options['alpha'] == 0 else False
     start = time.time()
+    
+    if options['optimal_init']:
+        for _ in range(options['n_init']):
+            # randomly initialize a new model
+            random_model = choose_model(options)
+            i_loss, i_alpha = eval_hessian(random_model, data_all_loader, criterion, options['device'], compute_alpha)
+            # save the best model so far
+            if i_loss < best_loss:
+                best_loss = i_loss
+                best_model = random_model
 
-    for _ in range(options['n_init']):
-        # randomly initialize a new model
-        random_model = choose_model(options)
-        i_loss, i_alpha = eval_hessian(random_model, data_all_loader, criterion, options['device'], compute_alpha)
-        # save the best model so far
-        if i_loss < best_loss:
-            best_loss = i_loss
-            best_model = random_model
-
-        if compute_alpha:
-            best_alpha = max(best_alpha, i_alpha)
-
+            if compute_alpha:
+                best_alpha = max(best_alpha, i_alpha)
+    else:
+        best_model = choose_model(options)
+    
     best_model_init = get_flat_params_from(best_model).detach()
-    options['alpha'] = best_alpha
+    if options['optimal_init']:
+        options['alpha'] = best_alpha
     options['model_init'] = best_model_init
     print(f'>>> The estimate of constant alpha is {best_alpha}.')
 
